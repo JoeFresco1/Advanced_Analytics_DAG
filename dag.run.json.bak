@@ -1,0 +1,31 @@
+{
+  "storageVersion": 2,
+  "id": "run_dbb4739c",
+  "objective": "Advanced analytics product workspace",
+  "createdAt": "2026-10-12T17:22:45.077Z",
+  "settings": {
+    "concurrency": 3,
+    "timeoutMs": 3600000,
+    "silenceMs": 600000,
+    "silenceAction": "warn",
+    "autoPlan": true,
+    "reviewVerdict": "marker",
+    "maxAttempts": 3,
+    "onDepFailure": "block",
+    "onGateBlocked": "wait",
+    "maxWallClockMs": 0,
+    "logCapBytes": 1048576,
+    "notifyCmd": "",
+    "model": "",
+    "variant": "",
+    "worktree": "none",
+    "worktreePrepareCmd": "",
+    "harnessChain": [],
+    "failOnNonZeroExit": null,
+    "finalReview": "off",
+    "finalReviewRounds": 1,
+    "finalReviewCmd": null,
+    "mergeRounds": 2
+  },
+  "tasks": {}
+}

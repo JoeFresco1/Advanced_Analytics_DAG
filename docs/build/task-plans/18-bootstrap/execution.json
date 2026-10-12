@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "18-bootstrap",
+  "requirementTasks": {},
+  "successTasks": {},
+  "edgeCaseTasks": {},
+  "units": [
+    {
+      "id": "fixture-package",
+      "title": "Build deterministic synthetic fixtures and frozen cohorts",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/evaluation/fixtures/index.ts",
+        "src/analytics/evaluation/fixtures/generators.ts",
+        "src/analytics/evaluation/fixtures/profiles.json",
+        "src/analytics/evaluation/fixtures/reference.json",
+        "src/analytics/evaluation/fixtures/tabular.json",
+        "src/analytics/evaluation/fixtures/retrieval.json",
+        "src/analytics/evaluation/fixtures/import-corpus.json",
+        "src/analytics/evaluation/fixtures/capture-signals.json",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Implement deterministic synthetic fixture IDs and digests, worker/reference separation, explicit source/grant profiles, answer limits and rubrics, planted-fault variants, and the exact 150-card/20-query/5-no-match, 99-file, and 48-signal cohorts. Freeze development/evaluation case roles into evaluator-only fixture-set digests, exclude roles from worker payloads, and preserve tuning exposure; include at least 20 evaluation-role question cases, and do not relabel a tuned development case as evaluation in the same fixture-set version. Preserve proposal-case ownership and do not tune labels from product output.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "--test-name-pattern=fixture-package",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reference-registry",
+      "title": "metric declarations",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "fixture-package"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 Implement immutable base metric declarations, ten accepted formulas/cohorts/directions/minima/thresholds, separate no-match contract and observed-or-unavailable non-gating cost. Validate required denominator inputs. Defer approval, batch and contribution transitions to their owning units.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-reference-registry: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-reference-registry",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context-isolation",
+      "title": "context isolation",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "reference-registry"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 Validate and serialize the actual 001 worker context, including retrieved-card, source-skill and cached-summary additions. Reject direct and indirect answer-key, relevance-label, primaryRelevantCardId, reference digest and planted-fault leaks in permitted text fields as well as properties. Include a shape-valid summary containing the primary reference ID and a safe-summary positive control. Preserve actual packet digest.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-context-isolation: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-context-isolation",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exposure-lineage",
+      "title": "exposure lineage",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "context-isolation"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T008 Preserve fixture role and exposure by immutable content/source lineage, not caller-provided IDs or exposure flags. Reject an exposed development payload copied under a new fixture ID and falsely declared unexposed evaluation; retain its exposure record. Distinct genuinely unexposed content remains eligible. Do not claim local-shell independence.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-exposure-lineage: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-exposure-lineage",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approval-time",
+      "title": "approval time",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "exposure-lineage"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T009 Enforce configured owner, exact approval subject/digest and real approval time on metric/contribution approval records and at consumption. Reject missing/wrong owner, future approval even when a future batch start follows it, equal-time and post-start approval. Use one explicit clock boundary that is testable; never synthesize approval.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-approval-time: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-approval-time",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contribution-admission",
+      "title": "contribution admission",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "approval-time"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T010 Admit feature-owned descriptors only with configured owner, bound source/grant/content, exact parent revision and independently adjudicated expected outcome/rubric evidence. Reject invalid fixture shapes, changed-content ID collisions, missing independent evidence, unauthorized grant/owner and late registration. Append immutable child lock revisions without changing parent outcomes or thresholds. Consume exposure and approval validators already built.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-contribution-admission: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-contribution-admission",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "batch-locking",
+      "title": "batch locking",
+      "taskIds": [
+        "T011"
+      ],
+      "dependsOn": [
+        "contribution-admission"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T011 Pin each unique batch ID exactly once to the approved immutable registry revision, evaluator/profile/fixture/source/grant and fixed cohorts. Allow exact idempotent replay; reject changed reuse, late revision retroactive pinning, and selecting a later head. Reject fixed-cohort denominator drift and unavailable required denominators without deleting observations.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-batch-locking: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-batch-locking",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "post-response-adjudication",
+      "title": "post response adjudication",
+      "taskIds": [
+        "T012"
+      ],
+      "dependsOn": [
+        "batch-locking"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T012 Adjudicate only a bound completed worker response using evaluator-only reference data for the exact pinned fixture revision, including contributed fixtures. Reject mismatched task/harness/version/budget/source/grant/adjudication settings. Append evidence without rewriting lock or threshold digests. Validate disagreement sampling/precision fields; undersized audits remain descriptive.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-post-response-adjudication: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-post-response-adjudication",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "registry-integration",
+      "title": "registry integration",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "post-response-adjudication"
+      ],
+      "files": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T013 Exercise the complete registry through real serialization, contribution, approval, batch selection and post-response adjudication. Reproduce the actual prior review failures across composed APIs; require all registry tests to pass. Verify the original T004/T005 foundation obligations jointly and preserve all negative results. Do not implement later release aggregation.\n  - Files: `src/analytics/evaluation/registry.ts`, `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-registry-integration: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "node_modules/tsx/dist/cli.mjs",
+            "--test",
+            "--test-name-pattern=registry",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture-lock-report",
+      "title": "Freeze the fixture IDs, digests, cohorts, and initial metric declarations",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "registry-integration"
+      ],
+      "files": [
+        "docs/build/evaluation-fixture-lock.json",
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T006 Write the versioned fixture lock/report with all fixture IDs,\n  generator versions/seeds, canonical digest rules and digests, cohort sizes,\n  denominator definitions, metric formulas/gates, expected no-match outcome,\n  owner-approval requirement, and reference-boundary disclosure. Mark the\n  profile frozen and unscored; preserve a pending owner approval rather than\n  inventing approval metadata. Include a versioning rule that additions create\n  a new fixture-set version and cannot rewrite already evaluated references.\n  - Files: `docs/build/evaluation-fixture-lock.json`,\n    `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Depends on: T001–T005.\n  - Independent verification: `pnpm build`; `pnpm exec tsx --test --test-name-pattern=fixture-lock src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Coverage: reproducible lock/report and pre-evaluation metric registration.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-fixture-lock-report: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "18-bootstrap-fixture-lock-report",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bootstrap-acceptance",
+      "title": "Verify the frozen fixture boundary and evaluator registry",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "fixture-lock-report"
+      ],
+      "files": [
+        "src/analytics/acceptance/18-bootstrap.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 Add focused bootstrap acceptance cases for same-seed ID/digest\n  reproducibility; lock and generator drift rejection; frozen `development`\n  and `evaluation` case roles; at least 20 evaluation-role question cases;\n  absence of role metadata from worker payloads; and rejection of relabeling a\n  tuned development case as evaluation in the same fixture-set version. Check\n  exact literals for\n  all ten accepted gates: answer quality `>= 0.90` / 20 questions; unsupported\n  promotion `= 0` / 20 presented assertions; fault recall `>= 0.95` / 20\n  faults; false-block rate `<= 0.05` / 20 valid claims; trace completeness\n  `= 1.00` / 20 displayed assertions; budget completion `>= 0.90` / 20\n  questions; retrieval Hit@3 `>= 0.90` / 20 queries over 150 cards; ledger\n  completeness `= 1.00` / 20 attempts; candidate precision `>= 0.80` / at\n  least 10 proposals; and candidate recall `>= 0.80` / all 32 positive\n  signals. Assert cost remains observed-or-unavailable and non-gating, and\n  five no-match queries require zero false direct answers. Require matching\n  configured-owner approval with a timestamp strictly earlier than batch\n  start; reject missing, equal-time, and post-batch approval. Exercise an\n  undersized review-disagreement sample against its predeclared precision\n  target, assert all required audit fields and `descriptive_only`, then prove\n  the policy/threshold digest did not change. Also verify exact cohort sizes\n  and denominators and reject missing, zero, or undersized required\n  denominators. For each of the ten registry entries, compare its\n  exact metric ID, formula, numerator and denominator definition, favorable\n  direction, minimum cohort, threshold, applicable profile, evaluator version,\n  and fixture-set digest against the accepted registry contract. Reject\n  comparative-run evidence when task constraints, harness/version, budget,\n  fixture IDs, or adjudication protocol differs; matched comparisons retain\n  identical fixture IDs and scoring-rubric references. Preserve the settings\n  needed to explain each mismatch.\n  Verify direct and indirect reference-exposure rejection, lock drift\n  rejection, unchanged gates after evidence registration, and successful\n  append-only registration of a later feature's execution evidence. Assert\n  contribution acceptance before batch start; reject an unauthorized owner,\n  changed-ID/content collision, missing independent expected outcomes, and\n  approval or registry admission at/after batch start. Verify that parent\n  lock, existing expected-outcome, and threshold digests remain unchanged and\n  that evaluator selection uses exactly the contributed revision pinned by\n  the batch even when a later revision exists. Run key/fault canaries through\n  the 001 worker-context packet using synthetic future retrieved-card,\n  source-skill, and cached-summary additions; reject any canary in the packet\n  and prove the context digest binds only to the sanitized bytes. Assert that\n  this foundation does not emit a final release assessment or broad\n  reliability label.\n  - Files: `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Depends on: T001–T006.\n  - Independent verification and final acceptance:\n    `pnpm build`; `pnpm exec tsx --test src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Named acceptance: `18-bootstrap: deterministic fixture lock, isolated\n    reference adjudication, declared denominators, and append-only evidence`.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:18-bootstrap-bootstrap-acceptance: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/18-bootstrap.test.ts"
+          ]
+        }
+      ]
+    }
+  ]
+}

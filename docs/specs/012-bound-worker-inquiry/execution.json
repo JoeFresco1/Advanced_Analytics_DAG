@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "012",
+  "requirementTasks": {
+    "FR-001": [
+      "T002",
+      "T010"
+    ],
+    "FR-002": [
+      "T004",
+      "T006"
+    ],
+    "FR-003": [
+      "T007"
+    ],
+    "FR-004": [
+      "T008"
+    ],
+    "FR-005": [
+      "T010"
+    ],
+    "FR-006": [
+      "T004"
+    ],
+    "FR-007": [
+      "T009"
+    ],
+    "FR-008": [
+      "T001",
+      "T005"
+    ],
+    "FR-009": [
+      "T004",
+      "T009"
+    ],
+    "FR-010": [
+      "T002",
+      "T010"
+    ],
+    "FR-011": [
+      "T007"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T005",
+      "T011"
+    ],
+    "SC-002": [
+      "T007",
+      "T009",
+      "T011"
+    ],
+    "SC-003": [
+      "T002",
+      "T011"
+    ],
+    "SC-004": [
+      "T004",
+      "T011"
+    ],
+    "SC-005": [
+      "T009",
+      "T011"
+    ],
+    "SC-006": [
+      "T001",
+      "T005",
+      "T011"
+    ],
+    "SC-007": [
+      "T002",
+      "T010",
+      "T011"
+    ],
+    "SC-008": [
+      "T004",
+      "T006",
+      "T007",
+      "T011"
+    ],
+    "SC-009": [
+      "T007",
+      "T011"
+    ],
+    "SC-010": [
+      "T008",
+      "T011"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T010",
+      "T011"
+    ],
+    "EC-002": [
+      "T007",
+      "T011"
+    ],
+    "EC-003": [
+      "T008",
+      "T011"
+    ],
+    "EC-004": [
+      "T004",
+      "T011"
+    ]
+  },
+  "units": [
+    {
+      "id": "foundation",
+      "title": "Define the shared analytical identity and inquiry budget types",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/analytical-identity.ts",
+        "src/analytics/budget.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [P] Define AttemptIdentityV1 and compareAnalyticalIdentityV1 in src/analytics/analytical-identity.ts; compare every required 023 identity dimension and return exact only when all are known and equal.\n\n- [ ] T002 [P] Define canonical inquiry budget defaults, resource/telemetry status types and shared reserve accounting in src/analytics/budget.ts; preserve unknown cost as estimated or unavailable rather than zero.\n\n- [ ] T003 Add initial synthetic identity and budget fixtures in src/analytics/acceptance/012.test.ts after T001 and T002.\n\n**Foundation verification**: pnpm test passes with tests for known-equal, changed-denominator and unknown-input-version identity dimensions plus the frozen count/time defaults.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-foundation: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-foundation",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: Implement typed proposal validation and controller context packet construction in src/analytics/inquiry.ts, includi",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "foundation"
+      ],
+      "files": [
+        "src/analytics/inquiry.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 [US1] Implement typed proposal validation and controller context packet construction in src/analytics/inquiry.ts, including question/Plan refs, prior Plans/Results/exposure, policy, accessible evidence refs, graph revision and remaining allowance; test missing outputs, dependencies, cycles, unaffordable proposals and attributed/disputed relevance in src/analytics/acceptance/012.test.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t004",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Apply the shared compareAnalyticalIdentityV1 predicate for no-progress decisions in src/analytics/inquiry.ts; test ",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/inquiry.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 [US1] Apply the shared compareAnalyticalIdentityV1 predicate for no-progress decisions in src/analytics/inquiry.ts; test exact repeats, changed denominators, unknown input versions and reasoned replication in src/analytics/acceptance/012.test.ts, keeping unknown identity unresolved without rejecting a proposal on identity uncertainty alone.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t005: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t005",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006",
+      "title": "T006: Persist ProposalAdmissionRecordV1 through the feature 009 run-event commit service before returning admitted in src",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/inquiry.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T006 [US1] Persist ProposalAdmissionRecordV1 through the feature 009 run-event commit service before returning admitted in src/analytics/inquiry.ts; test commit-before-dispatch ordering and commit-failure/no-launch behavior in src/analytics/acceptance/012.test.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t006: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t006",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007",
+      "title": "T007: Reserve required checks and final reporting before optional work, and aggregate nested CPU/worker/source-query dema",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "scope-t006"
+      ],
+      "files": [
+        "src/analytics/budget.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 [US1] Reserve required checks and final reporting before optional work, and aggregate nested CPU/worker/source-query demand against the shared remainder in src/analytics/budget.ts; test combined child demand, optional-reserve protection and hard-cap refusal in src/analytics/acceptance/012.test.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t007: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t007",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t008",
+      "title": "T008: Classify infrastructure attempts separately from analytical outcomes in src/analytics/inquiry.ts; retain failures, ",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t007"
+      ],
+      "files": [
+        "src/analytics/inquiry.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T008 [US1] Classify infrastructure attempts separately from analytical outcomes in src/analytics/inquiry.ts; retain failures, keep generic runner retries at zero, and require linked new Executions for explicit infrastructure retries or code repairs and a new Plan revision for a substantive method change; test a negative baseline with zero automatic retries in src/analytics/acceptance/012.test.ts.\n\n**Checkpoint**: The valid sequence is durably admitted before launch; an exact repeat without new purpose cannot loop; changed/unknown dimensions retain their correct comparison state; optional work cannot consume check/finalization reserves.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t008: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t008",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t009",
+      "title": "T009: Implement answer-proposal validation, canonical outcome precedence and deterministic missing-prose status rendering",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t008"
+      ],
+      "files": [
+        "src/analytics/inquiry.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T009 [US2] Implement answer-proposal validation, canonical outcome precedence and deterministic missing-prose status rendering in src/analytics/inquiry.ts; test all six terminal outcomes, exit-code independence and missing final prose in src/analytics/acceptance/012.test.ts while preserving semantic attribution.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t009: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t009",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t010",
+      "title": "T010: Enforce and label the 15-minute, 12-invocation, four-branch, three-Plan-revision and five-minute command limits in ",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "scope-t009"
+      ],
+      "files": [
+        "src/analytics/budget.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T010 [US2] Enforce and label the 15-minute, 12-invocation, four-branch, three-Plan-revision and five-minute command limits in src/analytics/budget.ts; test count limits, missing cost telemetry, a controlled process timeout through the host cancellation adapter, and active-cancellation versus scheduling-cutoff behavior in src/analytics/acceptance/012.test.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t010: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "012-scope-t010",
+            "src/analytics/acceptance/012.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t011-t012",
+      "title": "T011 / T012: Complete synthetic feature acceptance fixtures in src/analytics/acceptance/012.test.ts for every FR, SC and edge ca",
+      "taskIds": [
+        "T011",
+        "T012"
+      ],
+      "dependsOn": [
+        "scope-t010"
+      ],
+      "files": [
+        "src/analytics/acceptance/012.test.ts",
+        "specs/012-bound-worker-inquiry/verification.md"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T011 [US2] Complete synthetic feature acceptance fixtures in src/analytics/acceptance/012.test.ts for every FR, SC and edge case, including SC-009 hard-cap refusal, SC-006 changed denominator and unknown input version, negative-baseline no-retry behavior, and persist-before-dispatch plus commit-failure/no-launch ordering.\n\n**Checkpoint**: All six canonical outcomes, negative baseline, exhausted work, missing prose, replacement context, cancellation/cutoff and nested resource cases settle with retained evidence and no favorable-result retries.\n\n- [ ] T012 Run pnpm test and write specs/012-bound-worker-inquiry/verification.md with actual evidence for every FR-001..FR-011, SC-001..SC-010 and EC-001..EC-004. Do not alter accepted specs, quality checklists, policy thresholds or reference answers.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:012-scope-t011-t012: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "runId": "run_b3a47590",
+  "tasksAudited": 201,
+  "authoredSplitGroupsAudited": 11,
+  "groups": [
+    {
+      "original": "003-scope-t010",
+      "members": [
+        {
+          "key": "003-scope-t010",
+          "taskId": "task_f9bc26d5",
+          "completionCriteria": [
+            "local:003-scope-t010"
+          ],
+          "originalChecklist": [
+            "T010"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-finalization-invalidation",
+          "taskId": "task_c86bbdf8",
+          "completionCriteria": [
+            "local:003-finalization-invalidation"
+          ],
+          "originalChecklist": [
+            "T029"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "003-scope-t014",
+      "members": [
+        {
+          "key": "003-scope-t014",
+          "taskId": "task_e5368781",
+          "completionCriteria": [
+            "local:003-scope-t014"
+          ],
+          "originalChecklist": [
+            "T014"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-exposure-integration-acceptance",
+          "taskId": "task_d771d32d",
+          "completionCriteria": [
+            "local:003-exposure-integration-acceptance"
+          ],
+          "originalChecklist": [
+            "T030"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "003-scope-t015",
+      "members": [
+        {
+          "key": "003-scope-t015",
+          "taskId": "task_5757efe0",
+          "completionCriteria": [
+            "local:003-scope-t015"
+          ],
+          "originalChecklist": [
+            "T015"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-question-roundtrip-acceptance",
+          "taskId": "task_13b982c0",
+          "completionCriteria": [
+            "local:003-question-roundtrip-acceptance"
+          ],
+          "originalChecklist": [
+            "T031"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "003-question-roundtrip-acceptance",
+      "members": [
+        {
+          "key": "003-question-roundtrip-acceptance",
+          "taskId": "task_13b982c0",
+          "completionCriteria": [
+            "local:003-question-roundtrip-acceptance"
+          ],
+          "originalChecklist": [
+            "T031"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-report-honesty-acceptance",
+          "taskId": "task_6bc62b99",
+          "completionCriteria": [
+            "local:003-report-honesty-acceptance"
+          ],
+          "originalChecklist": [
+            "T032"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "017-scope-t001-t002-t003",
+      "members": [
+        {
+          "key": "017-scope-t001-t002-t003",
+          "taskId": "task_e5af03b7",
+          "completionCriteria": [
+            "local:017-scope-t001-t002-t003"
+          ],
+          "originalChecklist": [
+            "T001",
+            "T002"
+          ],
+          "final": false
+        },
+        {
+          "key": "017-decision-record-types",
+          "taskId": "task_75a2dbb6",
+          "completionCriteria": [
+            "local:017-decision-record-types"
+          ],
+          "originalChecklist": [
+            "T003"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "017-decision-change-integration",
+      "members": [
+        {
+          "key": "017-decision-change-integration",
+          "taskId": "task_606c118c",
+          "completionCriteria": [
+            "local:017-decision-change-integration"
+          ],
+          "originalChecklist": [
+            "T006"
+          ],
+          "final": false
+        },
+        {
+          "key": "017-use-extension-registration",
+          "taskId": "task_1d11e270",
+          "completionCriteria": [
+            "local:017-use-extension-registration"
+          ],
+          "originalChecklist": [
+            "T007"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "016-scope-t005-t008",
+      "members": [
+        {
+          "key": "016-scope-t005-t008",
+          "taskId": "task_a6696e51",
+          "completionCriteria": [
+            "local:016-scope-t005-t008"
+          ],
+          "originalChecklist": [
+            "T008"
+          ],
+          "final": false
+        },
+        {
+          "key": "016-recurrence-fault-acceptance",
+          "taskId": "task_a86d27ee",
+          "completionCriteria": [
+            "local:016-recurrence-fault-acceptance"
+          ],
+          "originalChecklist": [
+            "T005"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "018-scope-t007",
+      "members": [
+        {
+          "key": "018-scope-t007",
+          "taskId": "task_521b208c",
+          "completionCriteria": [
+            "local:018-scope-t007"
+          ],
+          "originalChecklist": [
+            "T007"
+          ],
+          "final": false
+        },
+        {
+          "key": "018-evaluation-cohort-acceptance",
+          "taskId": "task_6b486cc2",
+          "completionCriteria": [
+            "local:018-evaluation-cohort-acceptance"
+          ],
+          "originalChecklist": [
+            "T012"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "019-scope-t006",
+      "members": [
+        {
+          "key": "019-scope-t006",
+          "taskId": "task_be233903",
+          "completionCriteria": [
+            "local:019-scope-t006"
+          ],
+          "originalChecklist": [
+            "T006"
+          ],
+          "final": false
+        },
+        {
+          "key": "019-retention-recovery",
+          "taskId": "task_99ab810a",
+          "completionCriteria": [
+            "local:019-retention-recovery"
+          ],
+          "originalChecklist": [
+            "T013"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "canonical-decomposition-audit.json",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "003-stage-lineage",
+      "members": [
+        {
+          "key": "003-stage-lineage",
+          "taskId": "task_30d481ec",
+          "completionCriteria": [
+            "local:003-stage-lineage"
+          ],
+          "originalChecklist": [
+            "T017"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-measurement-binding",
+          "taskId": "task_7491d40d",
+          "completionCriteria": [
+            "local:003-measurement-binding"
+          ],
+          "originalChecklist": [
+            "T027"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "Recorded capability amendment, original T017 retained",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    },
+    {
+      "original": "003-prediction-checks",
+      "members": [
+        {
+          "key": "003-prediction-checks",
+          "taskId": "task_0b7a3bae",
+          "completionCriteria": [
+            "local:003-prediction-checks"
+          ],
+          "originalChecklist": [
+            "T018"
+          ],
+          "final": false
+        },
+        {
+          "key": "003-prediction-integrity-checks",
+          "taskId": "task_df897b0b",
+          "completionCriteria": [
+            "local:003-prediction-integrity-checks"
+          ],
+          "originalChecklist": [
+            "T028"
+          ],
+          "final": false
+        }
+      ],
+      "provenance": "Recorded capability amendment, original T018 retained",
+      "legacyCheckboxRisk": "Old shared adapter demanded original checkboxes before local checks; canonical mode now uses independent acceptance and final aggregate verification."
+    }
+  ],
+  "finalPrerequisiteFindings": [],
+  "finalOwners": [
+    {
+      "key": "001-feature-acceptance",
+      "taskId": "task_3964eb81",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "009-final-acceptance",
+      "taskId": "task_c93c62f1",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "010-acceptance-verification",
+      "taskId": "task_537095d2",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "011-acceptance-verification",
+      "taskId": "task_764884ff",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "002-acceptance-report",
+      "taskId": "task_a5fb61d9",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "008-scope-t010-t011",
+      "taskId": "task_cb1288c7",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "012-scope-t011-t012",
+      "taskId": "task_a0c970ba",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "013-feature-verification",
+      "taskId": "task_2189c2e3",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "007-join-evidence-correction",
+      "taskId": "task_1c31862a",
+      "legacyFinalFlag": false
+    },
+    {
+      "key": "003-scope-t016",
+      "taskId": "task_ba50d110",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "019-scope-t008",
+      "taskId": "task_f192bc5d",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "023-acceptance-verification",
+      "taskId": "task_388a62cb",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "020-acceptance-verification",
+      "taskId": "task_f01860c5",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "014-acceptance-and-verification",
+      "taskId": "task_382d2025",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "015-scope-t010-t011",
+      "taskId": "task_19bbbf13",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "021-frozen-evaluation",
+      "taskId": "task_e02e7c3d",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "022-inquiry-use",
+      "taskId": "task_80329af1",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "004-trust-and-final-acceptance",
+      "taskId": "task_1073c4cc",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "016-acceptance-verification",
+      "taskId": "task_ec51200c",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "017-acceptance-verification",
+      "taskId": "task_d26357ec",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "005-final-verification",
+      "taskId": "task_bd9ef758",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "006-fault-fixtures-and-browser-evidence",
+      "taskId": "task_b9f6131b",
+      "legacyFinalFlag": true
+    },
+    {
+      "key": "018-scope-t008",
+      "taskId": "task_c101c951",
+      "legacyFinalFlag": true
+    }
+  ],
+  "completionAuthority": "Existing canonical criterion receipts, after checks and independent review; original task text and whole-feature guard preserved",
+  "scope": "Completion ownership and final prerequisites only. No claim of new product acceptance or a semantic re-review of every task."
+}

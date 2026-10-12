@@ -1,0 +1,5797 @@
+{
+  "version": 1,
+  "revision": "763c92622d5abc775f87642832a5e34c41a57a7828a9ee72c1fa9a76dfb4c489",
+  "valid": true,
+  "findings": [],
+  "dependencies": {
+    "task_47f2c531": [],
+    "task_489a04c8": [
+      {
+        "owner": "task_47f2c531",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-neutral-and-contract-foundation"
+        ]
+      }
+    ],
+    "task_2dfefa3f": [
+      {
+        "owner": "task_489a04c8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-analytics-worker-boundary"
+        ]
+      }
+    ],
+    "task_3964eb81": [
+      {
+        "owner": "task_489a04c8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-analytics-worker-boundary"
+        ]
+      },
+      {
+        "owner": "task_2dfefa3f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-neutral-compatibility-release"
+        ]
+      }
+    ],
+    "task_b26dab67": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      }
+    ],
+    "task_81cde6a2": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_b26dab67",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-fixture-package"
+        ]
+      }
+    ],
+    "task_b27fa9a7": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_81cde6a2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-reference-registry"
+        ]
+      }
+    ],
+    "task_6772cca4": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_b27fa9a7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-context-isolation"
+        ]
+      }
+    ],
+    "task_28ab47c8": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6772cca4",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-exposure-lineage"
+        ]
+      }
+    ],
+    "task_44b54008": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_28ab47c8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-approval-time"
+        ]
+      }
+    ],
+    "task_0774ee93": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_44b54008",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-contribution-admission"
+        ]
+      }
+    ],
+    "task_e880915d": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_0774ee93",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-batch-locking"
+        ]
+      }
+    ],
+    "task_2b52b9b5": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_e880915d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-post-response-adjudication"
+        ]
+      }
+    ],
+    "task_34554e57": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_2b52b9b5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-registry-integration"
+        ]
+      }
+    ],
+    "task_6eed0d60": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_34554e57",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-fixture-lock-report"
+        ]
+      }
+    ],
+    "task_8e63f6ab": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_edb6d2b7": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_8e63f6ab",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-scope-t001"
+        ]
+      }
+    ],
+    "task_40b3628e": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_edb6d2b7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-scope-t002"
+        ]
+      }
+    ],
+    "task_9dd6e137": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_40b3628e",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-project-memory"
+        ]
+      }
+    ],
+    "task_03686023": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_9dd6e137",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-scope-t004"
+        ]
+      }
+    ],
+    "task_c93c62f1": [
+      {
+        "owner": "task_3964eb81",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "001-feature-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_03686023",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-scope-t005"
+        ]
+      }
+    ],
+    "task_12c886df": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      }
+    ],
+    "task_c857bd3b": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_12c886df",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-policy-foundation"
+        ]
+      }
+    ],
+    "task_fa07a958": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_c857bd3b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-check-execution"
+        ]
+      }
+    ],
+    "task_9dbdca62": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_fa07a958",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-scope-t006"
+        ]
+      }
+    ],
+    "task_537095d2": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_9dbdca62",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-scope-t007-t008-t009"
+        ]
+      }
+    ],
+    "task_5493faeb": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      }
+    ],
+    "task_151cc5eb": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_5493faeb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-scope-t001-t002-t004"
+        ]
+      }
+    ],
+    "task_b959b588": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_151cc5eb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-scope-t005"
+        ]
+      }
+    ],
+    "task_e914f50a": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_b959b588",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-scope-t003-t006"
+        ]
+      }
+    ],
+    "task_35125cfc": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e914f50a",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-answer-and-chart"
+        ]
+      }
+    ],
+    "task_764884ff": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_35125cfc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-access-safe-serving"
+        ]
+      }
+    ],
+    "task_bce3b1c6": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_a8d7f849": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bce3b1c6",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t001-t002"
+        ]
+      }
+    ],
+    "task_1f08e703": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_a8d7f849",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t003-t004"
+        ]
+      }
+    ],
+    "task_3354cfc3": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_1f08e703",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t005-t006"
+        ]
+      }
+    ],
+    "task_e918b0fd": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_3354cfc3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t007-t008-t009-t010"
+        ]
+      }
+    ],
+    "task_399e6680": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_e918b0fd",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t012"
+        ]
+      }
+    ],
+    "task_43ee5ca9": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_399e6680",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t013"
+        ]
+      }
+    ],
+    "task_a5fb61d9": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_43ee5ca9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-scope-t011-t014"
+        ]
+      }
+    ],
+    "task_18a36d28": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_527510d9": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_18a36d28",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-scope-t001-t002"
+        ]
+      }
+    ],
+    "task_192da577": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_527510d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-scope-t003"
+        ]
+      }
+    ],
+    "task_c8c8a178": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_192da577",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-descriptive-computation"
+        ]
+      }
+    ],
+    "task_738aefa0": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_c8c8a178",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acquisition-semantic-validity"
+        ]
+      }
+    ],
+    "task_414ebeab": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_07301bef": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_414ebeab",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-mode-registration"
+        ]
+      }
+    ],
+    "task_df757e3a": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_07301bef",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t004"
+        ]
+      }
+    ],
+    "task_eda13b06": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_df757e3a",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t005"
+        ]
+      }
+    ],
+    "task_a3ec4616": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_eda13b06",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t003-t006"
+        ]
+      }
+    ],
+    "task_e66acede": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_a3ec4616",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t008"
+        ]
+      }
+    ],
+    "task_cb1288c7": [
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_e66acede",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t007-t009"
+        ]
+      }
+    ],
+    "task_ca4e9d97": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      }
+    ],
+    "task_60087ea6": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_ca4e9d97",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-foundation"
+        ]
+      }
+    ],
+    "task_5aedae94": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_60087ea6",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t004"
+        ]
+      }
+    ],
+    "task_83f5c5f8": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_5aedae94",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t005"
+        ]
+      }
+    ],
+    "task_1c9e586f": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_83f5c5f8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t006"
+        ]
+      }
+    ],
+    "task_6bbf44d4": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_1c9e586f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t007"
+        ]
+      }
+    ],
+    "task_2283355e": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6bbf44d4",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t008"
+        ]
+      }
+    ],
+    "task_2db1deaa": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_2283355e",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t009"
+        ]
+      }
+    ],
+    "task_a0c970ba": [
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_c93c62f1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "009-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_2db1deaa",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t010"
+        ]
+      }
+    ],
+    "task_46527f11": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_9771f815": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_46527f11",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-python-calculator"
+        ]
+      }
+    ],
+    "task_f77c930e": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_9771f815",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-typescript-evidence-gate"
+        ]
+      }
+    ],
+    "task_a0afca45": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_f77c930e",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-valid-comparison-fixtures"
+        ]
+      }
+    ],
+    "task_2189c2e3": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_a0afca45",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-invalid-evaluation-fixtures"
+        ]
+      }
+    ],
+    "task_de40eddd": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      }
+    ],
+    "task_0a96749e": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_de40eddd",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-extension-foundation"
+        ]
+      }
+    ],
+    "task_63bfefe6": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_0a96749e",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t004"
+        ]
+      }
+    ],
+    "task_85473e53": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_63bfefe6",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-runtime-contract"
+        ]
+      }
+    ],
+    "task_613e9820": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_85473e53",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-worker-invocation"
+        ]
+      }
+    ],
+    "task_8fbb1d3f": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_613e9820",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t011-t012"
+        ]
+      }
+    ],
+    "task_7907b678": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_8fbb1d3f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-lifecycle-dispatch"
+        ]
+      }
+    ],
+    "task_1c31862a": [
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      }
+    ],
+    "task_30d481ec": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_7907b678",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-stage-admission"
+        ]
+      },
+      {
+        "owner": "task_1c31862a",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-join-evidence-correction"
+        ]
+      }
+    ],
+    "task_7491d40d": [
+      {
+        "owner": "task_30d481ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-stage-lineage"
+        ]
+      }
+    ],
+    "task_0b7a3bae": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_7491d40d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-measurement-binding"
+        ]
+      }
+    ],
+    "task_df897b0b": [
+      {
+        "owner": "task_0b7a3bae",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-prediction-checks"
+        ]
+      }
+    ],
+    "task_e1e5e4ef": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_df897b0b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-prediction-integrity-checks"
+        ]
+      }
+    ],
+    "task_052d216b": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_e1e5e4ef",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-report-binding"
+        ]
+      }
+    ],
+    "task_72a6b056": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_052d216b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t008"
+        ]
+      }
+    ],
+    "task_f9bc26d5": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_72a6b056",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t009"
+        ]
+      }
+    ],
+    "task_fc1d4fb4": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_f9bc26d5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t010"
+        ]
+      }
+    ],
+    "task_426aeb0f": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_fc1d4fb4",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-runtime-composition"
+        ]
+      }
+    ],
+    "task_351d667b": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_426aeb0f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t005"
+        ]
+      }
+    ],
+    "task_bb305f2a": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_351d667b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-cli-comparison-integration"
+        ]
+      }
+    ],
+    "task_f1b01fa9": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_bb305f2a",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-cli-lineage-integration"
+        ]
+      }
+    ],
+    "task_82f10ca2": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_f1b01fa9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-cli-temporal-integration"
+        ]
+      }
+    ],
+    "task_10c4fa02": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_82f10ca2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-cli-report-integration"
+        ]
+      }
+    ],
+    "task_e5368781": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_10c4fa02",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t013"
+        ]
+      }
+    ],
+    "task_5757efe0": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_e5368781",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t014"
+        ]
+      }
+    ],
+    "task_ba50d110": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_cb1288c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "008-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2189c2e3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "013-feature-verification"
+        ]
+      },
+      {
+        "owner": "task_5757efe0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t015"
+        ]
+      }
+    ],
+    "task_a0577d3b": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      }
+    ],
+    "task_7fb806e9": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_a0577d3b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t001"
+        ]
+      }
+    ],
+    "task_e87765e0": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_7fb806e9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-bounded-import"
+        ]
+      }
+    ],
+    "task_8bca2edd": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_e87765e0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-import-history"
+        ]
+      }
+    ],
+    "task_e4d07d53": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_8bca2edd",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-committed-index"
+        ]
+      }
+    ],
+    "task_db818728": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_e4d07d53",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-curation-events"
+        ]
+      }
+    ],
+    "task_57fe64c7": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_db818728",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-access-first-search"
+        ]
+      }
+    ],
+    "task_9b58dd59": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_57fe64c7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t002"
+        ]
+      }
+    ],
+    "task_e121d619": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_9b58dd59",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t009"
+        ]
+      }
+    ],
+    "task_be233903": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_e121d619",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t005"
+        ]
+      }
+    ],
+    "task_4d260a77": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_be233903",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t006"
+        ]
+      }
+    ],
+    "task_f192bc5d": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_4d260a77",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t007"
+        ]
+      }
+    ],
+    "task_8a314de8": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      }
+    ],
+    "task_cab371a9": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_8a314de8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-scope-t001"
+        ]
+      }
+    ],
+    "task_2f7f78ac": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_cab371a9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-scope-t002-t003"
+        ]
+      }
+    ],
+    "task_76d87c93": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_2f7f78ac",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-scope-t004"
+        ]
+      }
+    ],
+    "task_388a62cb": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_a0c970ba",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "012-scope-t011-t012"
+        ]
+      },
+      {
+        "owner": "task_76d87c93",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-repeat-orientation"
+        ]
+      }
+    ],
+    "task_ccdebd11": [
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_388a62cb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      }
+    ],
+    "task_2b03858b": [
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_388a62cb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_ccdebd11",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-durable-answer-cards"
+        ]
+      }
+    ],
+    "task_250a692d": [
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_388a62cb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_2b03858b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-ranked-search"
+        ]
+      }
+    ],
+    "task_6d97e774": [
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_388a62cb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_250a692d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-curation-home"
+        ]
+      }
+    ],
+    "task_f01860c5": [
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_388a62cb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "023-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_764884ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "011-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_6d97e774",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-automatic-recall"
+        ]
+      }
+    ],
+    "task_8faf3a26": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      }
+    ],
+    "task_dd1d4ec4": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_8faf3a26",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t001"
+        ]
+      }
+    ],
+    "task_84272a94": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_dd1d4ec4",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t002"
+        ]
+      }
+    ],
+    "task_3752fac2": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_84272a94",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t003"
+        ]
+      }
+    ],
+    "task_1aa4364c": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_3752fac2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t004"
+        ]
+      }
+    ],
+    "task_2b546a24": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_1aa4364c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t005-t007"
+        ]
+      }
+    ],
+    "task_382d2025": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_f192bc5d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "019-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_2b546a24",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-scope-t006-t008"
+        ]
+      }
+    ],
+    "task_ef959ca7": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      }
+    ],
+    "task_a2d60be1": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_ef959ca7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t002"
+        ]
+      }
+    ],
+    "task_fcaf1d44": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_a2d60be1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t001-t003-t004"
+        ]
+      }
+    ],
+    "task_4cb76e0b": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_fcaf1d44",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t005-t006"
+        ]
+      }
+    ],
+    "task_815761a7": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_4cb76e0b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t007-t008"
+        ]
+      }
+    ],
+    "task_19bbbf13": [
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_815761a7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t009"
+        ]
+      }
+    ],
+    "task_14d4e5a0": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      }
+    ],
+    "task_283a87f4": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_14d4e5a0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-provider-foundation"
+        ]
+      }
+    ],
+    "task_d1bf2e3c": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_283a87f4",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-method-endorsement"
+        ]
+      }
+    ],
+    "task_f4434666": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d1bf2e3c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-repeat-trigger"
+        ]
+      }
+    ],
+    "task_5415ea4d": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_f4434666",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-cost-trigger"
+        ]
+      }
+    ],
+    "task_97159df2": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_5415ea4d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-correction-trigger"
+        ]
+      }
+    ],
+    "task_e02e7c3d": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_97159df2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-scope-t004-t006"
+        ]
+      }
+    ],
+    "task_b674451b": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      }
+    ],
+    "task_f9eb6363": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_b674451b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t001-t002-t003"
+        ]
+      }
+    ],
+    "task_70f0b4b2": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_f9eb6363",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t004-t005"
+        ]
+      }
+    ],
+    "task_0a8d4151": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_70f0b4b2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t006"
+        ]
+      }
+    ],
+    "task_a0386b94": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_0a8d4151",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t013-t014-t015"
+        ]
+      }
+    ],
+    "task_ba2fa9f3": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_a0386b94",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t007-t008"
+        ]
+      }
+    ],
+    "task_80329af1": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e02e7c3d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "021-frozen-evaluation"
+        ]
+      },
+      {
+        "owner": "task_ba2fa9f3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-scope-t009-t010"
+        ]
+      }
+    ],
+    "task_04d2b8b9": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      }
+    ],
+    "task_9f472266": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_04d2b8b9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-scope-t001-t002"
+        ]
+      }
+    ],
+    "task_ba29145f": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_9f472266",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-scope-t003"
+        ]
+      }
+    ],
+    "task_8bc190f5": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_ba29145f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-scope-t004"
+        ]
+      }
+    ],
+    "task_515cddcb": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_8bc190f5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-scope-t005"
+        ]
+      }
+    ],
+    "task_1073c4cc": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_382d2025",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "014-acceptance-and-verification"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_515cddcb",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-scope-t006"
+        ]
+      }
+    ],
+    "task_ea0466b0": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      }
+    ],
+    "task_82be96a6": [
+      {
+        "owner": "task_ea0466b0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-window-identity-comparison"
+        ]
+      }
+    ],
+    "task_022fe404": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_82be96a6",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-window-comparison"
+        ]
+      }
+    ],
+    "task_a6696e51": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_022fe404",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-impact-traversal"
+        ]
+      }
+    ],
+    "task_ec51200c": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_19bbbf13",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "015-scope-t010-t011"
+        ]
+      },
+      {
+        "owner": "task_a6696e51",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-scope-t005-t008"
+        ]
+      }
+    ],
+    "task_e5af03b7": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      }
+    ],
+    "task_1f6297cc": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e5af03b7",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-scope-t001-t002-t003"
+        ]
+      }
+    ],
+    "task_606c118c": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_1f6297cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-scope-t004-t005"
+        ]
+      }
+    ],
+    "task_d26357ec": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_606c118c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-decision-change-integration"
+        ]
+      }
+    ],
+    "task_fb2b06b6": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      }
+    ],
+    "task_9820cea0": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_fb2b06b6",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t001-t002"
+        ]
+      }
+    ],
+    "task_bdeea771": [
+      {
+        "owner": "task_9820cea0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t003-t004-t005"
+        ]
+      }
+    ],
+    "task_306f45c0": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_bdeea771",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-window-view"
+        ]
+      }
+    ],
+    "task_cc2e2f4b": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_306f45c0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t006"
+        ]
+      }
+    ],
+    "task_5761e676": [
+      {
+        "owner": "task_cc2e2f4b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t007-t008-t009"
+        ]
+      }
+    ],
+    "task_d567ee23": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_5761e676",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-correction-reassessment"
+        ]
+      }
+    ],
+    "task_0c1d4134": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d567ee23",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t010"
+        ]
+      }
+    ],
+    "task_e10043e2": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_0c1d4134",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t011"
+        ]
+      }
+    ],
+    "task_bd9ef758": [
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_d26357ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "017-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_e10043e2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-scope-t012-t013"
+        ]
+      }
+    ],
+    "task_f9ca5eec": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      }
+    ],
+    "task_9cb55cd8": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_f9ca5eec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-risk-difference-calculator"
+        ]
+      }
+    ],
+    "task_6daca131": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_9cb55cd8",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-scope-t003"
+        ]
+      }
+    ],
+    "task_2c9182ec": [
+      {
+        "owner": "task_6daca131",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-method-applicability"
+        ]
+      }
+    ],
+    "task_36305a82": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_2c9182ec",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-population-applicability"
+        ]
+      }
+    ],
+    "task_0c168e3f": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_36305a82",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-selection-interpretation"
+        ]
+      }
+    ],
+    "task_b9f6131b": [
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_ec51200c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "016-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_738aefa0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "007-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_537095d2",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "010-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_0c168e3f",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-scope-t004"
+        ]
+      }
+    ],
+    "task_5bdb9b8e": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      }
+    ],
+    "task_4638d732": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_5bdb9b8e",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t004"
+        ]
+      }
+    ],
+    "task_b0702e4a": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_4638d732",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t001"
+        ]
+      }
+    ],
+    "task_6fbc02b0": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_b0702e4a",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t002"
+        ]
+      }
+    ],
+    "task_0c0c559d": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_6fbc02b0",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-retrieval-scoring"
+        ]
+      }
+    ],
+    "task_7ed2e5ff": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_0c0c559d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-skill-scoring"
+        ]
+      }
+    ],
+    "task_35e84017": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_7ed2e5ff",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-artifact-scoring"
+        ]
+      }
+    ],
+    "task_07ef5122": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_35e84017",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-ledger-access-scoring"
+        ]
+      }
+    ],
+    "task_be9daa82": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_07ef5122",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t005"
+        ]
+      }
+    ],
+    "task_521b208c": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_be9daa82",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t006"
+        ]
+      }
+    ],
+    "task_c101c951": [
+      {
+        "owner": "task_a5fb61d9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "002-acceptance-report"
+        ]
+      },
+      {
+        "owner": "task_ba50d110",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "003-scope-t016"
+        ]
+      },
+      {
+        "owner": "task_1073c4cc",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "004-trust-and-final-acceptance"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6eed0d60",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "18-bootstrap-bootstrap-acceptance"
+        ]
+      },
+      {
+        "owner": "task_521b208c",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t007"
+        ]
+      }
+    ],
+    "task_fc543199": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      }
+    ],
+    "task_ba2c5cd9": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_fc543199",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-scope-t001"
+        ]
+      }
+    ],
+    "task_6a3e6422": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_ba2c5cd9",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-evidence-inquiry-integration"
+        ]
+      }
+    ],
+    "task_64c7724b": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_6a3e6422",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-memory-skill-integration"
+        ]
+      }
+    ],
+    "task_d059bdb3": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_64c7724b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-recurrence-inference-integration"
+        ]
+      }
+    ],
+    "task_7363f594": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_d059bdb3",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-scope-t004"
+        ]
+      }
+    ],
+    "task_5b86c85d": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_7363f594",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-runnable-quickstart"
+        ]
+      }
+    ],
+    "task_b5dd90b1": [
+      {
+        "owner": "task_c101c951",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "018-scope-t008"
+        ]
+      },
+      {
+        "owner": "task_bd9ef758",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "005-final-verification"
+        ]
+      },
+      {
+        "owner": "task_b9f6131b",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "006-fault-fixtures-and-browser-evidence"
+        ]
+      },
+      {
+        "owner": "task_f01860c5",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "020-acceptance-verification"
+        ]
+      },
+      {
+        "owner": "task_80329af1",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "022-inquiry-use"
+        ]
+      },
+      {
+        "owner": "task_5b86c85d",
+        "reason": "Registered producer prerequisite",
+        "evidence": [
+          "99-scope-t002"
+        ]
+      }
+    ]
+  },
+  "semanticRequired": true,
+  "scope": "Declared legacy capabilities, dependency topology, file/resource declarations and one existing local boundary per unit; not a complete canonical FR/SC migration or semantic-review receipt."
+}

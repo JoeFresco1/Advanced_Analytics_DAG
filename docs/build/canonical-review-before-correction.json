@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "revision": "7d611dcf0792ae182513b617bd3cbe45a5e0c8c02966ffeb25a26a04966e6fed",
+  "contextDigest": "8dbff7a26d382905dea416890b4aef055fc7d4aef3507d7962f6040b240be184",
+  "reviewer": "independent-codex-gpt-6-luna-xhigh",
+  "verdict": "fail",
+  "findings": [
+    {
+      "id": "F-001",
+      "rule": "Final coverage must include every criterion and ordered edge case in the pinned specifications.",
+      "tasks": [
+        "task_5b86c85d",
+        "task_388a62cb",
+        "task_b5dd90b1"
+      ],
+      "references": [
+        "specs/023-record-analysis-ledger/spec.md",
+        "docs/specs/edge-verification-map.md",
+        "docs/build/task-plans/99/tasks.md",
+        "docs/build/task-plans/99/data-model.md",
+        "scripts/audit_spec_coverage.py"
+      ],
+      "evidence": [
+        "The plan contains 219 SC and 115 EC identifiers, including final:023:SC-015 and final:023:EC-009; task_388a62cb includes both in its acceptance criteria.",
+        "task_5b86c85d T002 and the 99 data model expect 218 SC and 114 edges.",
+        "The pinned 023 spec has a ninth Edge Case at line 73: the ledger has no attempts, or none are visible under the worker’s access scope. The 023 edge-map section has only eight rows.",
+        "scripts/audit_spec_coverage.py checks that mapped edge-row count equals the spec’s edge-bullet count; its check at line 78 will fail for 023."
+      ],
+      "severity": "error",
+      "blocking": true,
+      "message": "The final coverage task is inconsistent with its pinned sources. Its 218-SC/114-edge denominators omit 023:SC-015 and 023:EC-009, and the missing 023 map row makes the required structural audit fail. The completion matrix cannot pass with the specified coverage.",
+      "correction": "Add a prerequisite to reconcile the coverage map and planned denominator: map 023’s ninth edge to its owning FR and check, then derive and assert the complete source set—219 SC and 115 edges, or 637 keyed rows including 234 FR, 61 T cases, and eight paths. Preserve the 023 spec, existing product tests, and policy thresholds."
+    }
+  ]
+}

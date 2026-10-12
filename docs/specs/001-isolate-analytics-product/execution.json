@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "001",
+  "requirementTasks": {
+    "FR-001": [
+      "T008",
+      "T010",
+      "T013"
+    ],
+    "FR-002": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "FR-003": [
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "FR-004": [
+      "T003",
+      "T011",
+      "T012",
+      "T013"
+    ],
+    "FR-005": [
+      "T007",
+      "T010",
+      "T013"
+    ],
+    "FR-006": [
+      "T011",
+      "T012",
+      "T013"
+    ],
+    "FR-007": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "FR-008": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "FR-009": [
+      "T008",
+      "T010",
+      "T013"
+    ],
+    "FR-010": [
+      "T007",
+      "T010",
+      "T013"
+    ],
+    "FR-011": [
+      "T006",
+      "T008",
+      "T010",
+      "T013"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "SC-002": [
+      "T003",
+      "T011",
+      "T013"
+    ],
+    "SC-003": [
+      "T008",
+      "T010",
+      "T013"
+    ],
+    "SC-004": [
+      "T007",
+      "T010",
+      "T013"
+    ],
+    "SC-005": [
+      "T011",
+      "T012",
+      "T013"
+    ],
+    "SC-006": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "SC-007": [
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "SC-008": [
+      "T006",
+      "T008",
+      "T010",
+      "T013"
+    ],
+    "SC-009": [
+      "T008",
+      "T010",
+      "T013"
+    ],
+    "SC-010": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "EC-002": [
+      "T007",
+      "T010",
+      "T013"
+    ],
+    "EC-003": [
+      "T008",
+      "T009",
+      "T010",
+      "T013"
+    ],
+    "EC-004": [
+      "T011",
+      "T012",
+      "T013"
+    ]
+  },
+  "units": [
+    {
+      "id": "neutral-and-contract-foundation",
+      "title": "Create the neutral execution source and frozen wire contracts",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T003",
+        "T004",
+        "T005",
+        "T006"
+      ],
+      "dependsOn": [],
+      "files": [
+        "pnpm-workspace.yaml",
+        "package.json",
+        "pnpm-lock.yaml",
+        "packages/neutral-execution/package.json",
+        "packages/neutral-execution/tsconfig.json",
+        "packages/neutral-execution/src/index.ts",
+        "packages/neutral-execution/src/types.ts",
+        "packages/neutral-execution/src/process.ts",
+        "packages/neutral-execution/src/scheduler.ts",
+        "packages/neutral-execution/src/storage.ts",
+        "packages/neutral-execution/src/run.ts",
+        "packages/neutral-execution/src/recovery.ts",
+        "src/runner.ts",
+        "src/scheduler.ts",
+        "src/commands/run.ts",
+        "python/pyproject.toml",
+        "python/uv.lock",
+        "python/analytics_worker/__init__.py",
+        "python/analytics_worker/contracts.py",
+        "python/analytics_worker/__main__.py",
+        "python/analytics_worker/schema_export.py",
+        "src/analytics/schemas/",
+        "python/tests/contract-vectors/",
+        "python/tests/test_contracts.py",
+        "src/analytics/contract-vectors.test.ts",
+        "src/analytics/principals.ts"
+      ],
+      "instructions": "Implement the authoritative neutral package API, strict Pydantic contracts, deterministic generated-schema exporter, shared Python/TypeScript vectors and Ajv validation, plus the shared principal/caller gates. Keep neutral execution metadata separate from analytics judgment and use the frozen field definitions.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "--filter",
+            "@dag-orchestrator/neutral-execution",
+            "build"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "python",
+            "-m",
+            "analytics_worker.schema_export"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "--test",
+            "dist/analytics/contract-vectors.test.js"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "python",
+            "-m",
+            "analytics_worker.schema_export",
+            "--check"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "pytest",
+            "python/tests/test_contracts.py"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analytics-worker-boundary",
+      "title": "Integrate principal-bound worker context and disable runtime repair paths",
+      "taskIds": [
+        "T007",
+        "T008",
+        "T009",
+        "T010"
+      ],
+      "dependsOn": [
+        "neutral-and-contract-foundation"
+      ],
+      "files": [
+        "package.json",
+        "src/analytics/runner-adapter.ts",
+        "src/analytics/context.ts",
+        "src/analytics/principals.ts",
+        "src/analytics/acceptance/001.test.ts",
+        "artifacts/neutral-execution/acceptance/001-live-demo.md",
+        "artifacts/neutral-execution/acceptance/001-transitional-behavior-inventory.md",
+        "README.md",
+        "src/factory/",
+        "src/commands/factory.ts",
+        "src/commands/index.ts",
+        "src/cli.ts",
+        "src/server.ts",
+        "src/server-view.ts",
+        "src/http.ts",
+        "src/commands/viewer.ts",
+        "viewer/index.html",
+        "viewer/project.html",
+        "viewer/run.html",
+        "scripts/seed-factory-dag.mjs",
+        ".github/copilot-instructions.md",
+        ".claude/skills/dag-orchestrator/SKILL.md",
+        ".cursor/rules/dag-orchestrator.mdc",
+        "skill/SKILL.md",
+        "skill/README.md",
+        "skill/install-skill.mjs",
+        "docs/software-factory.md",
+        "docs/specs/software-factory-architecture.md",
+        "docs/specs/software-factory-v0.1.md"
+      ],
+      "instructions": "Wire real controller/context, source, catalog, and viewer request callers through the shared principal gateways; connect the default worker launch to the neutral adapter; remove inherited factory product discovery/default-viewer surfaces and the dangling skill installer while preserving the build orchestrator and accepted specifications. Rewrite the root README, produce the inspectable local demo and transitional-behavior inventory, and test that inventory against the active fixture. Node 001 solely owns src/commands/index.ts: remove factory registration, add an analytics command trampoline with a computed lazy import of ../analytics/cli.js and explicit unavailable behavior until 003 supplies analyticsCmd(argv, cmd); do not swallow unrelated import/handler errors. 003 must not edit the registry.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "acceptance:001"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neutral-compatibility-release",
+      "title": "Prove legacy neutral compatibility and produce the local archive",
+      "taskIds": [
+        "T011",
+        "T012"
+      ],
+      "dependsOn": [
+        "analytics-worker-boundary"
+      ],
+      "files": [
+        "packages/neutral-execution/src/legacy-adapter.ts",
+        "packages/neutral-execution/tests/conformance.test.ts",
+        "packages/neutral-execution/tests/vectors/",
+        "src/runner.test.ts",
+        "src/scheduler.test.ts",
+        "packages/neutral-execution/scripts/pack-local.mjs",
+        "artifacts/neutral-execution/",
+        "packages/neutral-execution/package.json",
+        "packages/neutral-execution/src/index.ts",
+        "packages/neutral-execution/src/process.ts"
+      ],
+      "instructions": "Run the same frozen neutral vectors through the extracted package and legacy adapter, then generate a local archive and digest from the actual package bytes. Keep the conformance suite in tests/conformance.test.ts and the package test script wired to it. Exercise a live orphan parent with a descendant and verify both PIDs are terminated by recovery on Windows; process.ts is owned by this unit for that scoped fix. Do not publish remotely or change build-runner retry policy.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "--filter",
+            "@dag-orchestrator/neutral-execution",
+            "test"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "--filter",
+            "@dag-orchestrator/neutral-execution",
+            "run",
+            "pack:local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-acceptance",
+      "title": "Run all 001 acceptance paths and record evidence",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "analytics-worker-boundary",
+        "neutral-compatibility-release"
+      ],
+      "files": [
+        "specs/001-isolate-analytics-product/verification.md",
+        "src/analytics/acceptance/001.test.ts",
+        "artifacts/neutral-execution/acceptance/001-live-demo.md",
+        "artifacts/neutral-execution/acceptance/001-transitional-behavior-inventory.md",
+        "artifacts/neutral-execution/",
+        "package.json",
+        "src/analytics/context.ts",
+        "packages/neutral-execution/src/legacy-adapter.ts",
+        "packages/neutral-execution/tests/conformance.test.ts",
+        "scripts/run-001-live.mjs"
+      ],
+      "instructions": "Run every feature acceptance including three live gpt-6-luna/xhigh worker starts with distinct questions, caller-level access checks, disabled retry/review/repair/fallback, README and transitional-inventory checks, the T53 checkout/context discovery-path search, contract vectors, neutral compatibility and local archive digest. Write verification.md with actual evidence for all FRs, SCs, Edge Cases and T53; include SC-006/FR-007 inventory evidence and leave accepted contracts unchanged. Coordinator-authorized recovery scope: repair the real live-worker acceptance command and its context-launch adapter as necessary. Launch three actual codex gpt-6-luna/xhigh model workers sequentially through the controller with distinct neutral questions and preserve exact supplied context, raw first responses, command argv, exit status, model/version, timestamps and digests. A synthetic Node process or model metadata alone is not live-worker evidence. Keep ordinary acceptance deterministic; acceptance:001:live must execute and verify the real model-response demonstration or verify previously recorded immutable responses with explicit provenance, never silently substitute synthetic output. Complete SC-005/EC-004 using actual evidence for both product execution paths consuming the same authoritative neutral package; the upstream lightweight-dag checkout may be read or exercised for this proof but must not be modified by this worker. Add only these scoped fixes and evidence; preserve the feature requirements, policy, task wording, frozen schemas, and analytical no-retry behavior.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "acceptance:001"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "pytest"
+          ]
+        },
+        {
+          "program": "python",
+          "args": [
+            "scripts/audit_spec_coverage.py"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "--filter",
+            "@dag-orchestrator/neutral-execution",
+            "test"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "--filter",
+            "@dag-orchestrator/neutral-execution",
+            "run",
+            "pack:local"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "acceptance:001:live"
+          ]
+        }
+      ]
+    }
+  ]
+}

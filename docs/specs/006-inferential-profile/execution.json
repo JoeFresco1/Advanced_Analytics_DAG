@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "006",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T002",
+      "T003",
+      "T006"
+    ],
+    "FR-002": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-003": [
+      "T002",
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-004": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-005": [
+      "T003",
+      "T004",
+      "T006"
+    ],
+    "FR-006": [
+      "T001",
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-007": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-008": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-009": [
+      "T003",
+      "T004",
+      "T006"
+    ],
+    "FR-010": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "FR-011": [
+      "T002",
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T001",
+      "T002",
+      "T006"
+    ],
+    "SC-002": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "SC-003": [
+      "T001",
+      "T002",
+      "T006"
+    ],
+    "SC-004": [
+      "T003",
+      "T004",
+      "T006"
+    ],
+    "SC-005": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "SC-006": [
+      "T001",
+      "T002",
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "SC-007": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "SC-008": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "SC-009": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "EC-002": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "EC-003": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "EC-004": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "EC-005": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ],
+    "EC-006": [
+      "T004",
+      "T005",
+      "T007",
+      "T006",
+      "T008"
+    ]
+  },
+  "units": [
+    {
+      "id": "risk-difference-calculator",
+      "title": "Implement the Plan-bound customer renewal-rate calculator",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/006.test.ts",
+        "python/analytics_worker/inferential.py"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 [P] [US1] Add feature-local Plan/request builders and synthetic customer-row fixtures with known-effect, null, and low-power calculator assertions through the Python dispatcher in `src/analytics/acceptance/006.test.ts`; validate requests against 001's generated inferential schema and keep evaluator keys out of worker context.\n\n- [ ] T002 [P] [US1] Implement the authoritative `compute(request)` profile in `python/analytics_worker/inferential.py` using 001's `InferentialRequestV1`; compute signed `p_B - p_A`, the declared Newcombe-Wilson or cluster-aware interval, customer numerators/denominators, and assumptions under the frozen payload, leaving limitation and supported-presentation state to the existing check/Claim path and without TypeScript numeric calculations.\n\nRead docs/build/task-handoffs.json entry 006-risk-difference-calculator and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:006-risk-difference-calculator: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/006-inferential-profile/unit-verification/risk-difference-calculator.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-risk-difference-calculator",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003",
+      "title": "T003: Export `computeAnalytics(request, services)` and `analyticsExtensionV1` with extension ID `inferential-compute` fro",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "risk-difference-calculator"
+      ],
+      "files": [
+        "src/analytics/inferential.ts",
+        "src/analytics/acceptance/006.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 [US1] Export `computeAnalytics(request, services)` and `analyticsExtensionV1` with extension ID `inferential-compute` from `src/analytics/inferential.ts`; route the inferential mode through the frozen 003 dispatch seam and shared binding adapter.\n\nRead docs/build/task-handoffs.json entry 006-scope-t003 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:006-scope-t003: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/006-inferential-profile/unit-verification/scope-t003.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-scope-t003",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "method-applicability",
+      "title": "method applicability",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t003"
+      ],
+      "files": [
+        "src/analytics/acceptance/006.test.ts",
+        "src/analytics/inferential.ts",
+        "python/analytics_worker/inferential.py"
+      ],
+      "instructions": "T005 sampling-unit portion: Implement customer-level reduction, dependence/cluster uncertainty, small-group and unsupported-method applicability through the existing Python/TypeScript inferential dispatcher. Use pinned 001 schemas and 010 policy outcomes. Test valid independent/cluster controls and each assigned rejection/uncertainty while preserving the frozen fault precedence. Missing/changing category meaning, representativeness and name-derived categories are the next boundary. Add real-entry-point passing tests named scope:006-method-applicability:; preserve all existing tests and product requirements.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-method-applicability",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "population-applicability",
+      "title": "population applicability",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "method-applicability"
+      ],
+      "files": [
+        "src/analytics/acceptance/006.test.ts",
+        "src/analytics/inferential.ts",
+        "python/analytics_worker/inferential.py"
+      ],
+      "instructions": "Assigned boundary: T008. Complete original T005 by enforcing missing/changing category definitions, representativeness limitations and name-derived-label restrictions through the existing inferential dispatcher and 010 checks. Consume the completed customer-unit/uncertainty handling; do not change the numeric estimand or classify unsupported causal claims as evidence. Test valid known-category/declared-population controls plus unknown/changed meaning, biased scope and name-derived labels under the frozen 006 precedence. Preserve existing tests and frozen product requirements. Add passing real-entry-point tests named scope:006-population-applicability: with a valid control and each listed rejection. Do not implement later boundaries.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-population-applicability",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "selection-interpretation",
+      "title": "selection interpretation",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "population-applicability"
+      ],
+      "files": [
+        "src/analytics/acceptance/006.test.ts",
+        "src/analytics/inferential.ts",
+        "python/analytics_worker/inferential.py"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Implement outcome-selected subgroup, comparison-family and repeated-look interpretation in src/analytics/inferential.ts and python/analytics_worker/inferential.py using committed feature-016 exposure/look evidence. Preserve association-only conclusions and scope/limitations; test no-selection controls plus selected subgroup, repeated look, missing evidence and unsupported causal claims without changing the numeric estimand.\n\nRead docs/build/task-handoffs.json entry 006-selection-interpretation and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:006-selection-interpretation: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/006-inferential-profile/unit-verification/selection-interpretation.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-selection-interpretation",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: [US2] Extend `src/analytics/acceptance/006.test.ts` with the ordered fault fixtures for customer dependen",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "selection-interpretation"
+      ],
+      "files": [
+        "src/analytics/acceptance/006.test.ts",
+        "src/analytics/inferential.ts",
+        "python/analytics_worker/inferential.py"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [US2] Extend `src/analytics/acceptance/006.test.ts` with the ordered fault fixtures for customer dependence, small groups, missing/changing categories, representativeness, name-derived labels, outcome-selected subgroups, repeated looks, unsupported methods, and causal overreach; include T54/T55/T58 and the live browser answer/trace path.\n\nRead docs/build/task-handoffs.json entry 006-scope-t004 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:006-scope-t004: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/006-inferential-profile/unit-verification/scope-t004.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "006-scope-t004",
+            "src/analytics/acceptance/006.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fault-fixtures-and-browser-evidence",
+      "title": "Verify fault outcomes and the live browser evidence path",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "specs/006-inferential-profile/verification.md",
+        "src/analytics/acceptance/006.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 Run the complete feature acceptance commands and record actual command/exit evidence, fixture IDs, three causal-wording run outcomes, calculator and browser trace observations, FR/SC/edge-case coverage, limitations, and any failed or blocked result in `specs/006-inferential-profile/verification.md`.\n\nRead docs/build/task-handoffs.json entry 006-fault-fixtures-and-browser-evidence and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:006-fault-fixtures-and-browser-evidence: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/006-inferential-profile/unit-verification/fault-fixtures-and-browser-evidence.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "pytest"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "smoke:viewer"
+          ]
+        }
+      ]
+    }
+  ]
+}

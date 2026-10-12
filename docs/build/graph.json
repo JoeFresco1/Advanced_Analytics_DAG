@@ -1,0 +1,504 @@
+{
+  "model": "gpt-6-luna",
+  "reasoningEffort": "xhigh",
+  "concurrency": 3,
+  "nodes": [
+    {
+      "key": "00",
+      "title": "Shared implementation architecture and interface ownership",
+      "deps": [],
+      "outputs": [
+        "docs/build/ARCHITECTURE.md",
+        "docs/build/interfaces.md",
+        "docs/build/acceptance-plan.md"
+      ],
+      "instructions": "Read all 23 specs and relevant inherited code. Define the implementation stack and interfaces before parallel implementation. Use TypeScript for controller, CLI, store, and viewer; use a uv-locked Python package at python/ for authoritative tabular computation and Pydantic mode-specific contracts. Define one authoritative neutral execution package, its maintenance owner, dependency/artifact pin, and tested compatibility path for the original software product; do not create a second scheduler or leave independently edited runner copies. Define analytics sidecar versions, append-only commit/CAS recovery, access enforcement, controller admission, exact evidence identity, feature-owned facades listed in this graph, resource limits, and safe viewer serving. Select local storage and an index adapter with a rebuild contract. Keep the kernel incremental: each record has a consumer in the earliest slice. Resolve the 012/023 dependency by assigning the shared analytical identity predicate once before the full ledger is built. Freeze schemas/interface names needed by parallel nodes and assign every shared file to one owner. Document an FR/SC/T-case acceptance strategy, real CLI user paths, live worker demos using gpt-6-luna/xhigh, reference evaluator isolation, and release commands. Do not implement product behavior in this task. Acceptance: the three outputs exist, have no unresolved placeholders, cover every graph boundary, and python scripts/audit_spec_coverage.py passes."
+    },
+    {
+      "key": "001",
+      "title": "001 â€” Analytics boundary, neutral engine, principals and adapter",
+      "deps": [
+        "00"
+      ],
+      "feature": "specs/001-isolate-analytics-product",
+      "outputs": [
+        "specs/001-isolate-analytics-product/plan.md",
+        "specs/001-isolate-analytics-product/tasks.md",
+        "specs/001-isolate-analytics-product/verification.md",
+        "src/analytics/context.ts",
+        "src/commands/index.ts",
+        "src/analytics/principals.ts",
+        "src/analytics/runner-adapter.ts",
+        "src/analytics/acceptance/001.test.ts",
+        "python/pyproject.toml",
+        "python/uv.lock",
+        "python/analytics_worker/contracts.py",
+        "src/analytics/schemas/",
+        "packages/neutral-execution/",
+        "artifacts/neutral-execution/",
+        "pnpm-workspace.yaml",
+        "python/analytics_worker/__init__.py",
+        "python/analytics_worker/__main__.py",
+        "python/tests/contract-vectors/"
+      ],
+      "instructions": "Implement spec 001 completely. Extract/consume the single-source neutral execution boundary defined by ARCHITECTURE.md; remove inherited factory modules, prompts, fixtures, commands, and default viewer semantics from this product. Preserve neutral contract regression tests. Add deny-by-default principal/grant enforcement and an analytics adapter whose automatic retries, review redo, repair, and fallback are disabled mechanically. Demonstrate a live analytics worker context and controller-run neutral command. Keep this build runner separate from analytics runtime policy. Acceptance: all 001 FRs/SCs and T53 plus neutral compatibility regressions pass. Bootstrap the uv-locked Python package and strict Pydantic common/mode-specific plan and computation contracts now, plus generated JSON schemas and Python/TypeScript conformance vectors, so 008 can validate registration before 013 implements computation. Own the Python manifest and lock, including dependencies needed by predictive and inferential profiles. Explicitly own packages/neutral-execution/ source, package exports, neutral conformance and legacy adapter; produce the local archive and digest under artifacts/neutral-execution/. Own pnpm-workspace.yaml, the Python transport/dispatcher, all named PlanRegistrationV1 profile models, and Python/TS contract vectors. Do not require remote publishing. Own the top-level src/commands/index.ts registry: remove factory registration and add a computed lazy analytics trampoline that is buildable before 003 supplies src/analytics/cli.ts; route other import and handler failures normally. Allow one neutral process attempt with zero generic retries/review redo/repair, empty fallback and final review off."
+    },
+    {
+      "key": "18-bootstrap",
+      "title": "018 foundation â€” Frozen synthetic cases and independent evaluator",
+      "deps": [
+        "001"
+      ],
+      "outputs": [
+        "src/analytics/evaluation/registry.ts",
+        "src/analytics/evaluation/fixtures/",
+        "src/analytics/acceptance/18-bootstrap.test.ts",
+        "docs/build/evaluation-fixture-lock.json"
+      ],
+      "instructions": "Read spec 018 and all proposal T01â€“T61 cases. Create a versioned synthetic fixture package, source/grant profiles, generation rules, expected answer limits, planted-fault variants, adjudication rubrics, and an independent reference evaluator API. Register initial metrics and thresholds before product evaluation. Freeze the 150-card/20-query retrieval labels and five no-match queries, 99-file import corpus, and 48-signal candidate precision/recall fixture. Reference keys remain outside runtime analytics worker context, including source skills and cached context. Fixtures may be extended by feature owners before evaluating their implementations; existing thresholds and expected outcomes cannot be tuned to observed output. Acceptance: fixture IDs and digests are reproducible, required cohorts/denominators are defined, reference exposure is rejected, the bootstrap test passes, and the registry can receive later feature execution evidence. This is the foundation of 018, not its final release assessment."
+    },
+    {
+      "key": "009",
+      "title": "009 â€” Atomic evidence publication and recovery",
+      "deps": [
+        "001",
+        "18-bootstrap"
+      ],
+      "feature": "specs/009-publish-evidence",
+      "outputs": [
+        "specs/009-publish-evidence/plan.md",
+        "specs/009-publish-evidence/tasks.md",
+        "specs/009-publish-evidence/verification.md",
+        "src/analytics/store.ts",
+        "src/analytics/publication.ts",
+        "src/analytics/acceptance/009.test.ts",
+        "src/analytics/stages.ts"
+      ],
+      "instructions": "Implement exact immutable evidence bindings, append-only commit records, expected manifest revision, idempotency, concurrency arbitration, interrupted-publication recovery, byte and semantic comparison, artifact availability/redaction, and environment provenance. Use one analytics sidecar namespace without silently changing neutral run storage. Acceptance: 009 fixtures include zero-exit/missing output, altered evidence, concurrent writers, idempotent replay, crash recovery, and T01/T02/T13/T14/T15/T22/T52. Own ProjectManifestV1, ProjectCommitRequestV1/ResultV1 and RecoveryReportV1 as well as run evidence. Implement commitProjectMemory/recoverProjectMemory with the shared scoped append-only/CAS primitive. Reject same-ID changed-content reuse and uncommitted cross-run references. Test project races, lost acknowledgements, crashes and recovery before catalog consumers arrive. Own the production executeStageV1/StageRequestV1/StageResultV1 single-stage coordinator in stages.ts, frozen in interfaces.md; 002 calls it before the full 003 inquiry controller exists, and 003 later composes the same primitive. No second process runner."
+    },
+    {
+      "key": "010",
+      "title": "010 â€” Frozen policies and structured required checks",
+      "deps": [
+        "009"
+      ],
+      "feature": "specs/010-run-required-checks",
+      "outputs": [
+        "specs/010-run-required-checks/plan.md",
+        "specs/010-run-required-checks/tasks.md",
+        "specs/010-run-required-checks/verification.md",
+        "src/analytics/checks.ts",
+        "src/analytics/policies.ts",
+        "src/analytics/acceptance/010.test.ts"
+      ],
+      "instructions": "Implement policy-owned executable validators, parameter admission, structured Check Results, exact subjects, freshness, versioned approval, and the full supported_presentation_eligible truth table. A check that runs successfully and finds a fault records fail without retrying analysis. Preserve inconclusive, error, missing, stale, and unsupported N/A states. Acceptance: all 010 fixtures and T03/T10/T23 pass, and frozen policy cannot be replaced by worker-authored permissive checks."
+    },
+    {
+      "key": "011",
+      "title": "011 â€” Numerical report bindings and browser evidence trace",
+      "deps": [
+        "009",
+        "010"
+      ],
+      "feature": "specs/011-inspect-result-trace",
+      "outputs": [
+        "specs/011-inspect-result-trace/plan.md",
+        "specs/011-inspect-result-trace/tasks.md",
+        "specs/011-inspect-result-trace/verification.md",
+        "src/analytics/report.ts",
+        "src/analytics/http.ts",
+        "viewer/analytics.html",
+        "src/analytics/acceptance/011.test.ts"
+      ],
+      "instructions": "Implement the user answer/trace screen and server APIs against committed records. Bind each displayed assertion and chart to Result selectors, units, rounding, denominators, uncertainty, checks, Plan, transformations, and data version. Apply grants before serving metadata or bytes. Escape source/report text and reject out-of-root paths. Acceptance: browser tests click a report value through to its data version; changed/missing evidence and unsafe markup remain visible without unauthorized content; 011 SCs and T11/T60 pass. A terminal-only inspector is incomplete. The existing access-safe answer/trace projection must render generic committed linked provenance refs for source, skill version/status, independent validation, authority decision, supplied/executed usage and prior-outcome exposure. Verify this on synthetic committed linked records so later 004 needs no viewer edit."
+    },
+    {
+      "key": "002",
+      "title": "002 â€” Slice A evidence integration through failure and recovery",
+      "deps": [
+        "009",
+        "010",
+        "011",
+        "18-bootstrap"
+      ],
+      "feature": "specs/002-executable-evidence",
+      "outputs": [
+        "specs/002-executable-evidence/plan.md",
+        "specs/002-executable-evidence/tasks.md",
+        "specs/002-executable-evidence/verification.md",
+        "src/analytics/demo-evidence.ts",
+        "src/analytics/acceptance/002.test.ts",
+        "python/analytics_worker/demo_evidence.py"
+      ],
+      "instructions": "Integrate the focused 009/010/011 contracts without redefining them. Ship one runnable fixed-analysis demo with pass, overlap-fail, malformed check, missing output, changed artifacts, concurrent publication, recovery, and inaccessible evidence variants. Preserve valid negative results without method retry. Acceptance: all 002 criteria run through the production controller and viewer; publish a real command and browser evidence in verification.md. Own the fixed synthetic Python calculation fixture demo_evidence.py and invoke it through 009 executeStageV1 with a frozen typed Plan, then publication, checks and viewer. Do not depend on 003 or 007 implementations for this earlier slice."
+    },
+    {
+      "key": "007",
+      "title": "007 â€” Data identities, measurement and denominator reconciliation",
+      "deps": [
+        "009",
+        "18-bootstrap"
+      ],
+      "feature": "specs/007-data-identity-measurement",
+      "outputs": [
+        "specs/007-data-identity-measurement/plan.md",
+        "specs/007-data-identity-measurement/tasks.md",
+        "specs/007-data-identity-measurement/verification.md",
+        "src/analytics/data.ts",
+        "src/analytics/measurement.ts",
+        "src/analytics/acceptance/007.test.ts",
+        "python/analytics_worker/descriptive.py",
+        "src/analytics/descriptive.ts"
+      ],
+      "instructions": "Implement immutable source/data versions, population and time identity, declared grain/cardinality, transformation lineage, units and categories, maturation, freshness, access roles, and explicit unknown historical metadata. Reconcile every denominator through transformations. Acceptance: duplicate joins, unexplained expansion, immature labels, missing group meaning, and source-role mismatch fixtures expose the owning check and block affected supported claims. Own authoritative descriptive.py and descriptive.ts for count/sum/mean/proportion with units, population/period, missingness/exclusions and denominator lineage. Consume 001 contracts/dispatcher; controller 003 selects this calculator. Add real computed fixtures including zero denominators, group scope and exclusions; never fabricate numeric summaries in TypeScript."
+    },
+    {
+      "key": "008",
+      "title": "008 â€” Plan locking, revisions and durable exposure",
+      "deps": [
+        "009",
+        "18-bootstrap"
+      ],
+      "feature": "specs/008-plan-exposure-history",
+      "outputs": [
+        "specs/008-plan-exposure-history/plan.md",
+        "specs/008-plan-exposure-history/tasks.md",
+        "specs/008-plan-exposure-history/verification.md",
+        "src/analytics/plans.ts",
+        "src/analytics/exposure.ts",
+        "src/analytics/acceptance/008.test.ts"
+      ],
+      "instructions": "Implement typed mode-specific registration, substantive-change identity, immutable lock, planned search/resamples, outcome-informed forks, exposure recording and rehydration, and guarantees matching host enforcement. Approval cannot restore pre-specification. Acceptance: all 008 FRs/SCs and T06/T07/T09/T61 pass through the controller, including a replacement worker after exposure."
+    },
+    {
+      "key": "012",
+      "title": "012 â€” Bounded worker admission, resources and honest stopping",
+      "deps": [
+        "008",
+        "009",
+        "010"
+      ],
+      "feature": "specs/012-bound-worker-inquiry",
+      "outputs": [
+        "specs/012-bound-worker-inquiry/plan.md",
+        "specs/012-bound-worker-inquiry/tasks.md",
+        "specs/012-bound-worker-inquiry/verification.md",
+        "src/analytics/inquiry.ts",
+        "src/analytics/budget.ts",
+        "src/analytics/analytical-identity.ts",
+        "src/analytics/acceptance/012.test.ts"
+      ],
+      "instructions": "Implement inquiry state precedence, typed proposals and admission, classified infrastructure attempts, exact analytical identity, no-progress detection, check/finalization reserve, nested resource reservation, cancellation and scheduling cutoff labels. Use canonical counts/defaults and explain unavailable cost telemetry. The identity predicate is shared with the later 023 ledger, not independently reimplemented. Acceptance: runaway exploration, nested parallelism, cancellation, missing final prose, negative baseline, and unknown identity fixtures settle honestly without favorable-result retries."
+    },
+    {
+      "key": "013",
+      "title": "013 â€” Python predictive comparison with locked uncertainty",
+      "deps": [
+        "007",
+        "008",
+        "010",
+        "18-bootstrap"
+      ],
+      "feature": "specs/013-compare-predictive-value",
+      "outputs": [
+        "specs/013-compare-predictive-value/plan.md",
+        "specs/013-compare-predictive-value/tasks.md",
+        "specs/013-compare-predictive-value/verification.md",
+        "python/analytics_worker/predictive.py",
+        "src/analytics/predictive.ts",
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Implement a real Python baseline/candidate pipeline and strict Pydantic contracts, with train-only preprocessing, temporal/group splits, label maturity, declared search, metric direction, favorable gain, delta, resampling unit, interval method, and three-way decision rule. Bind code/environment/results back to TS evidence. Acceptance: known positive, tight below-margin, low-power null, lower-is-better, entity/temporal leakage, and unsupported dependence fixtures produce the specified states; no result is hard-coded. Consume the Python package, lock, Pydantic models and generated schemas already bootstrapped by 001; do not create a second common contract."
+    },
+    {
+      "key": "003",
+      "title": "003 â€” Slice B delegated question to inspectable answer",
+      "deps": [
+        "002",
+        "007",
+        "008",
+        "012",
+        "013"
+      ],
+      "feature": "specs/003-delegated-inquiry",
+      "outputs": [
+        "specs/003-delegated-inquiry/plan.md",
+        "specs/003-delegated-inquiry/tasks.md",
+        "specs/003-delegated-inquiry/verification.md",
+        "src/analytics/worker.ts",
+        "src/analytics/controller.ts",
+        "src/analytics/cli.ts",
+        "src/analytics/acceptance/003.test.ts",
+        "src/analytics/extensions.ts",
+        "src/analytics/runtime.ts",
+        "docs/build/003-runtime-handoff.md"
+      ],
+      "instructions": "Integrate one production CLI entrypoint that accepts a natural-language question and synthetic fixture, orients the worker, registers its contract, admits authored code and checks between settled stages, executes authoritative computation, and returns a scoped browser answer. Use gpt-6-luna/xhigh for live harness demos. Never make users construct YAML or manually select graph nodes. Acceptance: meaningful-feature and null-feature questions, injected denominator/leakage faults, post-observation revision, restart exposure, budget stop, and false report value all meet 003 criteria with visible evidence. Own extensions.ts and the fixed module/export allowlist, typed command registry and dependency-ordered lifecycle hooks frozen in interfaces.md. Later nodes export analyticsExtensionV1 from their own facade modules; shared analytics CLI/controller files under src/analytics/ remain owned here; the top-level src/commands/index.ts registry remains owned by 001 and must not be edited by 003. Export analyticsCmd(argv, cmd) from src/analytics/cli.ts for the 001 trampoline and test the live route. Test registration, missing providers, duplicate commands/cycles and hook failures. Coordinate replayable run terminal-intent, project-memory writes and run completion acknowledgement with stable IDs; no completed response before required writes are durable."
+    },
+    {
+      "key": "019",
+      "title": "019 â€” Artifact catalog, bounded exports, notebooks and legacy import",
+      "deps": [
+        "003"
+      ],
+      "feature": "specs/019-catalog-analytical-artifacts",
+      "outputs": [
+        "specs/019-catalog-analytical-artifacts/plan.md",
+        "specs/019-catalog-analytical-artifacts/tasks.md",
+        "specs/019-catalog-analytical-artifacts/verification.md",
+        "src/analytics/catalog.ts",
+        "src/analytics/import.ts",
+        "src/analytics/retention.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Implement authoritative artifact inventory and rebuildable index, stable IDs/digests/roles, bounded publication/scratch, retention and disclosure, notebook replay metadata, scoped safe reads and deduplication, legacy unknown provenance, bounded workbook import with sheet grants, and inventory recovery. Acceptance: the 99-file corpus is searchable without promoted stories, count/byte/time limits are enforced, unsafe metadata is withheld, notebook cell order and environment are pinned, and all 019 criteria pass. Export catalog analyticsExtensionV1 from catalog.ts for typed CLI/controller hooks. Persist catalog/import/curation through 009 commitProjectMemory/recoverProjectMemory; do not implement a second CAS engine."
+    },
+    {
+      "key": "023",
+      "title": "023 â€” Durable analysis-attempt ledger and repeat detection",
+      "deps": [
+        "003",
+        "019",
+        "012"
+      ],
+      "feature": "specs/023-record-analysis-ledger",
+      "outputs": [
+        "specs/023-record-analysis-ledger/plan.md",
+        "specs/023-record-analysis-ledger/tasks.md",
+        "specs/023-record-analysis-ledger/verification.md",
+        "src/analytics/ledger.ts",
+        "src/analytics/acceptance/023.test.ts"
+      ],
+      "instructions": "Implement an append-only event projection of each admitted analytical attempt, including failed, null, inconclusive, and worker-without-prose work. Reuse the shared analytical identity predicate, canonical exact/related/incompatible/unresolved matches, and rationale for intentional reruns. Infrastructure retries remain executions within an attempt; intentional replication can create another linked attempt without changing the Plan. Preserve permissions, exposure, redaction, recovery, and new-window nonduplicates. Acceptance: all 023 fixtures and T48â€“T51 pass through orientation and user timeline. Export ledger analyticsExtensionV1 from ledger.ts for orientation, admitted/execution events, ledger show and finalization. Use 009 project memory and 003 hooks; run before 020 ranking and do not edit shared controller/CLI files."
+    },
+    {
+      "key": "020",
+      "title": "020 â€” Slice B2 answer cards, ranking and automatic recall",
+      "deps": [
+        "019",
+        "023",
+        "011"
+      ],
+      "feature": "specs/020-find-analytical-answers",
+      "outputs": [
+        "specs/020-find-analytical-answers/plan.md",
+        "specs/020-find-analytical-answers/tasks.md",
+        "specs/020-find-analytical-answers/verification.md",
+        "src/analytics/answers.ts",
+        "src/analytics/retrieval.ts",
+        "src/analytics/acceptance/020.test.ts"
+      ],
+      "instructions": "Implement durable inquiry answer cards and deterministic fallback, short scoped stories, curation history, project home, access-before-ranking, direct/related/not-relevant card classification and query outcome, pins as ties only, one prior-attempt match call, and recorded retrieval/use/exposure. Acceptance: the frozen 150-card/20-query fixture meets Hit@3 >= 0.90 without pins, five no-match queries return zero false direct answers, 99-file story retrieval works, and a later live worker finds relevant prior work without a user hint. Export answers analyticsExtensionV1 from retrieval.ts, using answers.ts for finalization records. Wire automatic recall/search and durable answer/fallback completion through 003 hooks and 009 project memory; do not edit shared CLI/controller files."
+    },
+    {
+      "key": "014",
+      "title": "014 â€” Source discovery generates a validated skill package",
+      "deps": [
+        "003",
+        "019"
+      ],
+      "feature": "specs/014-build-source-skill",
+      "outputs": [
+        "specs/014-build-source-skill/plan.md",
+        "specs/014-build-source-skill/tasks.md",
+        "specs/014-build-source-skill/verification.md",
+        "src/analytics/source-discovery.ts",
+        "src/analytics/source-skills.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Implement one read-only SQLite source adapter and bounded metadata/profile discovery. Generate immutable SKILL.md, scoped schema/definition/grain/time references, parameterized Python examples, claim provenance, access metadata and tests, without raw sensitive rows or credentials. Keep inferred meaning unknown until authority resolves it. Acceptance: demonstrate discovery, executed read-only examples, source assertions and candidate package inspection; contaminated source text cannot inject privileged commands. Export source-discovery analyticsExtensionV1 from source-discovery.ts for source discover and orientation; use 009 project memory and 003 registry. Its orient hook must perform grant/budget-bounded cold discovery through the same implementation as source discover during ordinary ask when committed memory has zero accessible active source-skill refs for the exact source identity/environment/tenant, commit only candidate metadata, and never supply candidate content as active guidance. If any active refs exist, defer compatibility to 015 without auto-discovery; no 003 or 015 compatibility service is called by 014. Acceptance exercises cold and active-reference paths through the production orient hook, not only the command."
+    },
+    {
+      "key": "015",
+      "title": "015 â€” Source-skill compatibility, freshness and refresh",
+      "deps": [
+        "014"
+      ],
+      "feature": "specs/015-reuse-source-skill",
+      "outputs": [
+        "specs/015-reuse-source-skill/plan.md",
+        "specs/015-reuse-source-skill/tasks.md",
+        "specs/015-reuse-source-skill/verification.md",
+        "src/analytics/skill-compatibility.ts",
+        "src/analytics/skill-refresh.ts",
+        "src/analytics/acceptance/015.test.ts"
+      ],
+      "instructions": "Implement the normative complete compatibility predicate once, supplied/used reference logs, semantic drift, cheap checks versus profile cadence, immutable refresh, scoped staleness, authority revocation, and preserved historical versions. Acceptance: schema-compatible changed units/roles/timezones/lag or definitions are detected; unused added columns do not broadly invalidate; a compatible later worker receives the exact entrypoint and executes its recipe. Export source-reuse analyticsExtensionV1 from skill-refresh.ts for compatible skill orientation/use; use the 003 registry and 009 project writes."
+    },
+    {
+      "key": "021",
+      "title": "021 â€” Automatic skill-candidate capture from feedback and reuse",
+      "deps": [
+        "003",
+        "014",
+        "015",
+        "020"
+      ],
+      "feature": "specs/021-detect-skill-candidates",
+      "outputs": [
+        "specs/021-detect-skill-candidates/plan.md",
+        "specs/021-detect-skill-candidates/tasks.md",
+        "specs/021-detect-skill-candidates/verification.md",
+        "src/analytics/skill-capture.ts",
+        "src/analytics/acceptance/021.test.ts"
+      ],
+      "instructions": "Implement bounded memory checkpoints and typed capture signals for method endorsement, repeated validated work, costly discovery and durable correction. Separate answer praise/result memory from reusable guidance; deduplicate/revise, restrict scope, name conflicting authority, and preserve prior-outcome exposure. Detection never activates. Acceptance: all 021 criteria including the frozen 48-signal capture precision/recall/duplicate gates are measured by the independent evaluator. Export skill-capture analyticsExtensionV1 from skill-capture.ts for feedback/checkpoint capture; consume the 003 registry and 009 persistence."
+    },
+    {
+      "key": "022",
+      "title": "022 â€” Slice C2 independent activation and later skill use",
+      "deps": [
+        "003",
+        "014",
+        "015",
+        "020",
+        "021"
+      ],
+      "feature": "specs/022-activate-reusable-skills",
+      "outputs": [
+        "specs/022-activate-reusable-skills/plan.md",
+        "specs/022-activate-reusable-skills/tasks.md",
+        "specs/022-activate-reusable-skills/verification.md",
+        "src/analytics/skill-activation.ts",
+        "src/analytics/acceptance/022.test.ts"
+      ],
+      "instructions": "Implement exact candidate/active/stale/revoked transitions, independent policy-owned method tests, narrowly preapproved automatic activation, owner review for new/changed definitions or expanded audience/access/release policy, scope predicates, explicit approval without duplication, usage attribution and revocation. Acceptance: worker-authored tests alone activate nothing; a validated eligible method auto-activates; authoritative changes wait for configured owner; a later live inquiry uses the intended version without unscoped evaluation outcomes. Export skill-activation analyticsExtensionV1 from skill-activation.ts for activation/owner-review commands and scoped guidance orientation; consume the 003 registry and 009 persistence. Own source-candidate activation as well as method/rule activation. Independently replay a bounded source recipe under its intended grant, preserve assertion provenance and unresolved definitions, record configured authority/conflict checks, and publish the immutable active version before the 004 live reuse demonstration. Worker-authored validation alone cannot activate it."
+    },
+    {
+      "key": "004",
+      "title": "004 â€” Slice C live second inquiry using source memory",
+      "deps": [
+        "003",
+        "014",
+        "015",
+        "022"
+      ],
+      "feature": "specs/004-source-memory",
+      "outputs": [
+        "specs/004-source-memory/plan.md",
+        "specs/004-source-memory/tasks.md",
+        "specs/004-source-memory/verification.md",
+        "src/analytics/demo-source-memory.ts",
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Integrate discovery and registry into the normal question orientation path. Demonstrate a first live inquiry creating the source package and a second live inquiry using its exact validated version. Show incompatible source semantics and revoked authority handling without silently replacing locked input. Acceptance: all 004 criteria plus source/skill provenance are visible in the answer inspector."
+    },
+    {
+      "key": "016",
+      "title": "016 â€” Recurring windows, comparability and dependency invalidation",
+      "deps": [
+        "003",
+        "015"
+      ],
+      "feature": "specs/016-reconcile-recurring-windows",
+      "outputs": [
+        "specs/016-reconcile-recurring-windows/plan.md",
+        "specs/016-reconcile-recurring-windows/tasks.md",
+        "specs/016-reconcile-recurring-windows/verification.md",
+        "src/analytics/recurrence.ts",
+        "src/analytics/invalidation.ts",
+        "src/analytics/acceptance/016.test.ts"
+      ],
+      "instructions": "Implement window identity, comparison enum and reasons, repeated-inspection policies, late-data corrections, and complete dependency traversal over the nine canonical affected types. Any changed bound revision marks dependents reassessment_required before judgment. Historical meaning remains immutable; no materiality shortcut suppresses staleness. Acceptance: new windows, changed definitions, event/processing time mismatch, repeated looks and multi-hop correction fixtures pass. Export recurrence analyticsExtensionV1 from recurrence.ts for window orientation/correction hooks; consume the 003 registry and 009 persistence."
+    },
+    {
+      "key": "017",
+      "title": "017 â€” Claim use authorization and lightweight Decisions",
+      "deps": [
+        "003",
+        "016",
+        "010"
+      ],
+      "feature": "specs/017-authorize-claim-use",
+      "outputs": [
+        "specs/017-authorize-claim-use/plan.md",
+        "specs/017-authorize-claim-use/tasks.md",
+        "specs/017-authorize-claim-use/verification.md",
+        "src/analytics/authorization.ts",
+        "src/analytics/decisions.ts",
+        "src/analytics/acceptance/017.test.ts"
+      ],
+      "instructions": "Implement policy-owned use triggers, attribution and rationale, trace-seen without approval laundering, explicit denial/pending/not-assessed rules, exact Claim/Result/Check/Plan/policy/scope binding, reevaluation after bound changes, revocation, and a lightweight Decision pointer. Worker self-review stays distinct from independent review. Acceptance: descriptive internal uncertainty can finish; consequential use needs current authorization; stale, missing, opposing and owner-denied evidence follow the exact contract without relabeling history. Export use-authorization analyticsExtensionV1 from authorization.ts for use commands/finalization policy; consume the 003 registry and 009 persistence."
+    },
+    {
+      "key": "005",
+      "title": "005 â€” Slice D recurrence and consequential-use integration",
+      "deps": [
+        "004",
+        "016",
+        "017"
+      ],
+      "feature": "specs/005-recurrence-and-use",
+      "outputs": [
+        "specs/005-recurrence-and-use/plan.md",
+        "specs/005-recurrence-and-use/tasks.md",
+        "specs/005-recurrence-and-use/verification.md",
+        "src/analytics/demo-recurrence.ts",
+        "src/analytics/acceptance/005.test.ts"
+      ],
+      "instructions": "Integrate recurring source windows, corrections, skill validity, comparisons, Claims, reports and Decisions into the production flow. Consume 016 and 017 owned transitions without duplicating vocabularies. Acceptance: all 005 criteria show the full invalidation chain, a preserved historical Decision, changed current authorization and explicit repeated-look exposure in the viewer."
+    },
+    {
+      "key": "006",
+      "title": "006 â€” Two-group inferential renewal-rate profile",
+      "deps": [
+        "003",
+        "016",
+        "007",
+        "010"
+      ],
+      "feature": "specs/006-inferential-profile",
+      "outputs": [
+        "specs/006-inferential-profile/plan.md",
+        "specs/006-inferential-profile/tasks.md",
+        "specs/006-inferential-profile/verification.md",
+        "python/analytics_worker/inferential.py",
+        "src/analytics/inferential.ts",
+        "src/analytics/acceptance/006.test.ts"
+      ],
+      "instructions": "Implement the concrete two-group renewal-rate difference profile, Pydantic plan, operational categories without inferring gender from names, margin/direction/unit, dependent sampling and uncertainty, population scope, planned comparison family and repeated inspection. Do not claim causation from association. Acceptance: known-effect/null/low-power/dependence/missing-category/nonrepresentative/repeated-look and causal-overreach fixtures return honest scoped states and a live user question reaches the browser answer. Export inferential-compute analyticsExtensionV1 from inferential.ts, registering the calculator through the 003 dispatch seam. Consume the 001 Plan/computation schemas; do not edit common contracts or shared controller files."
+    },
+    {
+      "key": "018",
+      "title": "018 â€” Whole-product evaluation and release assessment",
+      "deps": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "020",
+        "022",
+        "18-bootstrap"
+      ],
+      "feature": "specs/018-evaluate-analytics-product",
+      "outputs": [
+        "specs/018-evaluate-analytics-product/plan.md",
+        "specs/018-evaluate-analytics-product/tasks.md",
+        "specs/018-evaluate-analytics-product/verification.md",
+        "src/analytics/evaluation/evaluator.ts",
+        "src/analytics/evaluation/release.ts",
+        "src/analytics/acceptance/018.test.ts"
+      ],
+      "instructions": "Complete spec 018 against the frozen fixture registry. Score actual complete questions, evidence, library/ledger, exports, skills, access, budgets and costs; measure fault recall together with false blocking. Enforce pre-batch policy-approved metrics and minimum denominators, versioned reference isolation and audit-disagreement sampling. Run the real worker on held-out synthetic questions with gpt-6-luna/xhigh. Report fixture-profile eligibility separately from general reliability. A missed gate must fail with exact counts and evidence; do not lower a threshold or replace runtime with fixture-only answers."
+    },
+    {
+      "key": "99",
+      "title": "Final merged-product convergence and runnable handover",
+      "deps": [
+        "018",
+        "005",
+        "006",
+        "020",
+        "022"
+      ],
+      "outputs": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md",
+        "docs/QUICKSTART.md"
+      ],
+      "instructions": "Audit the merged implementation against every feature verification report, every 234 FR and 115 edge-case mapping, all 61 T-case owners, and the eight integrated user paths. Run pnpm build, pnpm test, uv run --project python pytest, python scripts/audit_spec_coverage.py, real browser smoke and the frozen full evaluator. Exercise the documented CLI with a live gpt-6-luna/xhigh analytics question, source-skill reuse, automatic result recall and a failed-check trace. Correct small cross-feature integration defects and rerun affected checks; report larger missing behaviors explicitly as failure. Complete docs/QUICKSTART.md with actual commands and user screens, not planned capabilities. Produce COMPLETION.md with all requirements/acceptance outcomes, measured metrics, cost availability, demo artifact links and limits. No skipped milestone or hard-coded analytical answer can pass. Do not merge into the user branch or publish; the build output is the integration branch."
+    }
+  ],
+  "controllerRoot": "C:\\Users\\Fresc\\advanced-analytics-dag"
+}

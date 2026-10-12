@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "013",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T002",
+      "T003",
+      "T004"
+    ],
+    "FR-002": [
+      "T001",
+      "T003",
+      "T004"
+    ],
+    "FR-003": [
+      "T001",
+      "T002",
+      "T004"
+    ],
+    "FR-004": [
+      "T001",
+      "T002",
+      "T003"
+    ],
+    "FR-005": [
+      "T003",
+      "T004"
+    ],
+    "FR-006": [
+      "T003",
+      "T004"
+    ],
+    "FR-007": [
+      "T002",
+      "T004"
+    ],
+    "FR-008": [
+      "T002",
+      "T003",
+      "T004"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003"
+    ],
+    "SC-002": [
+      "T004"
+    ],
+    "SC-003": [
+      "T003"
+    ],
+    "SC-004": [
+      "T003",
+      "T004"
+    ],
+    "SC-005": [
+      "T001",
+      "T002",
+      "T004"
+    ],
+    "SC-006": [
+      "T002",
+      "T003",
+      "T004"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T004"
+    ],
+    "EC-002": [
+      "T004"
+    ],
+    "EC-003": [
+      "T004"
+    ],
+    "EC-004": [
+      "T004"
+    ]
+  },
+  "units": [
+    {
+      "id": "python-calculator",
+      "title": "Implement computed predictive metrics and locked uncertainty",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "python/analytics_worker/predictive.py",
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [US1] Implement the real baseline/candidate pipeline in python/analytics_worker/predictive.py using the existing Pydantic request/result models, comparable evaluation rows, train-only preprocessing, temporal/group partitions, cohort label maturity, declared search/tuning, and the locked interval/resampling parameters; return computed metric, favorable-gain, denominator, population, uncertainty, and evidence-bound result values without owning Claim classification.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:013-python-calculator: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "013-python-calculator",
+            "src/analytics/acceptance/013.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typescript-evidence-gate",
+      "title": "Bind predictive results and apply the post-check Claim rule",
+      "taskIds": [
+        "T002"
+      ],
+      "dependsOn": [
+        "python-calculator"
+      ],
+      "files": [
+        "src/analytics/predictive.ts",
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T002 [US1] Implement the predictive TypeScript facade in src/analytics/predictive.ts using the shared computation adapter to verify exact Plan/source/transformation/code/Python/lock/environment/seed/result bindings, consume current 010 eligibility, reject changed metric/population/denominator/split, and apply the three-way locked interval-versus-delta rule to an eligible Claim only.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:013-typescript-evidence-gate: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "013-typescript-evidence-gate",
+            "src/analytics/acceptance/013.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valid-comparison-fixtures",
+      "title": "Verify computed valid decision states end to end",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "typescript-evidence-gate"
+      ],
+      "files": [
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 [US1] Add end-to-end acceptance scenarios for positive, tight below-margin and low-power null comparisons in both predeclared log-loss and ROC AUC fixtures in src/analytics/acceptance/013.test.ts; assert computed outputs against frozen evaluator tolerances, TypeScript classification after passing checks, exact binding, the predictive target and evaluation population in the structured result without a causal assertion, and no retry for a valid null.\n\n**Checkpoint**: A valid baseline/candidate comparison yields improvement,\nmeaningful_improvement_excluded or inconclusive from computed values and the\nlocked favorable-gain interval.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:013-valid-comparison-fixtures: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "013-valid-comparison-fixtures",
+            "src/analytics/acceptance/013.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invalid-evaluation-fixtures",
+      "title": "Verify leakage, dependence and comparability failures",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "valid-comparison-fixtures"
+      ],
+      "files": [
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 [US2] Extend the feature-owned acceptance file src/analytics/acceptance/013.test.ts with post-cutoff feature, cohort-specific immature label, repeated-entity split, temporal leakage, globally fitted preprocessing, evaluation-set tuning, unsupported dependence, post-result search expansion, changed population/metric/denominator, and workflow-withheld cases; assert their specified failed-check, exposure, unsupported-Claim or access-label states without changing shared fixtures or retrying.\n\n**Checkpoint**: Invalid comparisons remain inspectable as failed required\nconditions and unsupported Claims; valid uncertainty remains distinct from\ninvalid evidence.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:013-invalid-evaluation-fixtures: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "013-invalid-evaluation-fixtures",
+            "src/analytics/acceptance/013.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-verification",
+      "title": "Run complete acceptance and record feature evidence",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "invalid-evaluation-fixtures"
+      ],
+      "files": [
+        "specs/013-compare-predictive-value/verification.md",
+        "src/analytics/acceptance/013.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 Record actual commands, fixture outcomes, evidence bindings, limitations and FR/SC evidence mappings in specs/013-compare-predictive-value/verification.md after running the Python package check and complete pnpm test acceptance suite.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:013-feature-verification: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--locked",
+            "--project",
+            "python",
+            "python",
+            "-m",
+            "compileall",
+            "-q",
+            "python/analytics_worker/predictive.py"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

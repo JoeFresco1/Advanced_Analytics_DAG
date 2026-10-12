@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "022",
+  "requirementTasks": {
+    "FR-001": [
+      "T002",
+      "T003",
+      "T014",
+      "T015"
+    ],
+    "FR-002": [
+      "T001",
+      "T003",
+      "T008"
+    ],
+    "FR-003": [
+      "T007",
+      "T008"
+    ],
+    "FR-004": [
+      "T005",
+      "T011"
+    ],
+    "FR-005": [
+      "T004",
+      "T005",
+      "T011",
+      "T015"
+    ],
+    "FR-006": [
+      "T006",
+      "T011",
+      "T015"
+    ],
+    "FR-007": [
+      "T009",
+      "T010",
+      "T015"
+    ],
+    "FR-008": [
+      "T009",
+      "T010"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T005",
+      "T006",
+      "T011"
+    ],
+    "SC-002": [
+      "T007",
+      "T008",
+      "T010"
+    ],
+    "SC-003": [
+      "T005",
+      "T011",
+      "T015"
+    ],
+    "SC-004": [
+      "T007",
+      "T008",
+      "T011"
+    ],
+    "SC-005": [
+      "T001",
+      "T003",
+      "T008",
+      "T014"
+    ],
+    "SC-006": [
+      "T009",
+      "T010"
+    ],
+    "SC-007": [
+      "T002",
+      "T003",
+      "T012",
+      "T014",
+      "T015"
+    ],
+    "SC-008": [
+      "T004",
+      "T005",
+      "T011",
+      "T015"
+    ],
+    "SC-009": [
+      "T011"
+    ],
+    "SC-010": [
+      "T006",
+      "T011"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T009",
+      "T010"
+    ],
+    "EC-002": [
+      "T005",
+      "T011"
+    ],
+    "EC-003": [
+      "T007",
+      "T008",
+      "T011"
+    ],
+    "EC-004": [
+      "T006",
+      "T011"
+    ],
+    "EC-005": [
+      "T004",
+      "T005",
+      "T011",
+      "T015"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002-t003",
+      "title": "T001 / T002 / T003: Add synthetic fixtures for worker-authored method self-tests, independent policy-owned method checks, conflict outc",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/022.test.ts",
+        "src/analytics/skill-activation.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 [P] [US1] Add synthetic fixtures for worker-authored method self-tests, independent policy-owned method checks, conflict outcomes, and activation record completeness in `src/analytics/acceptance/022.test.ts`.\n\n- [ ] T002 [US1] Define immutable candidate/version/decision/use record types and enforce the canonical candidate, active, stale, and revoked lifecycle in `src/analytics/skill-activation.ts`.\n\n- [ ] T003 [US1] Implement preapproved low-risk project-method eligibility, policy-owned independent validation, exact conflict checks, and candidate retention on missing, failed, inconclusive, or unresolved evidence in `src/analytics/skill-activation.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t001-t002-t003 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t001-t002-t003: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t001-t002-t003.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t001-t002-t003",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004-t005",
+      "title": "T004 / T005: Add scope and access fixtures for source, role, period, unknown predicate fields, and a skill requiring unavailable",
+      "taskIds": [
+        "T004",
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t001-t002-t003"
+      ],
+      "files": [
+        "src/analytics/acceptance/022.test.ts",
+        "src/analytics/skill-activation.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [P] [US1] Add scope and access fixtures for source, role, period, unknown predicate fields, and a skill requiring unavailable privileges in `src/analytics/acceptance/022.test.ts`.\n\n- [ ] T005 [US1] Implement bounded orientation filters for active status, audience, current grant, freshness, and the declared method/rule scope predicate; retain source reuse on feature 015's compatibility path in `src/analytics/skill-activation.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t004-t005 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t004-t005: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t004-t005.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t004-t005",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006",
+      "title": "T006: Record exact supplied skill/reference versions, actual recipe executions, and prior-outcome exposure separately, th",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t004-t005"
+      ],
+      "files": [
+        "src/analytics/skill-activation.ts",
+        "src/analytics/acceptance/022.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 [US1] Record exact supplied skill/reference versions, actual recipe executions, and prior-outcome exposure separately, then export `analyticsExtensionV1` with scoped orientation and activation commands through 003 and project writes through 009 in `src/analytics/skill-activation.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t006 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t006: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t006.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t006",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t013-t014-t015",
+      "title": "T013 / T014 / T015: Add separate synthetic committed 014 source-candidate fixtures: an eligible bounded recipe with intended grant/sour",
+      "taskIds": [
+        "T013",
+        "T014",
+        "T015"
+      ],
+      "dependsOn": [
+        "scope-t006"
+      ],
+      "files": [
+        "src/analytics/acceptance/022.test.ts",
+        "src/analytics/skill-activation.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T013 [US1] Add separate synthetic committed 014 source-candidate fixtures: an eligible bounded recipe with intended grant/source version, assertion provenance, and a non-required unknown definition; plus a worker-authored-replay-only candidate, an owner-conflicting candidate, and a candidate requiring a broader grant in `src/analytics/acceptance/022.test.ts`.\n\n- [ ] T014 [US1] Implement source-candidate activation by consuming 014's source-discovery facade and 015's compatibility predicate, independently replaying the bounded recipe under its exact intended grant with a validator/execution not authored by the candidate author, checking source facts/provenance/scope/conflicts, recording only existing configured owner or a preapproved policy that exactly covers the source scope, preserving unresolved definitions as nonauthoritative, and publishing the immutable active version through 009 in `src/analytics/skill-activation.ts`.\n\n- [ ] T015 [US1] Exercise candidate → independent validation → active commit through the production `analyticsExtensionV1` provider and 009 project-memory service; assert the active source decision binds candidate evidence, type/version, scope predicate, audience, existing authority, independent replay, conflict check, and reason; assert the exact version is oriented only within scope/grant, its unknown definition remains explicitly nonauthoritative, and worker-authored-only, conflicting, and broader-grant candidates stay candidate, without requiring 004 in `src/analytics/acceptance/022.test.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t013-t014-t015 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t013-t014-t015: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t013-t014-t015.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t013-t014-t015",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007-t008",
+      "title": "T007 / T008: Add owner-review fixtures for conflicting/new/changed definitions, expanded audience/access/release policy, and an ",
+      "taskIds": [
+        "T007",
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t013-t014-t015"
+      ],
+      "files": [
+        "src/analytics/acceptance/022.test.ts",
+        "src/analytics/skill-activation.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 [P] [US2] Add owner-review fixtures for conflicting/new/changed definitions, expanded audience/access/release policy, and an explicit configured-owner approval with a duplicate-prompt assertion in `src/analytics/acceptance/022.test.ts`.\n\n- [ ] T008 [US2] Implement configured-owner review and approval attribution, idempotent matching of one concrete approval, and candidate retention until independent validation and conflict checks pass in `src/analytics/skill-activation.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t007-t008 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t007-t008: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t007-t008.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t007-t008",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t009-t010",
+      "title": "T009 / T010: Implement affected-version invalidation to stale after source-unit or access-role changes and configured-authority ",
+      "taskIds": [
+        "T009",
+        "T010"
+      ],
+      "dependsOn": [
+        "scope-t007-t008"
+      ],
+      "files": [
+        "src/analytics/skill-activation.ts",
+        "src/analytics/acceptance/022.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 [US2] Implement affected-version invalidation to stale after source-unit or access-role changes and configured-authority withdrawal to revoked, preserving historical versions and uses in `src/analytics/skill-activation.ts`.\n\n- [ ] T010 [US2] Add lifecycle assertions for exact stale/revoked targeting, prior-version retention, access denial, and zero current supply of stale/revoked guidance in `src/analytics/acceptance/022.test.ts`.\n\nRead docs/build/task-handoffs.json entry 022-scope-t009-t010 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-scope-t009-t010: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/scope-t009-t010.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "022-scope-t009-t010",
+            "src/analytics/acceptance/022.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inquiry-use",
+      "title": "Verify later method use and record complete feature evidence",
+      "taskIds": [
+        "T011",
+        "T012"
+      ],
+      "dependsOn": [
+        "scope-t009-t010"
+      ],
+      "files": [
+        "src/analytics/acceptance/022.test.ts",
+        "specs/022-activate-reusable-skills/verification.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T011 Add the synthetic two-inquiry method path and explicitly assert the second compatible inquiry receives the exact active method version, records its supplied reference and actually executed recipe against that version, and completes without a save/recreate prompt. Also propose one study Result as a general skill and assert it remains `candidate` with outcome provenance/exposure and is supplied to zero unrelated inquiries as an authoritative unscoped rule; cover scope, owner-approval reuse, and supplied-only versus executed use in `src/analytics/acceptance/022.test.ts`.\n\n- [ ] T012 Run the focused/full acceptance command after prerequisites and implementation units pass, then write observed command results and the complete FR/SC/Edge evidence matrix in `specs/022-activate-reusable-skills/verification.md`.\n\nRead docs/build/task-handoffs.json entry 022-inquiry-use and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:022-inquiry-use: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/022-activate-reusable-skills/unit-verification/inquiry-use.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

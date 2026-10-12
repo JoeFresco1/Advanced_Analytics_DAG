@@ -1,0 +1,2 @@
+{"seq":1,"ts":"2026-10-12T17:22:47.029Z","type":"edit","taskId":null,"message":"settings: {\"concurrency\":3,\"maxAttempts\":3,\"timeoutMs\":3600000,\"silenceMs\":600000}"}
+{"seq":2,"ts":"2026-10-12T17:22:50.496Z","type":"edit","taskId":null,"message":"settings: {\"harnessChain\":[{\"harness\":\"opencode\",\"model\":null,\"variant\":null},{\"harness\":\"codex\",\"model\":null,\"variant\":null}]}"}

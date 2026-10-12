@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "99",
+  "requirementTasks": {},
+  "successTasks": {},
+  "edgeCaseTasks": {},
+  "units": [
+    {
+      "id": "scope-t001",
+      "title": "T001: Inventory all 23 feature `verification.md` paths in `src/analytics/acceptance/99.test.ts` and `docs/build",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Inventory all 23 feature `verification.md` paths in `src/analytics/acceptance/99.test.ts` and `docs/build/COMPLETION.md`. Record report presence, actual versus planned/pending content, owning feature, and unresolved limits. A missing report or placeholder is unverified; preserve failures and do not count planned evidence as a pass.\n\nRead docs/build/task-handoffs.json entry 99-scope-t001 and its referenced source interfaces. Inventory only. Exact completed integration-path evidence is owned by T002 after the live journeys. Do not require future 99 evidence here.\nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-scope-t001: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/scope-t001.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-scope-t001",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evidence-inquiry-integration",
+      "title": "evidence inquiry integration",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001"
+      ],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 Exercise synthetic/local paths 001 worker boundary, 002 fixed evidence and 003 delegated inquiry through their real producers/controller/inspection routes with injected failures. Preserve primary feature ownership and evidence refs.\n  - Files: `src/analytics/acceptance/99.test.ts`, `docs/build/COMPLETION.md`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 99-evidence-inquiry-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-evidence-inquiry-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/evidence-inquiry-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-evidence-inquiry-integration",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memory-skill-integration",
+      "title": "memory skill integration",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "evidence-inquiry-integration"
+      ],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Exercise paths 020 answer recall, 004 source memory and 022 skill activation/use through real providers/controller/user inspection routes and injected failures. Preserve primary feature ownership and exact supplied/executed refs.\n  - Files: `src/analytics/acceptance/99.test.ts`, `docs/build/COMPLETION.md`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 99-memory-skill-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-memory-skill-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/memory-skill-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-memory-skill-integration",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recurrence-inference-integration",
+      "title": "recurrence inference integration",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "memory-skill-integration"
+      ],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T008 Exercise paths 005 recurrence/use and 006 inference with actual feature producers/controller/inspection routes and injected failures; preserve uncertainty, correction, interpretation and use boundaries and original primary owners.\n  - Files: `src/analytics/acceptance/99.test.ts`, `docs/build/COMPLETION.md`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 99-recurrence-inference-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-recurrence-inference-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/recurrence-inference-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-recurrence-inference-integration",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: Exercise the frozen CLI and browser path in `src/analytics/acceptance/99.test.ts` and capture actual IDs, command o",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "recurrence-inference-integration"
+      ],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 Exercise the frozen CLI and browser path in `src/analytics/acceptance/99.test.ts` and capture actual IDs, command outcomes, routes, and limits in `docs/build/COMPLETION.md`: live synthetic `gpt-6-luna` / `xhigh` inquiry; `dag analytics answer show`, `trace`, `answers search`, `ledger show`, and `source discover`; automatic answer recall on a later inquiry; exact compatible source-skill version with its recipe actually executed; and a retained failed-required-check trace. Run `pnpm smoke:viewer` and inspect the real answer and evidence-inspector screens. Follow the evaluator API documented by feature 018 after the worker response. Do not expose keys/fault explanations, use canned answers, or claim a path that is missing.\n\n**Independent verification:** `pnpm exec tsx --test src/analytics/acceptance/99.test.ts` and `pnpm smoke:viewer`; also complete the feature-018 evaluator and the live journeys through the documented implementation. Record actual IDs and screen/evidence references.\n\nRead docs/build/task-handoffs.json entry 99-scope-t004 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-scope-t004: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/scope-t004.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-scope-t004",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runnable-quickstart",
+      "title": "Document exercised commands and screens",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "docs/QUICKSTART.md",
+        "src/analytics/acceptance/99.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 Complete `docs/QUICKSTART.md` with prerequisites, synthetic fixture setup, exact runnable command lines and required arguments, observed answer/trace screens, search/recall, ledger, source discovery and second-inquiry reuse, and failed-check view. State which commands and screens were exercised and show actual output/IDs and limits; label unavailable capabilities as unavailable rather than planned runnable flows.\n\n**Independent verification:** `pnpm build` and `pnpm exec tsx --test src/analytics/acceptance/99.test.ts`; follow the quickstart against the local fixture and compare its commands, outputs, and screen descriptions with the observed run.\n\nRead docs/build/task-handoffs.json entry 99-runnable-quickstart and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-runnable-quickstart: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/runnable-quickstart.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-runnable-quickstart",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t002",
+      "title": "T002: Extend `src/analytics/acceptance/99.test.ts` to derive and assert the exact 234 FR, 219 SC, 115 source-or",
+      "taskIds": [
+        "T002"
+      ],
+      "dependsOn": [
+        "runnable-quickstart"
+      ],
+      "files": [
+        "src/analytics/acceptance/99.test.ts",
+        "docs/build/COMPLETION.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T002 Extend `src/analytics/acceptance/99.test.ts` to derive and assert the exact 234 FR, 219 SC, 115 source-ordered edge, 61 T-case primary-owner, 23 report, and eight integrated-path sets from the accepted specs/maps/registers. Require a machine-checkable `COMPLETION.md` evidence matrix with exactly one row per expected FR, SC, edge, T case, and path; verify owner and source report, outcome, and actual evidence reference; reject missing/duplicate/extra rows, missing reports, pending/TODO-only rows, unresolved evidence links, or incomplete denominators. Run `python scripts/audit_spec_coverage.py`; do not edit specs, maps, reports, or criteria.\n\n**Independent verification:** `python scripts/audit_spec_coverage.py` and `pnpm exec tsx --test src/analytics/acceptance/99.test.ts`. The structural script alone does not establish behavior. Any missing report or evidence row remains a failing convergence result.\n\nRead docs/build/task-handoffs.json entry 99-scope-t002 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-scope-t002: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/scope-t002.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "99-scope-t002",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-handover",
+      "title": "Rerun the release set and write measured completion evidence",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t002"
+      ],
+      "files": [
+        "docs/build/COMPLETION.md",
+        "src/analytics/acceptance/99.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 Run `pnpm build`, `pnpm test`, `uv run --project python pytest`, `python scripts/audit_spec_coverage.py`, `pnpm smoke:viewer`, and the focused 99 acceptance test; run the complete feature-018 evaluator and documented live user journeys. Write `docs/build/COMPLETION.md` with actual exits, all FR/SC/edge/T/path outcomes and evidence, report inventory, unchanged evaluator thresholds and denominators, observed metrics, cost as observed or unavailable, demo artifact references, runtime/harness and access/holdout limits, and every unresolved failure. Fix only Node 99-owned test or handover defects here. For an upstream implementation defect, record evidence plus owning feature/task and fail convergence; the coordinator must arrange a separate bounded repair with that owner, after which affected checks are rerun. Do not patch unowned production files, relax acceptance, hard-code answers, or claim completion while a gate is missed.\n\n**Independent verification:** Repeat the full release command set, evaluator, live journeys, and browser inspection from the merged integration checkout. Completion status must agree with retained test, evaluator, browser, CLI, and report evidence; cost is non-gating when telemetry is unavailable.\n\nRead docs/build/task-handoffs.json entry 99-release-handover and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:99-release-handover: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in docs/build/task-plans/99/unit-verification/release-handover.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "pytest"
+          ]
+        },
+        {
+          "program": "python",
+          "args": [
+            "scripts/audit_spec_coverage.py"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "smoke:viewer"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/99.test.ts"
+          ]
+        }
+      ]
+    }
+  ]
+}

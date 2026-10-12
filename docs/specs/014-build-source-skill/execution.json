@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "014",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T003",
+      "T005",
+      "T007"
+    ],
+    "FR-002": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "FR-003": [
+      "T001",
+      "T003",
+      "T004"
+    ],
+    "FR-004": [
+      "T004",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-005": [
+      "T006",
+      "T008"
+    ],
+    "FR-006": [
+      "T003",
+      "T006",
+      "T008"
+    ],
+    "FR-007": [
+      "T003",
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "FR-008": [
+      "T001",
+      "T006",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T004",
+      "T007"
+    ],
+    "SC-002": [
+      "T006",
+      "T008"
+    ],
+    "SC-003": [
+      "T006",
+      "T008"
+    ],
+    "SC-004": [
+      "T003",
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "SC-005": [
+      "T006",
+      "T008"
+    ],
+    "SC-006": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "SC-007": [
+      "T006",
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T007"
+    ],
+    "EC-002": [
+      "T003",
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "EC-003": [
+      "T004",
+      "T008"
+    ],
+    "EC-004": [
+      "T006",
+      "T008"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001",
+      "title": "T001: Define source identity, current grant scope, provenance types, fixed discovery bounds, and the read-only ",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/source-discovery.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Define source identity, current grant scope, provenance types, fixed discovery bounds, and the read-only SQLite bridge in src/analytics/source-discovery.ts. Resolve an opaque registered source only after its metadata grant is checked; use executeStageV1, a read-only URI, query-only mode, a transaction-bound window, and an immutable source version or explicit unknown value.\n\nRead docs/build/task-handoffs.json entry 014-scope-t001 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t001: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t001.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t001",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t002",
+      "title": "T002: [US1] Implement bounded schema and aggregate discovery in src/analytics/source-discovery.ts, including ta",
+      "taskIds": [
+        "T002"
+      ],
+      "dependsOn": [
+        "scope-t001"
+      ],
+      "files": [
+        "src/analytics/source-discovery.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T002 [US1] Implement bounded schema and aggregate discovery in src/analytics/source-discovery.ts, including table/column/profile/sample caps, source-version and snapshot limitations, and safe stop reasons.\n\nRead docs/build/task-handoffs.json entry 014-scope-t002 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t002: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t002.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t002",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003",
+      "title": "T003: [US1] Generate immutable SKILL.md, manifest, scoped schema/definition/grain/time references, provenance, ",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t002"
+      ],
+      "files": [
+        "src/analytics/source-skills.ts",
+        "src/analytics/source-discovery.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 [US1] Generate immutable SKILL.md, manifest, scoped schema/definition/grain/time references, provenance, access metadata, and candidate lifecycle records in src/analytics/source-skills.ts; publish through 009 commitProjectMemory without a second CAS or registry.\n\nRead docs/build/task-handoffs.json entry 014-scope-t003 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t003: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t003.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t003",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: [US1] Generate and execute parameterized Python aggregate examples under the intended grant through the e",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "scope-t003"
+      ],
+      "files": [
+        "src/analytics/source-skills.ts",
+        "src/analytics/source-discovery.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [US1] Generate and execute parameterized Python aggregate examples under the intended grant through the existing stage service in src/analytics/source-discovery.ts, bind each tested assertion to its source version/window and execution evidence, and add source-core acceptance cases in src/analytics/acceptance/014.test.ts. Using a fixture with known keys, grain, joins, definitions, and time columns, compare each generated guidance claim with the fixture truth at the named source version/window; fail on invented, mismatched, or omitted required guidance. Separately test an unknown definition and two owner-conflicting definitions: preserve the named authority and both evidence references, mark the claims unresolved/inactive, and never promote either interpretation. Also assert bounded read-only discovery, executed recipes, provenance, and inspectable candidate contents. The source-core unit runs the entire 014.test.ts file at this stage, so its assertions cannot be skipped by a name filter.\n\nRead docs/build/task-handoffs.json entry 014-scope-t004 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t004: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t004.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t004",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005-t007",
+      "title": "T005 / T007: Export analyticsExtensionV1 with the frozen source discover command and production orient(context) hook from src/an",
+      "taskIds": [
+        "T005",
+        "T007"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/source-discovery.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 [US1] Export analyticsExtensionV1 with the frozen source discover command and production orient(context) hook from src/analytics/source-discovery.ts. For ordinary ask, read source-skill refs from the committed 009 project head and apply 001 filterAccessible before checking active status for the exact source identity, environment, and tenant. With zero matching active refs, require current metadata and aggregate grants plus remaining discovery budget, then call the same bounded discovery implementation as source discover and return only safe candidate refs/scope. With one or more matching active refs, return safe refs only and perform no discovery or compatibility assessment; defer that judgment to the later 015 orientation hook. Stale/revoked records do not count as active, but do not infer revoked authority or bypass current access. Do not call or consume any 003/015 compatibility service, add a shared 003 context field, or supply candidate content as active guidance.\n\n- [ ] T007 [US1] Add acceptance cases that invoke the registered `source discover` command through the 003 extension registry, verify the command reaches the bounded discovery implementation, commits an inspectable candidate, and reports safe refs/scope; also verify a denied grant prevents a source read or commit. Separately add production orient(context) acceptance cases in src/analytics/acceptance/014.test.ts. Prove zero accessible active refs for the exact source identity/environment/tenant trigger the shared cold-discovery implementation, commit only a candidate, and return safe refs/scope without content; prove one or more matching active refs return safe refs only with no rediscovery, candidate content, compatibility judgment, or 003/015 compatibility-service call. Include sibling-scope, access-denied, uncommitted/staging, and stale/revoked refs to verify only accessible committed exact-scope active records suppress cold discovery; prove 019 is not called for source-skill lookup. Assert unresolved/owner-conflicting definition claims and their authority/evidence refs remain inactive in the returned orientation metadata.\n\nRead docs/build/task-handoffs.json entry 014-scope-t005-t007 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t005-t007: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t005-t007.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t005-t007",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006-t008",
+      "title": "T006 / T008: Enforce exact source-audience filtering and inert treatment of comments, labels, stored SQL, and examples in src/an",
+      "taskIds": [
+        "T006",
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t005-t007"
+      ],
+      "files": [
+        "src/analytics/source-skills.ts",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 [US2] Enforce exact source-audience filtering and inert treatment of comments, labels, stored SQL, and examples in src/analytics/source-skills.ts; exclude credentials, raw rows, and all study-specific outcome summaries.\n\n- [ ] T008 [US2] Add contaminated-source, outcome-content, audience-filtering, and unsafe-recipe cases in src/analytics/acceptance/014.test.ts, plus cold-orientation cases with missing/expired metadata or aggregate grants and exhausted discovery budget. Assert source text cannot change privileged commands, access, checks, or policy; sensitive metadata, credentials, raw rows, and untagged study outcomes do not leak; unbounded or over-grant recipes do not run for the weaker audience; and denied/budget-exhausted orientation performs no source read or candidate commit.\n\nRead docs/build/task-handoffs.json entry 014-scope-t006-t008 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-scope-t006-t008: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/scope-t006-t008.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "014-scope-t006-t008",
+            "src/analytics/acceptance/014.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-and-verification",
+      "title": "Run full Task 014 acceptance and record evidence",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t006-t008"
+      ],
+      "files": [
+        "specs/014-build-source-skill/verification.md",
+        "src/analytics/acceptance/014.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 Run the Task 014 acceptance suite and write FR/SC/edge evidence, actual command results, and any honest local-access/version limits to specs/014-build-source-skill/verification.md.\n\nRead docs/build/task-handoffs.json entry 014-acceptance-and-verification and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:014-acceptance-and-verification: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/014-build-source-skill/unit-verification/acceptance-and-verification.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

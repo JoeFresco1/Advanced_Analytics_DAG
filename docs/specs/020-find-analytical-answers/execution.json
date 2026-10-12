@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "020",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T002",
+      "T008",
+      "T009"
+    ],
+    "FR-002": [
+      "T003",
+      "T004"
+    ],
+    "FR-003": [
+      "T003",
+      "T004"
+    ],
+    "FR-004": [
+      "T005",
+      "T006"
+    ],
+    "FR-005": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "FR-006": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-007": [
+      "T003",
+      "T004",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-008": [
+      "T001",
+      "T002",
+      "T003",
+      "T004"
+    ],
+    "FR-009": [
+      "T001",
+      "T002",
+      "T008",
+      "T009"
+    ],
+    "FR-010": [
+      "T003",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-011": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-012": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "FR-013": [
+      "T001",
+      "T002",
+      "T005",
+      "T009"
+    ],
+    "FR-014": [
+      "T003",
+      "T004",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-015": [
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "FR-016": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "FR-017": [
+      "T007",
+      "T008",
+      "T009"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "SC-002": [
+      "T001",
+      "T002",
+      "T004",
+      "T009"
+    ],
+    "SC-003": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "SC-004": [
+      "T003",
+      "T004",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-005": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "SC-006": [
+      "T001",
+      "T002",
+      "T009"
+    ],
+    "SC-007": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-008": [
+      "T001",
+      "T002",
+      "T005",
+      "T009"
+    ],
+    "SC-009": [
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "SC-010": [
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "SC-011": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "SC-012": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-013": [
+      "T003",
+      "T004",
+      "T009"
+    ],
+    "SC-014": [
+      "T006",
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-015": [
+      "T001",
+      "T002",
+      "T008",
+      "T009"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T001",
+      "T002"
+    ],
+    "EC-002": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "EC-003": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "EC-004": [
+      "T003",
+      "T007",
+      "T008"
+    ],
+    "EC-005": [
+      "T001",
+      "T002",
+      "T009"
+    ],
+    "EC-006": [
+      "T003",
+      "T004",
+      "T007",
+      "T009"
+    ]
+  },
+  "units": [
+    {
+      "id": "durable-answer-cards",
+      "title": "Finalize scoped answer cards and deterministic fallback",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/020.test.ts",
+        "src/analytics/answers.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 [US1] Add synthetic acceptance cases in `src/analytics/acceptance/020.test.ts` for durable scoped cards, negative/inconclusive outcomes, competing Claims and selected-finding reasons, evidence/artifact refs, and opening an answer's ledger link to see every admitted attempt's method, outcome state, and evidence refs, plus worker-without-summary/interrupted-finalization fallback and no invented interpretation.\n\n- [ ] T002 [US1] Implement `AnswerCardV1` construction, deterministic committed-fact fallback, a ledger-timeline link derived from the existing inquiry reference/path plus evidence/artifact refs, selected-story reasons, and idempotent finalization persistence through 009 in `src/analytics/answers.ts`; preserve canonical inquiry/evidence/current-validity states and leave unsupported or missing interpretation explicit.\n\nRead docs/build/task-handoffs.json entry 020-durable-answer-cards and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:020-durable-answer-cards: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/020-find-analytical-answers/unit-verification/durable-answer-cards.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "020-durable-answer-cards",
+            "src/analytics/acceptance/020.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ranked-search",
+      "title": "Search and rank accessible answer cards",
+      "taskIds": [
+        "T003",
+        "T004"
+      ],
+      "dependsOn": [
+        "durable-answer-cards"
+      ],
+      "files": [
+        "src/analytics/acceptance/020.test.ts",
+        "src/analytics/retrieval.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 [US1] Add deterministic retrieval contract cases in `src/analytics/acceptance/020.test.ts` for question/source/metric/period/Claim-state/pin filters, access-before-ranking, direct/related/not-relevant classification, unknown compatibility, reasoned no-match, tie-only pins, restricted metadata exclusion, and the frozen 99-file, 150-card/20-query, and five-query no-match criteria.\n\n- [ ] T004 [US1] Implement structured filters, access-first candidate retrieval through 019, deterministic pinless relevance ranking, canonical per-card classification, explicit `direct_answer_found`/`no_match`, and the feature-owned `analyticsExtensionV1` search command in `src/analytics/retrieval.ts`; pins/recency may break ties only, and unknown scope may never be direct.\n\n**Checkpoint**: User Story 1 returns question-searchable scoped answers from the 99-file corpus, preserves negative/inconclusive findings, passes the frozen ranking/no-match limits, and keeps inaccessible candidates out of output and context.\n\nRead docs/build/task-handoffs.json entry 020-ranked-search and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:020-ranked-search: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/020-find-analytical-answers/unit-verification/ranked-search.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "020-ranked-search",
+            "src/analytics/acceptance/020.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curation-home",
+      "title": "Persist curation and expose the project-home projection",
+      "taskIds": [
+        "T005",
+        "T006"
+      ],
+      "dependsOn": [
+        "ranked-search"
+      ],
+      "files": [
+        "src/analytics/acceptance/020.test.ts",
+        "src/analytics/answers.ts",
+        "src/analytics/retrieval.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 [US2] Add synthetic curation and home cases in `src/analytics/acceptance/020.test.ts` for pin/annotation/supersession rebuild, an explicit “remember this analysis” pin during finalization, unchanged Claim state/scope, stale and redacted evidence, recent/pinned/unresolved home cards including negative and unresolved answers, and stable answer/timeline links.\n\n### Implementation for User Story 2\n\n- [ ] T006 [US2] Implement append-only pin/annotation/supersession events, pin-on-finalization handling from existing user-request/terminal-intent refs (without adding a frozen 003 schema field), and the access-filtered no-query `answers home` projection in `src/analytics/answers.ts` and `src/analytics/retrieval.ts`, persisted through 009 and rebuildable through 019 without changing Claim support, scope, or validity.\n\n**Checkpoint**: User curation and home views survive an index rebuild, current access is rechecked, and corrected/redacted evidence remains historically inspectable with canonical status.\n\nRead docs/build/task-handoffs.json entry 020-curation-home and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:020-curation-home: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/020-find-analytical-answers/unit-verification/curation-home.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "020-curation-home",
+            "src/analytics/acceptance/020.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automatic-recall",
+      "title": "Consume the 023 handoff and record answer retrieval/use",
+      "taskIds": [
+        "T007",
+        "T008"
+      ],
+      "dependsOn": [
+        "curation-home"
+      ],
+      "files": [
+        "src/analytics/acceptance/020.test.ts",
+        "src/analytics/retrieval.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 [US3] Add integration cases in `src/analytics/acceptance/020.test.ts` for the 023-to-020 orientation handoff, exactly one 023 prior-attempt match and one retrieval event, prior-outcome exposure, attributed worker use/rejection, no-hint later recall, wrong-cohort and stale-card rejection, and bounded context under many related cards.\n\n### Implementation for User Story 3\n\n- [ ] T008 [US3] Implement dependency-ordered `orient` and `beforeFinalize` hooks in `src/analytics/retrieval.ts` that consume the already-produced 023 `AnalyticalMatchV1` without calling its matcher again, use 019's access-filtered candidate IDs, durably record retrieval/exposure and linked later disposition through 009, and call `answers.ts` to commit the card/fallback before 003 acknowledges completion.\n\n**Checkpoint**: A later live worker in the same synthetic project finds relevant prior work with no user hint, while recorded access, current validity, mismatch, exposure, and use/rejection remain attributable.\n\nRead docs/build/task-handoffs.json entry 020-automatic-recall and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:020-automatic-recall: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/020-find-analytical-answers/unit-verification/automatic-recall.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "020-automatic-recall",
+            "src/analytics/acceptance/020.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Run full 020 acceptance and write actual verification evidence",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "automatic-recall"
+      ],
+      "files": [
+        "specs/020-find-analytical-answers/verification.md",
+        "src/analytics/acceptance/020.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 Run `pnpm build` and `pnpm test`, execute the 99-file, 150/20, five no-match, curation/rebuild, project-home, every-admitted-attempt timeline, and crash/fallback acceptance paths, and perform the two-inquiry live recall demonstration with `gpt-6-luna`/`xhigh` using only synthetic/local data; write actual command/results, Hit@3 denominator, per-query outcomes, one-match/one-retrieval evidence, harness/context/source digests, evidence refs, and FR/SC/edge-case evidence plus limits to `specs/020-find-analytical-answers/verification.md`.\n\nRead docs/build/task-handoffs.json entry 020-acceptance-verification and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:020-acceptance-verification: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/020-find-analytical-answers/unit-verification/acceptance-verification.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

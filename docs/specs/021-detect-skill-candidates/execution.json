@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "021",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T008"
+    ],
+    "FR-002": [
+      "T003",
+      "T005",
+      "T009",
+      "T010",
+      "T008"
+    ],
+    "FR-003": [
+      "T003",
+      "T006",
+      "T008"
+    ],
+    "FR-004": [
+      "T002",
+      "T008"
+    ],
+    "FR-005": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "FR-006": [
+      "T002",
+      "T004",
+      "T008"
+    ],
+    "FR-007": [
+      "T006",
+      "T008"
+    ],
+    "FR-008": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "FR-009": [
+      "T007",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T002",
+      "T003",
+      "T008"
+    ],
+    "SC-002": [
+      "T004",
+      "T005",
+      "T009",
+      "T010",
+      "T006",
+      "T008"
+    ],
+    "SC-003": [
+      "T002",
+      "T008"
+    ],
+    "SC-004": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "SC-005": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "SC-006": [
+      "T004",
+      "T005",
+      "T009",
+      "T010",
+      "T008"
+    ],
+    "SC-007": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "SC-008": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-009": [
+      "T007",
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T002",
+      "T008"
+    ],
+    "EC-002": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "EC-003": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "EC-004": [
+      "T004",
+      "T006",
+      "T008"
+    ],
+    "EC-005": [
+      "T004",
+      "T006",
+      "T008"
+    ]
+  },
+  "units": [
+    {
+      "id": "provider-foundation",
+      "title": "Add the typed bounded checkpoint provider",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/skill-capture.ts",
+        "src/analytics/acceptance/021.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Implement `analyticsExtensionV1` metadata and idempotent bounded checkpoint hooks in `src/analytics/skill-capture.ts`. Use `afterEvidenceCommit` for committed 003 inquiry/evidence records; use dependency-ordered `beforeFinalize` after the 020 `answers` finalizer to consume the current committed answer, a bounded set of completed question/answer refs, and the ordinary current terminal-intent/user-request ref. This ref is the producer when a follow-on question gives feedback on an already completed answer; join it through an explicit answer ref or the exact card ref in 020's retrieval/exposure event, and suppress a method candidate if the target is ambiguous. Read 014 candidate source packages through the 015 `source-reuse` facade; persist capture records through 009. Do not add a command, callback registry, or shared dispatch edit.\n\n**Independent verification**: `pnpm build` compiles the provider against the frozen extension types; no CLI/controller or persistence files change.\n\nRead docs/build/task-handoffs.json entry 021-provider-foundation and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-provider-foundation: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/provider-foundation.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-provider-foundation",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "method-endorsement",
+      "title": "Capture method endorsement separately from answer praise",
+      "taskIds": [
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [
+        "provider-foundation"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "src/analytics/skill-capture.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T002 [US1] Add synthetic acceptance cases for feedback carried by an ordinary follow-on delegated question, its 003 finalization hook path, method endorsement, identical-signal replay, and answer-only praise routed through the 020 answer facade in `src/analytics/acceptance/021.test.ts`.\n\n- [ ] T003 [US1] Classify feedback from terminal-intent/user-request refs against the exact completed answer record; persist a typed candidate or route answer-only praise to the answer-card annotation path, with trigger/evidence refs, in `src/analytics/skill-capture.ts`.\n\n**Checkpoint**: User Story 1 is independently verifiable after T001–T003 with `pnpm exec tsx --test --test-name-pattern=capture-US1 src/analytics/acceptance/021.test.ts`.\n\nRead docs/build/task-handoffs.json entry 021-method-endorsement and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-method-endorsement: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/method-endorsement.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-method-endorsement",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat-trigger",
+      "title": "repeat trigger",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "method-endorsement"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "src/analytics/skill-capture.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 Recognize repeated validated work across bounded completed inquiry/answer records in src/analytics/skill-capture.ts. Persist candidate-only decisions with exact scope, evidence and validation gaps through 009; use stable signal IDs to prevent duplicate proposals. Test valid repetition, insufficient/invalid repetition and replay.\n\nRead docs/build/task-handoffs.json entry 021-repeat-trigger and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-repeat-trigger: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/repeat-trigger.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-repeat-trigger",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cost-trigger",
+      "title": "cost trigger",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "repeat-trigger"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "src/analytics/skill-capture.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 Recognize costly source discovery only against predeclared thresholds and committed source-package evidence exposed through 015 in src/analytics/skill-capture.ts. Preserve intended grant/source scope and exact measured cost/count evidence; absent thresholds or telemetry cannot qualify. Test valid cost, missing threshold, missing evidence and replay without duplicate proposals.\n\nRead docs/build/task-handoffs.json entry 021-cost-trigger and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-cost-trigger: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/cost-trigger.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-cost-trigger",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "correction-trigger",
+      "title": "correction trigger",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "cost-trigger"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "src/analytics/skill-capture.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T010 Recognize durable corrections only with independent validation and later-reuse evidence in src/analytics/skill-capture.ts. Keep exact owner/conflict and prior-outcome exposure refs; suppress unresolved authority conflict and protected holdout signals; enforce checkpoint budgets and dedup/revision links. Test a validated correction, unvalidated correction, conflict, restricted exposure and exhaustion.\n\nRead docs/build/task-handoffs.json entry 021-correction-trigger and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-correction-trigger: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/correction-trigger.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-correction-trigger",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004-t006",
+      "title": "T004 + T006: [US2] Add synthetic acceptance cases for bounded completed-question repetition, source-package threshold ",
+      "taskIds": [
+        "T004",
+        "T006"
+      ],
+      "dependsOn": [
+        "correction-trigger"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "src/analytics/skill-capture.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [US2] Add synthetic acceptance cases for bounded completed-question repetition, source-package threshold evidence through 015, durable correction, dedup/revision, owner conflict, holdout exposure, scope restriction, and budget exhaustion in `src/analytics/acceptance/021.test.ts`.\n\n- [ ] T006 [US2] Persist typed proposal/suppression decisions with exact scope, authority conflict refs, prior-outcome exposure, dedup/revision links, validation gaps, and controller-supplied checkpoint limits in `src/analytics/skill-capture.ts`; keep all outputs candidate-only.\n\n**Checkpoint**: User Story 2 is independently verifiable after T001–T006 with `pnpm exec tsx --test --test-name-pattern=capture-US2 src/analytics/acceptance/021.test.ts`.\n\nRead docs/build/task-handoffs.json entry 021-scope-t004-t006 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-scope-t004-t006: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/scope-t004-t006.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "021-scope-t004-t006",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frozen-evaluation",
+      "title": "Measure the locked 48-signal fixture and record final evidence",
+      "taskIds": [
+        "T007",
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t004-t006"
+      ],
+      "files": [
+        "src/analytics/acceptance/021.test.ts",
+        "specs/021-detect-skill-candidates/verification.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Consume the frozen `src/analytics/evaluation/fixtures/capture-signals.json` cohort through `src/analytics/evaluation/registry.ts` in `src/analytics/acceptance/021.test.ts`: pin/select the unchanged 48-signal set, run capture before evaluation, resolve evaluator-only references after each completed response, and call `adjudicateResponseV1`. Apply the registered candidate-precision/recall formulas without exposing labels to capture. Preserve eight positives per trigger, eight negative answer-only praise signals, eight negative unvalidated-significance signals, and all existing gates. Report proposal IDs, true-positive count, total proposals, all 32 positive signals, precision, recall, and duplicate-proposal count.\n\n- [ ] T008 Run `pnpm build` and the complete 021 acceptance file with `pnpm exec tsx --test src/analytics/acceptance/021.test.ts`; update `specs/021-detect-skill-candidates/verification.md` with actual command/evaluator evidence and pass/fail status for every FR, SC, and ordered edge case.\n\n**Final gate**: The frozen evaluation fails closed for missing labels/denominators, fewer than 10 proposals, precision <0.80, recall <0.80, or any duplicate proposal. Every 021 acceptance case must run; skipped/TODO cases do not pass.\n\nRead docs/build/task-handoffs.json entry 021-frozen-evaluation and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:021-frozen-evaluation: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/021-detect-skill-candidates/unit-verification/frozen-evaluation.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/021.test.ts"
+          ]
+        }
+      ]
+    }
+  ]
+}

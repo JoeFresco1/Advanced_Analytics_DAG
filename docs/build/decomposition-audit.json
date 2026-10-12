@@ -1,0 +1,901 @@
+{
+  "version": 1,
+  "runId": "run_b3a47590",
+  "reviewedAt": "2026-10-04T18:44:14.621Z",
+  "previousUnits": 90,
+  "units": 164,
+  "previousTasks": 246,
+  "tasks": 260,
+  "expandedTasks": [
+    {
+      "featureKey": "18-bootstrap",
+      "originalTask": "T004",
+      "originalScope": "- [ ] T004 Implement the base registry types and immutable initial metric\n  declarations in `src/analytics/evaluation/registry.ts`. Include formula,\n  numerator, denominator, direction, minimum cohort, exact threshold,\n  applicable profile, fixture digest, evaluator version, and owner-approval\n  reference/time fields. Register all ten feature 018 gates verbatim,\n  including each formula, numerator/denominator cohort, favorable direction,\n  minimum denominator, and threshold literal. Keep cost observed-or-unavailable\n  and non-gating; represent the five no-match zero-false-direct-answer result\n  separately from the ten-gate registry. Require the configured feature 010\n  project-owner approval reference and a valid timestamp strictly earlier\n  than the governed batch start; reject missing, equal-time, and post-batch\n  approvals. Never synthesize an actor or timestamp. Fail closed on missing,\n  zero, or undersized required denominators.\n  - Files: `src/analytics/evaluation/registry.ts`,\n    `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Depends on: T001–T003.\n  - Independent verification: `pnpm build`; `pnpm exec tsx --test --test-name-pattern=registry src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Coverage: immutable pre-batch metric registration and explicit gate fields.",
+      "newTasks": [
+        "T004"
+      ],
+      "boundaries": [
+        "metric-declarations"
+      ]
+    },
+    {
+      "featureKey": "18-bootstrap",
+      "originalTask": "T005",
+      "originalScope": "- [ ] T005 Implement the independent post-response adjudication API and\n  append-only feature-evidence registration in `registry.ts`. The evaluator\n  receives the completed response and evaluator-only reference bundle through\n  separate parameters; reject reference material found in the worker packet,\n  retrieved-card payload, source-skill text, or cached summary. Exercise this\n  at the 001-only dependency floor by passing synthetic, shape-compatible\n  retrieval, source-skill, and cached-summary additions through the frozen\n  worker-context serialization/digest path; do not import or require later\n  feature implementations. Require zero reference-answer, relevance-label,\n  reference-ID/digest, and planted-fault bytes in the actual serialized\n  packet, and prove its digest is computed only from that sanitized packet.\n  Add a feature-scoped contribution API that\n  accepts the contributing feature owner, exact fixture IDs and content\n  digests, parent locked revision, independent expected outcomes and rubric\n  digests, and approval actor/reference plus timestamp. Verify authorized\n  feature ownership, that the approval reference resolves to an immutable\n  owner-authored approval for the canonical contribution digest, byte/digest\n  agreement, and that the recorded approval and registry-generated admission\n  time are strictly earlier than the target batch start. Do not accept\n  caller-supplied admission time. A\n  valid contribution creates a\n  new immutable child lock revision; changed-ID/content collisions,\n  unauthorized owners, missing independent outcomes, and post-start admission\n  fail. Preserve all existing expected-outcome and threshold digests. Derive\n  this unit's parent-lock fixture from T001/T004 records so its focused check\n  does not require the later T006 lock-report unit; T006 serializes the\n  initial lock only after this registry unit passes. Keep\n  contributed fixture files at feature-owned exact paths such as\n  `src/analytics/evaluation/fixtures/contributions/<featureKey>/<contributionId>.json`;\n  this manifest owns neither the contribution subtree nor the whole fixtures\n  directory. Pin evaluation to the exact contributed revision selected before\n  the batch, even if a later registry revision exists. Preserve each\n  evidence record's feature owner, case refs, worker/tool/model, harness,\n  policy and resource settings, source/prompt/context digests, fixture and\n  rubric digests, and observed result. Allow review-disagreement evidence with\n  its sampling frame, policy, strata, selection, adjudicator, severity, counts,\n  numerator/denominator, uncertainty, and a precision target declared before\n  the audit. Mark an\n  undersized audit descriptive only, and prove it cannot change the policy or\n  metric-threshold digest. Reject reclassification of a tuned development case\n  as evaluation within its frozen fixture-set version. Accept later feature\n  evidence without permitting it to edit locked fixtures, case roles, answer\n  keys, or thresholds. Keep the API case-neutral and leave whole-product\n  release aggregation to feature 018. Provide a comparison compatibility\n  check: reject comparisons whose task constraints, harness/version, budget,\n  fixture IDs, or adjudication protocol differ; matched runs retain identical\n  fixture IDs and scoring rubric references.\n  - Files: `src/analytics/evaluation/registry.ts`,\n    `src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Depends on: T004.\n  - Independent verification: `pnpm build`; `pnpm exec tsx --test --test-name-pattern=registry src/analytics/acceptance/18-bootstrap.test.ts`.\n  - Coverage: reference isolation, post-response scoring boundary, and later\n    evidence registration; locked development/evaluation role enforcement and\n    descriptive-only disagreement audits.",
+      "newTasks": [
+        "T005",
+        "T008",
+        "T009",
+        "T010",
+        "T011",
+        "T012",
+        "T013"
+      ],
+      "boundaries": [
+        "context-isolation",
+        "exposure-lineage",
+        "approval-time",
+        "contribution-admission",
+        "batch-locking",
+        "post-response-adjudication",
+        "registry-integration"
+      ]
+    },
+    {
+      "featureKey": "019",
+      "originalTask": "T003",
+      "originalScope": "- [ ] T003 [US2] Implement path/root validation, bounded CSV and `.xlsx` parsing, content hashing, immutable import/version records, duplicate groups and current workbook-sheet grant checks in `src/analytics/import.ts`. Enforce at most 100 files, 1 GiB and 300 seconds before further content reads; larger imports require a separate owner-authorized bounded profile/run. On change, append a source-change event and mark dependent current projections `reassessment_required`; on missing input, mark availability `unavailable` without rewriting provenance. Never move originals. Add `src/analytics/acceptance/019.test.ts` cases for the 99-file corpus, distinct paths with identical bytes, unknown provenance despite a `final` name, changed/missing rescan, 101st-file/byte/time stop, unsafe workbook structure, metadata-only sheets and denied sheet title/cell disclosure.",
+      "newTasks": [
+        "T003",
+        "T010"
+      ],
+      "boundaries": [
+        "bounded-import",
+        "import-history"
+      ]
+    },
+    {
+      "featureKey": "019",
+      "originalTask": "T004",
+      "originalScope": "- [ ] T004 [US2] Implement access-first FTS5 search, `ingestCommittedProjectionV1(CatalogProjectionInputV1)`, append-only `appendCurationEventV1(CatalogCurationEventV1)`, `recordDeniedLookupV1(DeniedLookupEventV1)`, and idempotent `rebuildIndex` in `src/analytics/catalog.ts`. The curation operation MUST validate the current project-owner grant, assign stable event/commit IDs, and persist the immutable actor, target artifact, permitted curation action, access scope, and exact evidence refs through node-009 `commitProjectMemory`; it MUST return the committed event ref and never treat an index edit as durable curation. A denied lookup MUST be recorded as an append-only, access-safe project event through the same node-009 commit path, with principal ref, opaque source ref, operation and safe denial reason, and without protected title/path/sheet/cell metadata. Rebuild MUST replay every committed node-009 project and run manifest revision, including artifact/import/curation records, answer-card records, and typed version-1 catalog projection inputs for ledger attempts, rationale and match assessments. Define and validate `CatalogProjectionInputV1` as a committed, versioned index contribution containing source record/commit refs, access scope, availability, current validity, safe search text and exact artifact/card/attempt/rationale/match refs. Rebuild only from refs reachable through recovered 009 manifest chains; do not import the not-yet-built `023/ledger.ts`, author ledger semantics, mutate source records, or turn index state into authority. Persist import/curation records using node-009 project memory; filter current grants before FTS matching/ranking and before worker-context construction, withholding raw rows/cells, restricted titles/paths/sheet names, rationale and counts. Add `src/analytics/acceptance/019.test.ts` fixtures `f019-curation-commit-rebuild` (commit a curation event through 009, recover with `recoverProjectMemory`, rebuild a deleted/corrupt index, and assert the event and its artifact/evidence refs are restored while canonical source bytes and history remain unchanged) and `f019-t39-restricted-workbook-denial` as supporting 019 catalog/access-boundary coverage for 020-owned proposal T39 (a lookup lacking current workbook/sheet metadata grant MUST be denied before FTS search, matching/ranking and worker-context construction; persist a safe denied-lookup event through 009 with principal/source/operation/reason; assert no protected title, path, sheet name or row value appears in the search response, committed audit payload, or context). Also cover versioned synthetic committed ledger/card/artifact rebuild, preserved attempt and match-assessment refs, scopes, availability, current validity and usage links, access-safe rationale retrieval, imported-versus-result distinction, and zero duplicate or staged promotion.",
+      "newTasks": [
+        "T004",
+        "T011",
+        "T012"
+      ],
+      "boundaries": [
+        "committed-index",
+        "curation-events",
+        "access-first-search"
+      ]
+    },
+    {
+      "featureKey": "018",
+      "originalTask": "T003",
+      "originalScope": "- [ ] T003 [US2] Add whole-product memory, output and access scoring in `src/analytics/evaluation/evaluator.ts`; measure the 150-card/20-query Hit@3 and five no-match retrieval cohort, 99-file catalog/false-story corpus, 48-signal candidate precision and 32-positive candidate recall plus validation/later use and incompatible reuse, automatic recall, ledger completeness/exact-repeat/false-duplicate/prior-negative retrieval, grant-respecting source/context/viewer access, retained output count/bytes, unwanted CSV/workbook exports, notebook replay, unmanaged-root writes, and matched cold/warm source discovery effort, answer quality and skipped checks.",
+      "newTasks": [
+        "T003",
+        "T009",
+        "T010",
+        "T011"
+      ],
+      "boundaries": [
+        "retrieval-scoring",
+        "skill-scoring",
+        "artifact-scoring",
+        "ledger-access-scoring"
+      ]
+    },
+    {
+      "featureKey": "99",
+      "originalTask": "T003",
+      "originalScope": "- [ ] T003 Add synthetic/local integration cases in `src/analytics/acceptance/99.test.ts` for all eight accepted paths: 001 worker boundary, 002 fixed evidence, 003 delegated inquiry, 020 answer recall, 004 source memory, 022 skill activation/use, 005 recurrence/use, and 006 inference. Exercise feature-owned producers, controller consumers, user inspection paths, and injected failures; do not transfer primary acceptance ownership.",
+      "newTasks": [
+        "T003",
+        "T007",
+        "T008"
+      ],
+      "boundaries": [
+        "evidence-inquiry-integration",
+        "memory-skill-integration",
+        "recurrence-inference-integration"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "previousUnit": "001-neutral-and-contract-foundation",
+      "decision": "preserve-completed",
+      "newUnits": [
+        "001-neutral-and-contract-foundation"
+      ],
+      "reason": "Already accepted; preserve historical evidence."
+    },
+    {
+      "previousUnit": "001-analytics-worker-boundary",
+      "decision": "preserve-completed",
+      "newUnits": [
+        "001-analytics-worker-boundary"
+      ],
+      "reason": "Already accepted; preserve historical evidence."
+    },
+    {
+      "previousUnit": "001-neutral-compatibility-release",
+      "decision": "preserve-completed",
+      "newUnits": [
+        "001-neutral-compatibility-release"
+      ],
+      "reason": "Already accepted; preserve historical evidence."
+    },
+    {
+      "previousUnit": "001-feature-acceptance",
+      "decision": "preserve-completed",
+      "newUnits": [
+        "001-feature-acceptance"
+      ],
+      "reason": "Already accepted; preserve historical evidence."
+    },
+    {
+      "previousUnit": "18-bootstrap-fixture-package",
+      "decision": "preserve-completed",
+      "newUnits": [
+        "18-bootstrap-fixture-package"
+      ],
+      "reason": "Already accepted; preserve historical evidence."
+    },
+    {
+      "previousUnit": "18-bootstrap-reference-registry",
+      "decision": "split",
+      "newUnits": [
+        "18-bootstrap-reference-registry",
+        "18-bootstrap-context-isolation",
+        "18-bootstrap-exposure-lineage",
+        "18-bootstrap-approval-time",
+        "18-bootstrap-contribution-admission",
+        "18-bootstrap-batch-locking",
+        "18-bootstrap-post-response-adjudication",
+        "18-bootstrap-registry-integration"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "18-bootstrap-fixture-lock-report",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "18-bootstrap-fixture-lock-report"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "18-bootstrap-bootstrap-acceptance",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "18-bootstrap-bootstrap-acceptance"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "009-run-evidence",
+      "decision": "split",
+      "newUnits": [
+        "009-scope-t001",
+        "009-scope-t002"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "009-project-memory",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "009-project-memory"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "009-stage-and-comparison",
+      "decision": "split",
+      "newUnits": [
+        "009-scope-t004",
+        "009-scope-t005"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "009-final-acceptance",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "009-final-acceptance"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "010-policy-foundation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "010-policy-foundation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "010-check-execution",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "010-check-execution"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "010-policy-coverage",
+      "decision": "split",
+      "newUnits": [
+        "010-scope-t006",
+        "010-scope-t007-t008-t009"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "010-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "010-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "011-numerical-trace",
+      "decision": "split",
+      "newUnits": [
+        "011-scope-t001-t002-t004",
+        "011-scope-t005",
+        "011-scope-t003-t006"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "011-answer-and-chart",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "011-answer-and-chart"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "011-access-safe-serving",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "011-access-safe-serving"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "011-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "011-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "002-foundation",
+      "decision": "split",
+      "newUnits": [
+        "002-scope-t001-t002",
+        "002-scope-t003-t004"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "002-result-and-checks",
+      "decision": "split",
+      "newUnits": [
+        "002-scope-t005-t006",
+        "002-scope-t007-t008-t009-t010"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "002-recovery-and-access",
+      "decision": "split",
+      "newUnits": [
+        "002-scope-t012",
+        "002-scope-t013",
+        "002-scope-t011-t014"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "002-acceptance-report",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "002-acceptance-report"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "007-identity-foundation",
+      "decision": "split",
+      "newUnits": [
+        "007-scope-t001-t002",
+        "007-scope-t003"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "007-descriptive-computation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "007-descriptive-computation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "007-acquisition-semantic-validity",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "007-acquisition-semantic-validity"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "007-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "007-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "008-mode-registration",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "008-mode-registration"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "008-locked-revision-exposure",
+      "decision": "split",
+      "newUnits": [
+        "008-scope-t004",
+        "008-scope-t005",
+        "008-scope-t003-t006"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "008-facade-rehydration-acceptance",
+      "decision": "split",
+      "newUnits": [
+        "008-scope-t008",
+        "008-scope-t007-t009",
+        "008-scope-t010-t011"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "012-foundation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "012-foundation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "012-admission",
+      "decision": "split",
+      "newUnits": [
+        "012-scope-t004",
+        "012-scope-t005",
+        "012-scope-t006",
+        "012-scope-t007",
+        "012-scope-t008"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "012-honest-stopping",
+      "decision": "split",
+      "newUnits": [
+        "012-scope-t009",
+        "012-scope-t010",
+        "012-scope-t011-t012"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "013-python-calculator",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "013-python-calculator"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "013-typescript-evidence-gate",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "013-typescript-evidence-gate"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "013-valid-comparison-fixtures",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "013-valid-comparison-fixtures"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "013-invalid-evaluation-fixtures",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "013-invalid-evaluation-fixtures"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "013-feature-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "013-feature-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "003-extension-foundation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "003-extension-foundation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "003-delegated-answer",
+      "decision": "split",
+      "newUnits": [
+        "003-scope-t004",
+        "003-scope-t005",
+        "003-scope-t006-t007"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "003-exposure-and-finalization",
+      "decision": "split",
+      "newUnits": [
+        "003-scope-t008",
+        "003-scope-t009",
+        "003-scope-t010"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "003-bounded-finalization",
+      "decision": "split",
+      "newUnits": [
+        "003-scope-t011-t012",
+        "003-scope-t013",
+        "003-scope-t014",
+        "003-scope-t015",
+        "003-scope-t016"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "019-catalog-records",
+      "decision": "split",
+      "newUnits": [
+        "019-scope-t001",
+        "019-scope-t002"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "019-legacy-import-index",
+      "decision": "split",
+      "newUnits": [
+        "019-bounded-import",
+        "019-committed-index",
+        "019-scope-t009",
+        "019-import-history",
+        "019-curation-events",
+        "019-access-first-search"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "019-output-retention",
+      "decision": "split",
+      "newUnits": [
+        "019-scope-t005",
+        "019-scope-t006"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "019-notebook-final-acceptance",
+      "decision": "split",
+      "newUnits": [
+        "019-scope-t007",
+        "019-scope-t008"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "023-attempt-history",
+      "decision": "split",
+      "newUnits": [
+        "023-scope-t001-t002",
+        "023-scope-t003-t004"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "023-repeat-orientation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "023-repeat-orientation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "023-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "023-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "020-durable-answer-cards",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "020-durable-answer-cards"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "020-ranked-search",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "020-ranked-search"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "020-curation-home",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "020-curation-home"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "020-automatic-recall",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "020-automatic-recall"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "020-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "020-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "014-source-core",
+      "decision": "split",
+      "newUnits": [
+        "014-scope-t001-t002",
+        "014-scope-t003-t004"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "014-registry-and-trust",
+      "decision": "split",
+      "newUnits": [
+        "014-scope-t005-t007",
+        "014-scope-t006-t008"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "014-acceptance-and-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "014-acceptance-and-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "015-warm-reuse",
+      "decision": "split",
+      "newUnits": [
+        "015-scope-t001-t002",
+        "015-scope-t003-t004"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "015-drift-refresh",
+      "decision": "split",
+      "newUnits": [
+        "015-scope-t005-t006",
+        "015-scope-t007-t008"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "015-feature-verification",
+      "decision": "split",
+      "newUnits": [
+        "015-scope-t009",
+        "015-scope-t010-t011"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "021-provider-foundation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "021-provider-foundation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "021-method-endorsement",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "021-method-endorsement"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "021-repeat-cost-correction",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "021-repeat-cost-correction"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "021-frozen-evaluation",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "021-frozen-evaluation"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "022-activation-and-reuse",
+      "decision": "split",
+      "newUnits": [
+        "022-scope-t001-t002-t003",
+        "022-scope-t004-t005",
+        "022-scope-t006",
+        "022-scope-t013-t014-t015"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "022-authority-lifecycle",
+      "decision": "split",
+      "newUnits": [
+        "022-scope-t007-t008",
+        "022-scope-t009-t010"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "022-inquiry-use",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "022-inquiry-use"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "004-source-and-first-inquiry",
+      "decision": "split",
+      "newUnits": [
+        "004-scope-t001-t002",
+        "004-scope-t003"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "004-reuse-and-invalidation",
+      "decision": "split",
+      "newUnits": [
+        "004-scope-t004",
+        "004-scope-t005",
+        "004-scope-t006"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "004-trust-and-final-acceptance",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "004-trust-and-final-acceptance"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "016-window-identity-comparison",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "016-window-identity-comparison"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "016-correction-dependencies",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "016-correction-dependencies"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "016-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "016-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "017-policy-review-gate",
+      "decision": "split",
+      "newUnits": [
+        "017-scope-t001-t002-t003",
+        "017-scope-t004-t005"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "017-decision-change-integration",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "017-decision-change-integration"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "017-acceptance-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "017-acceptance-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "005-window-comparison",
+      "decision": "split",
+      "newUnits": [
+        "005-scope-t001-t002",
+        "005-scope-t003-t004-t005"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "005-correction-and-use",
+      "decision": "split",
+      "newUnits": [
+        "005-scope-t006",
+        "005-scope-t007-t008-t009",
+        "005-scope-t010",
+        "005-scope-t011",
+        "005-scope-t012-t013"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "005-final-verification",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "005-final-verification"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "006-risk-difference-calculator",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "006-risk-difference-calculator"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "006-inferential-dispatch-and-guardrails",
+      "decision": "split",
+      "newUnits": [
+        "006-scope-t003",
+        "006-scope-t004-t005"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "006-fault-fixtures-and-browser-evidence",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "006-fault-fixtures-and-browser-evidence"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "018-complete-question-scoring",
+      "decision": "split",
+      "newUnits": [
+        "018-scope-t001",
+        "018-scope-t002",
+        "018-retrieval-scoring",
+        "018-skill-scoring",
+        "018-artifact-scoring",
+        "018-ledger-access-scoring"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "018-release-policy-and-comparison",
+      "decision": "split",
+      "newUnits": [
+        "018-scope-t004",
+        "018-scope-t005"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "018-live-acceptance-and-verification",
+      "decision": "split",
+      "newUnits": [
+        "018-scope-t006",
+        "018-scope-t007",
+        "018-scope-t008"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "99-convergence-audit",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "99-convergence-audit"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "99-integrated-paths",
+      "decision": "split",
+      "newUnits": [
+        "99-evidence-inquiry-integration",
+        "99-scope-t004",
+        "99-memory-skill-integration",
+        "99-recurrence-inference-integration"
+      ],
+      "reason": "Multiple separable behaviors now have independent checks."
+    },
+    {
+      "previousUnit": "99-runnable-quickstart",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "99-runnable-quickstart"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    },
+    {
+      "previousUnit": "99-release-handover",
+      "decision": "retain-coherent-boundary",
+      "newUnits": [
+        "99-release-handover"
+      ],
+      "reason": "Test fixtures and their implementation share one boundary; scoped checks prevent demanding later behavior."
+    }
+  ]
+}

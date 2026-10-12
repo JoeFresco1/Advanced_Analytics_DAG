@@ -1,0 +1,18 @@
+{
+  "reason": "Explicit task-owned generated evidence reports cannot also be frozen input contracts.",
+  "removed": {
+    "specs/004-source-memory/verification.md": "ba2dbcbc528b36aee7f9541243a070d3fc7739a3c43768613d3d977eb9cb02fd",
+    "specs/005-recurrence-and-use/verification.md": "a746fde089208ecf14a1b9ab531f086c254533068965574666bcadec39563130",
+    "specs/006-inferential-profile/verification.md": "bba2b941a35657d7d85149e0cb861eb61e6b490113b13d89d14d699fd4c1b877",
+    "specs/008-plan-exposure-history/verification.md": "97a2641ee2ee4eb6c8bd868cf6552b614c0cf68c0bf184caad616a26338cb294",
+    "specs/011-inspect-result-trace/verification.md": "1c8e584c3aa6f762e15e9913328c69026f8849aadba7d7da79aaba7dd853542b",
+    "specs/013-compare-predictive-value/verification.md": "654599317db7b21a86745f4676f99f3e99a445dcd21f2ce2899c0f34604390f1",
+    "specs/014-build-source-skill/verification.md": "9a81a0a0b468752ff1ee7222d2ca138f73fc0056e3cdfd82ee793c6902566f0c",
+    "specs/015-reuse-source-skill/verification.md": "ef0ccf62f9054fa47c715d89f89d314ed90a90f3c6a69c43e3d3ed99298364c8",
+    "specs/018-evaluate-analytics-product/verification.md": "c87c28a279047ab39fee97f09ed8faaf6add57e0b0d35e1331fdba0cc99d4ba1",
+    "specs/019-catalog-analytical-artifacts/verification.md": "b49d3c7e0644e4897eb5730c75645b94f6eb22df28377f14f2de831f5e48f954",
+    "specs/020-find-analytical-answers/verification.md": "7f090e6ae03ea9e66b741d7dd81fd385c62674741c26492d280e8796bb372088",
+    "specs/021-detect-skill-candidates/verification.md": "8cb084373f7b3b2fef16af7d1a34a73550aa292268327425416adb95b28f7c3e",
+    "specs/022-activate-reusable-skills/verification.md": "0b2ce816cfe79ba0458f08d36d57f5f3fc07b2a0e458f2fdab9bb31cc0115c9c"
+  }
+}

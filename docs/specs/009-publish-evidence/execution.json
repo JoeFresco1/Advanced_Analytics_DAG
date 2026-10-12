@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "009",
+  "requirementTasks": {
+    "FR-001": [
+      "T002",
+      "T004"
+    ],
+    "FR-002": [
+      "T002",
+      "T004"
+    ],
+    "FR-003": [
+      "T001",
+      "T002",
+      "T003"
+    ],
+    "FR-004": [
+      "T002",
+      "T003",
+      "T006"
+    ],
+    "FR-005": [
+      "T005",
+      "T006"
+    ],
+    "FR-006": [
+      "T005",
+      "T006"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T002",
+      "T006"
+    ],
+    "SC-002": [
+      "T002",
+      "T003",
+      "T006"
+    ],
+    "SC-003": [
+      "T005",
+      "T006"
+    ],
+    "SC-004": [
+      "T004",
+      "T005",
+      "T006"
+    ],
+    "SC-005": [
+      "T004",
+      "T006"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T002"
+    ],
+    "EC-002": [
+      "T004"
+    ],
+    "EC-003": [
+      "T002",
+      "T003",
+      "T006"
+    ],
+    "EC-004": [
+      "T005"
+    ],
+    "EC-005": [
+      "T005",
+      "T006"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001",
+      "title": "T001: Implement the shared scope-aware append-only/CAS persistence primitive in `src/analytics/store.ts`: separate run/pr",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/store.ts",
+        "src/analytics/acceptance/009.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [US1] Implement the shared scope-aware append-only/CAS persistence primitive in `src/analytics/store.ts`: separate run/project sidecar roots and writer locks, immutable record/artifact/commit writes, canonical request digest, monotone revision chain, expected-revision arbitration, and atomic manifest-pointer visibility. Keep neutral run storage untouched. **Depends on** graph prerequisites 001 and 18-bootstrap.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-scope-t001: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "009-scope-t001",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t002",
+      "title": "T002: Implement `RunManifestV1` in `src/analytics/store.ts`; implement `commitEvidence` and `recoverEvidence` in `src/ana",
+      "taskIds": [
+        "T002"
+      ],
+      "dependsOn": [
+        "scope-t001"
+      ],
+      "files": [
+        "src/analytics/store.ts",
+        "src/analytics/publication.ts",
+        "src/analytics/acceptance/009.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T002 [US1] Implement `RunManifestV1` in `src/analytics/store.ts`; implement `commitEvidence` and `recoverEvidence` in `src/analytics/publication.ts` over the shared primitive. Reject missing or altered declared outputs and mismatched exact Plan/program/environment/source/attempt/execution bindings; retain failed execution evidence. Recheck the principal's current run-commit write authorization at the publication boundary; reject a missing/denied grant and a grant revoked after staging without advancing the manifest or exposing staged records. Reject same-ID changed-content reuse. Add run-scope fixtures in `src/analytics/acceptance/009.test.ts` named `f009-t01-zero-exit-missing-output`, `f009-altered-output-digest`, `f009-t02-check-result-older-artifact`, `f009-t13-crash-before-manifest`, `f009-t14-run-writers-same-revision`, `f009-t52-commit-ack-lost`, `f009-run-scope-commit-id-changed-content-rejected`, `f009-run-scope-write-denied-at-commit`, and `f009-run-scope-write-revoked-before-commit`. Assert T02's old check is rejected for its older artifact subject and never reused; denied, revoked, and collision rejections leave the committed head unchanged. **Depends on** T001.\n\n**Unit checkpoint**: The `run-evidence` unit compiles and its `run-scope` tests execute directly from `009.test.ts`, including current write-grant denial and revocation at commit time; those cases assert no new visible revision. It does not defer store race/recovery or access checks to a later unit.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-scope-t002: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "009-scope-t002",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-memory",
+      "title": "Implement project-scoped commit and recovery APIs",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t002"
+      ],
+      "files": [
+        "src/analytics/store.ts",
+        "src/analytics/publication.ts",
+        "src/analytics/acceptance/009.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 [US2] Implement `ProjectManifestV1`, `ProjectCommitRequestV1`, `ProjectCommitResultV1`, `commitProjectMemory` and `recoverProjectMemory` in `src/analytics/store.ts` and `src/analytics/publication.ts`, reusing the shared scoped CAS primitive. Recheck current project-memory write authorization and access to every referenced committed run record before publication; reject missing/denied write access, a write grant revoked after staging, or denied/revoked access to referenced evidence without advancing the project head. Add `project-scope` fixtures in `src/analytics/acceptance/009.test.ts` for concurrent writers, pre/post-commit interruption and recovery, lost acknowledgement, same-ID idempotent replay, same-ID changed-content rejection, uncommitted cross-run reference rejection, `f009-project-scope-write-denied-at-commit`, `f009-project-scope-write-revoked-before-commit`, `f009-project-scope-reference-access-denied`, and `f009-project-scope-reference-access-revoked-before-commit`. **Depends on** T002.\n\n**Unit checkpoint**: The `project-memory` unit compiles and executes its `project-scope` tests by name from `009.test.ts` before catalog consumers arrive, including current write-grant denial/revocation and referenced-run access denial/revocation; rejected writes leave the project head unchanged.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-project-memory: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "009-project-memory",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: Implement `StageRequestV1`, `StageResultV1`, and `executeStageV1` in `src/analytics/stages.ts` using the node-001 r",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "project-memory"
+      ],
+      "files": [
+        "src/analytics/stages.ts",
+        "src/analytics/acceptance/009.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 [US1] Implement `StageRequestV1`, `StageResultV1`, and `executeStageV1` in `src/analytics/stages.ts` using the node-001 runner adapter only. Validate execution/attempt/Plan/input/program/environment refs, declared output schema/path/digest and process result; record the execution before publication and return a bounded result without analytical-result retries. Add the reused earlier-execution-path/different-attempt fixture to `src/analytics/acceptance/009.test.ts`. **Depends on** T003.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-scope-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "009-scope-t004",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Implement durable reproduction assessment and artifact availability handling in `src/analytics/publication.ts`: rec",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/publication.ts",
+        "src/analytics/acceptance/009.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 [US2] Implement durable reproduction assessment and artifact availability handling in `src/analytics/publication.ts`: record exact-byte, canonical-table, or numeric-tolerance comparison with the canonical reproduction state; preserve code/Python/dependency-lock/environment provenance; retain an access-safe historical record when availability becomes redacted or unavailable. Add `stage-and-comparison` fixtures in `src/analytics/acceptance/009.test.ts` for T15 serialization change with equal values, a real numeric mismatch, all four reproduction states, and T22 post-publication redaction. **Depends on** T004.\n\n**Unit checkpoint**: The `stage-and-comparison` unit compiles and runs its stage and comparison fixtures independently.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-scope-t005: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "009-scope-t005",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "final-acceptance",
+      "title": "Verify the full 009 fixture matrix and record evidence",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/acceptance/009.test.ts",
+        "specs/009-publish-evidence/verification.md"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T006 [US1] [US2] Complete the integrated synthetic acceptance matrix in `src/analytics/acceptance/009.test.ts` for run and project scope, exact bindings, zero-exit/missing output, altered evidence, T01/T02/T13/T14/T15/T22/T52, both race paths, same-ID replay and changed-content collision, pre-commit and post-commit crash recovery, cross-run reference rejection, current run/project write authorization with denied and revoked grants, denied and revoked access to referenced run evidence, environment provenance, semantic comparison, and redaction. Run the focused 009 test file and the full `pnpm test` acceptance command; write `specs/009-publish-evidence/verification.md` with actual command results and one evidence entry for every FR-001–FR-006 and SC-001–SC-005. Keep negative/null/failure outcomes intact; do not change a threshold, expected answer, or acceptance requirement. **Depends on** T001–T005.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:009-final-acceptance: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "node",
+          "args": [
+            "--import",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/009.test.ts"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

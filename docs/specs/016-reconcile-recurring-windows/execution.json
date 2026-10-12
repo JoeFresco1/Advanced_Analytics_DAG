@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "016",
+  "requirementTasks": {
+    "FR-001": [
+      "T004",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "FR-002": [
+      "T002",
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "FR-003": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "FR-004": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "FR-005": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "FR-006": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "FR-007": [
+      "T003",
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "SC-002": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "SC-003": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "SC-004": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "SC-005": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "SC-006": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "SC-007": [
+      "T003",
+      "T004",
+      "T007"
+    ],
+    "SC-008": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "SC-009": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "EC-002": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "EC-003": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ],
+    "EC-004": [
+      "T005",
+      "T006",
+      "T008",
+      "T007"
+    ]
+  },
+  "units": [
+    {
+      "id": "window-identity-comparison",
+      "title": "Implement immutable window identity and period comparison",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/016.test.ts",
+        "src/analytics/recurrence.ts"
+      ],
+      "instructions": "Implement T001/T002 fixture and immutable logical-window/version/inspection-policy types, plus the identity/version portion of T004. Validate identity completeness and exact immutable refs with passing local validator tests. Defer pair-comparison, previous-window orientation and its assertions to window-comparison. Add real-entry-point passing tests named scope:016-window-identity-comparison:; preserve all existing tests and product requirements.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "016-window-identity-comparison",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "window-comparison",
+      "title": "window comparison",
+      "taskIds": [
+        "T003",
+        "T004"
+      ],
+      "dependsOn": [
+        "window-identity-comparison"
+      ],
+      "files": [
+        "src/analytics/acceptance/016.test.ts",
+        "src/analytics/recurrence.ts"
+      ],
+      "instructions": "Assigned boundary: T009. Implement T003/T004 pair-comparison and prior-window orientation in recurrence.ts using the completed immutable identity types. Cover comparable, incomparable and unassessed states, same-schema meaning drift, unknown metadata, exact reason refs and preserved versions through real provider calls. T004 identity behavior already established must remain unchanged. Preserve existing tests and frozen product requirements. Add passing real-entry-point tests named scope:016-window-comparison: with a valid control and each listed rejection. Do not implement later boundaries.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "016-window-comparison",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "impact-traversal",
+      "title": "impact traversal",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "window-comparison"
+      ],
+      "files": [
+        "src/analytics/acceptance/016.test.ts",
+        "src/analytics/recurrence.ts",
+        "src/analytics/invalidation.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 Implement cycle-safe traversal of all nine canonical impact categories and append-only impact commits in src/analytics/invalidation.ts. Consume synthetic committed dependency records and 009; preserve historical nodes, exact reasons and revision refs. Test all categories, cycles, two corrections and commit replay/failure through this owned production entry point. Do not require recurrence hooks or the later 005 demo.\n\nRead docs/build/task-handoffs.json entry 016-impact-traversal and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:016-impact-traversal: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/016-reconcile-recurring-windows/unit-verification/impact-traversal.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "016-impact-traversal",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005-t008",
+      "title": "T005 + T008: [US2] Add synthetic correction, provisional-report completeness/lateness, event/processing-time, repeated",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "impact-traversal"
+      ],
+      "files": [
+        "src/analytics/acceptance/016.test.ts",
+        "src/analytics/recurrence.ts",
+        "src/analytics/invalidation.ts"
+      ],
+      "instructions": "Implement original T008 production recurrence orientation hooks for inspection-look recording under the declared registry and exact available source/comparison evidence. Preserve event/processing time and append-only look revisions. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:016-scope-t005-t008: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "016-scope-t005-t008",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recurrence-fault-acceptance",
+      "title": "recurrence fault acceptance",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t005-t008"
+      ],
+      "files": [
+        "src/analytics/acceptance/016.test.ts",
+        "src/analytics/recurrence.ts",
+        "src/analytics/invalidation.ts"
+      ],
+      "instructions": "Implement original T005 recurrence acceptance for corrections, provisional completeness/lateness, event/processing time, repeated looks, registry lifecycle and answer/trace display through completed production hooks. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:016-recurrence-fault-acceptance: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "016-recurrence-fault-acceptance",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Verify recurrence behavior and record evidence",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "recurrence-fault-acceptance"
+      ],
+      "files": [
+        "specs/016-reconcile-recurring-windows/verification.md",
+        "src/analytics/acceptance/016.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Record every FR/SC and edge-case result, command outcome, evidence refs, and fixture limitations in `specs/016-reconcile-recurring-windows/verification.md` after the declared checks pass.\n\nRead docs/build/task-handoffs.json entry 016-acceptance-verification and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:016-acceptance-verification: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/016-reconcile-recurring-windows/unit-verification/acceptance-verification.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "node",
+            "--import",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/016.test.ts"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "run",
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

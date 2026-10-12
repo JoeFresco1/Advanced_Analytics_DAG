@@ -1,0 +1,1191 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "003",
+  "requirementTasks": {
+    "FR-001": [
+      "T004",
+      "T005",
+      "T010",
+      "T015",
+      "T023",
+      "T024",
+      "T026",
+      "T029",
+      "T031",
+      "T032"
+    ],
+    "FR-002": [
+      "T004",
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T023",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "FR-003": [
+      "T008",
+      "T010",
+      "T014",
+      "T025",
+      "T026",
+      "T029",
+      "T030"
+    ],
+    "FR-004": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "FR-005": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "FR-006": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "FR-007": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "FR-008": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T015",
+      "T026",
+      "T027",
+      "T028",
+      "T031",
+      "T032"
+    ],
+    "FR-009": [
+      "T011",
+      "T026"
+    ],
+    "FR-010": [
+      "T011",
+      "T012",
+      "T025",
+      "T026"
+    ],
+    "FR-011": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T015",
+      "T026",
+      "T027",
+      "T028",
+      "T031",
+      "T032"
+    ],
+    "FR-012": [
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T013",
+      "T026"
+    ],
+    "FR-013": [
+      "T009",
+      "T010",
+      "T014",
+      "T015",
+      "T024",
+      "T026",
+      "T029",
+      "T030",
+      "T031",
+      "T032"
+    ],
+    "FR-014": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T012",
+      "T026",
+      "T027",
+      "T028"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T015",
+      "T026",
+      "T031",
+      "T032"
+    ],
+    "SC-002": [
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T013",
+      "T026"
+    ],
+    "SC-003": [
+      "T008",
+      "T010",
+      "T014",
+      "T026",
+      "T029",
+      "T030"
+    ],
+    "SC-004": [
+      "T011",
+      "T012",
+      "T013",
+      "T026"
+    ],
+    "SC-005": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T013",
+      "T026",
+      "T027",
+      "T028"
+    ],
+    "SC-006": [
+      "T004",
+      "T005",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T010",
+      "T015",
+      "T023",
+      "T024",
+      "T025",
+      "T026",
+      "T029",
+      "T031",
+      "T032"
+    ],
+    "SC-007": [
+      "T011",
+      "T012",
+      "T013",
+      "T026"
+    ],
+    "SC-008": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T015",
+      "T026",
+      "T027",
+      "T028",
+      "T031",
+      "T032"
+    ],
+    "SC-009": [
+      "T010",
+      "T013",
+      "T015",
+      "T026",
+      "T029",
+      "T031",
+      "T032"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T013"
+    ],
+    "EC-002": [
+      "T006",
+      "T017",
+      "T018",
+      "T019",
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T027",
+      "T028"
+    ],
+    "EC-003": [
+      "T008",
+      "T010",
+      "T014",
+      "T029",
+      "T030"
+    ],
+    "EC-004": [
+      "T010",
+      "T029"
+    ],
+    "EC-005": [
+      "T007",
+      "T020",
+      "T021",
+      "T022",
+      "T015",
+      "T031",
+      "T032"
+    ],
+    "EC-006": [
+      "T011",
+      "T012"
+    ],
+    "EC-007": [
+      "T009",
+      "T010",
+      "T014",
+      "T015",
+      "T029",
+      "T030",
+      "T031",
+      "T032"
+    ]
+  },
+  "units": [
+    {
+      "id": "extension-foundation",
+      "title": "Define the worker boundary and fixed typed extension registry",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/extensions.ts",
+        "src/analytics/worker.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [P] Define AnalyticsExtensionV1, typed command/context/result contracts, lifecycle hook types, the fixed module/export allowlist, capability manifest, deterministic dependency ordering, and validation errors in src/analytics/extensions.ts. Only absence of the exact optional module may become an unavailable capability; reject provider faults, missing dependencies, duplicate commands, invalid schemas, and cycles.\n\n- [ ] T002 [P] Define the worker invocation context and typed plan/code/check/report proposal envelope in src/analytics/worker.ts. Preserve original question, permitted context refs, exposure, remaining budget, capability data, model/harness settings, context digest, and attribution; do not treat opaque worker values as authoritative.\n\n- [ ] T003 Add synthetic registry and worker-boundary fixtures in src/analytics/acceptance/003.test.ts after T001 and T002. Cover valid registration, exact missing optional provider, transitive/present import failure, missing dependency, duplicate extension/command, invalid command schema, cycle, and unbound worker-authored numeric output.\n\n**Checkpoint**: Registry capabilities and worker proposals are typed, deterministic, access-scoped, and independently testable before CLI dispatch.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:003-extension-foundation: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-extension-foundation",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: Implement question intake and orientation in src/analytics/controller.ts. Resolve the principal and grants before c",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "extension-foundation"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 [US1] Implement question intake and orientation in src/analytics/controller.ts. Resolve the principal and grants before constructing context; persist a Question record retaining original wording, interpretation, intended use, assumptions, and unresolved definitions; invoke the real feature 008 registration/lock and exposure APIs on the ordinary delegated path; durably record any retrieved or observed outcome exposure before supplying that material to the worker; and register/lock the predictive Plan with all required fields before directed execution. Preserve `exposure_unknown` for unknown history and `exploratory`/`outcome_informed` for early or post-observation work as applicable; none can receive `planned_confirmatory` without a locked plan and declared inspection rule preceding relevant outcome exposure.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:003-scope-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t004",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-contract",
+      "title": "runtime contract",
+      "taskIds": [
+        "T023"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/runtime.ts",
+        "docs/build/003-runtime-handoff.md",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T023 Implement the feature-local DelegatedRuntimeServicesV1 and DelegatedInquiryRequestV1 contracts plus validateDelegatedRuntimeServicesV1 in src/analytics/runtime.ts. Model trusted principal/source resolution, attributed worker invocation, pinned stage execution, committed reads/publication, viewer location, clock and cancellation as explicit typed services using the existing 001/008/009/012/013 and AnalyticsExtensionContextV1 types. Export a validation function that accepts a complete injected service set and rejects missing services or worker-supplied grants. Document the exact runtime service construction and next consumers in docs/build/003-runtime-handoff.md. No stub inquiry executor, canned answer, public command change, or new shared wire field. This boundary is independently testable with injected synthetic services; production construction belongs to runtime-composition.\n\nRead docs/build/task-handoffs.json entry 003-runtime-contract and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-runtime-contract: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/runtime-contract.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-runtime-contract",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "worker-invocation",
+      "title": "worker invocation",
+      "taskIds": [
+        "T024"
+      ],
+      "dependsOn": [
+        "runtime-contract"
+      ],
+      "files": [
+        "src/analytics/worker.ts",
+        "src/analytics/runtime.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T024 Implement invokeInquiryWorkerV1 in src/analytics/worker.ts using the runtime service contract and existing worker-envelope validators. Execute the configured noninteractive worker through an injected argument-vector transport with a production adapter; send the exact attributed context/requested-output digest and validate plan/code/check/report envelopes. Preserve process failure versus valid negative proposal, timeout/cancellation and unavailable telemetry. Never calculate authoritative analytical values or grant access. Test a valid envelope, malformed/unbound output, transport failure, timeout and context tampering; use synthetic transports in automated tests, leaving the live model journey to final acceptance.\n\nRead docs/build/task-handoffs.json entry 003-worker-invocation and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-worker-invocation: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/worker-invocation.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-worker-invocation",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t011-t012",
+      "title": "T011 / T012: Integrate the feature 012 budget and terminal-outcome resolver in src/analytics/controller.ts. Enforce the 15-minut",
+      "taskIds": [
+        "T011",
+        "T012"
+      ],
+      "dependsOn": [
+        "worker-invocation"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T011 [US3] Integrate the feature 012 budget and terminal-outcome resolver in src/analytics/controller.ts. Enforce the 15-minute scheduling allowance, 12 invocations, four optional branches, three Plan revisions, and five-minute command timeout; reserve mandatory checks/reporting, distinguish scheduling cutoff from tested cancellation, and report unavailable/estimated cost accurately.\n\n- [ ] T012 [US3] Add acceptance fixtures in src/analytics/acceptance/003.test.ts for all six canonical outcomes, a valid imprecise internal answer, unresolved user definition, budget stop, required execution failure, process-exit-code changes, valid negative no-retry behavior, exhausted optional work, and missing cost telemetry.\n\n**Checkpoint**: Bounded inquiries stop with the canonical evidence-based outcome and a readable partial answer without consuming reserved checks/finalization capacity.\n\nRead docs/build/task-handoffs.json entry 003-scope-t011-t012 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t011-t012: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t011-t012.md. The coordinator alone amends the graph.\nExplicit handoff: export assessDelegatedInquiryBudgetV1 from src/analytics/controller.ts. Test this controller budget/outcome entry point with injected committed facts and real 012 budget/outcome services. Do not require the later runtime or CLI to exist for these focused tests. Full stopping journeys run after runtime composition.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t011-t012",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifecycle-dispatch",
+      "title": "lifecycle dispatch",
+      "taskIds": [
+        "T025"
+      ],
+      "dependsOn": [
+        "scope-t011-t012"
+      ],
+      "files": [
+        "src/analytics/extensions.ts",
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T025 Implement dispatchAnalyticsCommandV1 and dispatchAnalyticsLifecycleV1 in src/analytics/extensions.ts, and controller context-service construction in src/analytics/controller.ts. Consume loadAnalyticsExtensionsV1 and its fixed registry; enforce schema/grant checks before command invocation, dependency-ordered hooks, stable event IDs, explicit optional absence and required-hook failure without completion. Bind publishRun/publishProject/recovery to the real 009 scope services. Exercise a real injected provider through these production dispatch entry points, not a helper-only simulation. Do not wait for optional future provider files or edit their fixed schemas.\n\nRead docs/build/task-handoffs.json entry 003-lifecycle-dispatch and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-lifecycle-dispatch: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/lifecycle-dispatch.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-lifecycle-dispatch",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-admission",
+      "title": "stage admission",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "lifecycle-dispatch"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 Implement admitInquiryStageV1 in src/analytics/controller.ts. Consume orientInquiryV1, worker envelope validation, the runtime service contract, feature-012 admitProposalV1 and the registered budget. Admit one proposal only after its predecessor settles; invoke feature-009 executeStageV1 for pinned computation/check commands with generic retries disabled. Carry Question/Plan and program/environment/source refs. Test valid stage invocation, changed pins, overlapping admission, denied proposal and execution failure retaining evidence. Downstream numeric comparison, lineage and report composition have separate owners.\n\nRead docs/build/task-handoffs.json entry 003-stage-admission and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-stage-admission: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/stage-admission.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-stage-admission",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-lineage",
+      "title": "stage lineage",
+      "taskIds": [
+        "T017"
+      ],
+      "dependsOn": [
+        "stage-admission"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "T017: Implement bindInquiryLineageV1 transformation/source binding only. Consume 007 join-evidence-correction. Resolve the actual committed declaration, manifest, execution, artifact and source refs. Record exact declared/observed join identity, mappings, exclusions, row/entity counts and cutoffs; absent or mismatched evidence is unavailable/unsupported without deleting the execution. Cover real committed valid join, foreign or swapped ref, multiplied entities, unknown historical join, altered artifact and mismatched observed join. Exact admitted denominator-definition/unit/scope binding is owned by the next measurement-binding unit; do not manufacture it here. Add real-entry-point passing tests named scope:003-stage-lineage:; preserve all existing tests and product requirements.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-stage-lineage",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "measurement-binding",
+      "title": "measurement binding",
+      "taskIds": [
+        "T027"
+      ],
+      "dependsOn": [
+        "stage-lineage"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary: T027. Complete bindInquiryLineageV1 measurement binding against the admitted pinned measurement request and actual authoritative descriptive/predictive outputs. Require exact denominator definition ref, row/entity count basis, unit, population/period/group and declared measurement scope, plus committed artifact identity; matching totals alone are insufficient. Reject wrong definition, shifted scope, wrong unit/count basis and worker-authored fabricated diagnostics while retaining the execution. Include a genuinely valid real-calculator control and source-to-report trace. This unit jointly completes the original T017 obligation; do not change its final CLI fault checks. Preserve existing tests and frozen product requirements. Add passing real-entry-point tests named scope:003-measurement-binding: with a valid control and each listed rejection. Do not implement later boundaries.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-measurement-binding",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prediction-checks",
+      "title": "prediction checks",
+      "taskIds": [
+        "T018"
+      ],
+      "dependsOn": [
+        "measurement-binding"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "T018 comparison portion: Implement evaluateInquiryPredictionV1 authoritative 013 computation/result binding against the admitted execution, validated lineage and pinned program/environment. Test a real valid and null comparison, exact Result refs, locked delta/interval classification and no favorable-result retry. Required integrity checks are a separate next boundary; this intermediate comparison cannot claim supported presentation before that boundary completes. Add real-entry-point passing tests named scope:003-prediction-checks:; preserve all existing tests and product requirements.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-prediction-checks",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prediction-integrity-checks",
+      "title": "prediction integrity checks",
+      "taskIds": [
+        "T028"
+      ],
+      "dependsOn": [
+        "prediction-checks"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary: T028. Complete original T018 by binding and invoking the existing 010 integrity-check producers for split/customer overlap, feature availability, label maturity and training-only preparation. Bind every observation to exact stage/execution/Result/code/policy refs. Test valid controls and each failed required check through evaluateInquiryPredictionV1; retain all failures and make supported presentation ineligible. Consume authoritative comparison results from prediction-checks without recomputing them in TypeScript. Preserve existing tests and frozen product requirements. Add passing real-entry-point tests named scope:003-prediction-integrity-checks: with a valid control and each listed rejection. Do not implement later boundaries.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-prediction-integrity-checks",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "report-binding",
+      "title": "report binding",
+      "taskIds": [
+        "T019"
+      ],
+      "dependsOn": [
+        "prediction-integrity-checks"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T019 Implement bindInquiryReportV1 in src/analytics/controller.ts. Consume the committed Result and required-check records; bind every report assertion to exact Result, denominator, unit and scope via existing report/Claim services. Reject swapped values and opaque worker-only numbers; preserve unsupported and negative outcomes. Test exact valid bindings and tampered value/unit/scope through the production report binding entry point.\n\nRead docs/build/task-handoffs.json entry 003-report-binding and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-report-binding: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/report-binding.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-report-binding",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t008",
+      "title": "T008: Preserve exploration, exposure, and plan revision links in src/analytics/controller.ts and src/analytics/worker.ts.",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "report-binding"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/worker.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T008 [US2] Preserve exploration, exposure, and plan revision links in src/analytics/controller.ts and src/analytics/worker.ts. Exercise the ordinary observation path through feature 008's real exposure and plan-classification APIs: persist outcome exposure before delivering observed results to the worker; keep declared search within the locked plan; and make each post-observation substantive change a linked Plan revision with `outcome_informed` interpretation without erasing or relabeling earlier plans or exposure. Unknown history remains `exposure_unknown`; no unknown or early exposure is labeled `planned_confirmatory`.\n\nRead docs/build/task-handoffs.json entry 003-scope-t008 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t008: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t008.md. The coordinator alone amends the graph.\nExplicit handoff: export observeInquiryContextV1 from src/analytics/controller.ts. Bind observed outcome material to the real 008 exposure APIs before context delivery; preserve the accepted orientation behavior.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t008",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t009",
+      "title": "T009: Build replacement-worker context in src/analytics/worker.ts from prior plans, results, policy, exposure, source/acc",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t008"
+      ],
+      "files": [
+        "src/analytics/worker.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 [US2] Build replacement-worker context in src/analytics/worker.ts from prior plans, results, policy, exposure, source/access scope, and remaining allowance. Through the normal controller context-supply path, durably record required feature 008 exposure before delivering exposed prior records; preserve `exposure_unknown` when history or access is uncertain and never turn it into `planned_confirmatory`; record the supplied context digest; and ensure a shortened summary cannot drop authoritative exposure or reset the budget.\n\nRead docs/build/task-handoffs.json entry 003-scope-t009 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t009: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t009.md. The coordinator alone amends the graph.\nExplicit handoff: export buildReplacementWorkerContextV1 from src/analytics/worker.ts. Consume accepted context/exposure services without invoking later runtime composition.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t009",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t010",
+      "title": "T010: Implement replayable inquiry finalization and exact-check invalidation in src/analytics/controller.ts and src/analy",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "scope-t009"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Implement original T010 durable terminal intent, required memory writes and completion acknowledgement with stable IDs. Replay identical payloads and resume missing writes; required-hook/write failure keeps the inquiry incomplete. Question persistence checks remain with the downstream verifier. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-scope-t010: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t010",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finalization-invalidation",
+      "title": "finalization invalidation",
+      "taskIds": [
+        "T029"
+      ],
+      "dependsOn": [
+        "scope-t010"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Complete the check-invalidation portion of original T010: exact code or policy revision makes the earlier check stale for the changed execution. Retain the old check and execution; exercise real 010 check identity and ordinary controller reload. This supplements T010; do not rebuild finalization. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-finalization-invalidation: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-finalization-invalidation",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-composition",
+      "title": "runtime composition",
+      "taskIds": [
+        "T026"
+      ],
+      "dependsOn": [
+        "finalization-invalidation"
+      ],
+      "files": [
+        "src/analytics/runtime.ts",
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T026 Implement createDelegatedRuntimeV1 and runDelegatedInquiryV1 in src/analytics/runtime.ts after the worker, controller stages, budget, exposure and finalization boundaries pass. Construct actual services for the frozen registered synthetic/local source form: resolve principal/current grants through 001 before source reads; resolve source IDs against a trusted project fixture registry rather than arbitrary paths or worker-supplied authority; use existing fixture programs and authoritative 013 computation. Obtain attributed semantic interpretation and Plan proposals from the worker adapter, validate and lock through 008, run admitted stages, invoke registered extension hooks and durable finalization. Use feature-011 committed answer/trace lookup and record lookup location so inspection works after process restart. Missing configured identity, fixture or capability yields an explicit unavailable/denied result, never invented setup or a canned answer. Test the complete runtime with synthetic transport and real persistence; CLI token parsing remains T005.\n\nRead docs/build/task-handoffs.json entry 003-runtime-composition and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-runtime-composition: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/runtime-composition.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-runtime-composition",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Implement the public dag analytics ask, answer show, and trace commands in src/analytics/cli.ts, and export `analyt",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "runtime-composition"
+      ],
+      "files": [
+        "src/analytics/cli.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 [US1] Implement the public dag analytics ask, answer show, and trace commands in src/analytics/cli.ts, and export `analyticsCmd(argv, cmd)` for the `analytics` top-level trampoline already registered by 001 in src/commands/index.ts; do not edit that shared registry. Parse the frozen nested command forms, invoke the controller and feature 011 viewer route, return the inquiry ID, and require no user-authored YAML or graph-node selection. T007 verifies that the live `dag analytics ask` dispatcher reaches this CLI handler.\n\nRead docs/build/task-handoffs.json entry 003-scope-t005 and its referenced source interfaces. Consume createDelegatedRuntimeV1/runDelegatedInquiryV1 from runtime.ts; the runtime now exists. Implement frozen CLI parsing and viewer routing only. Delegate other registered extension commands to dispatchAnalyticsCommandV1.\nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t005: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t005.md. The coordinator alone amends the graph.\nExplicit handoff: export analyticsCmd from src/analytics/cli.ts. Consume the completed runtime composition and dispatch services; do not rebuild the executor.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t005",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-comparison-integration",
+      "title": "cli comparison integration",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Implement production CLI/dispatcher meaningful-feature and null-feature integration fixtures in src/analytics/acceptance/003.test.ts after runtime composition and T005. Invoke the frozen question-and-fixture form without YAML/node selection. Verify estimate, interval, delta, one fixed scope, Question/Plan bindings and workflow-withheld; access isolation not enforced.\n\nRead docs/build/task-handoffs.json entry 003-cli-comparison-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-cli-comparison-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/cli-comparison-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-cli-comparison-integration",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-lineage-integration",
+      "title": "cli lineage integration",
+      "taskIds": [
+        "T020"
+      ],
+      "dependsOn": [
+        "cli-comparison-integration"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T020 Add production CLI/dispatcher fixtures for denominator multiplication/shift and customer/split overlap in src/analytics/acceptance/003.test.ts. Verify each required integrity failure retains committed evidence and blocks supported presentation with the exact denominator/lineage trace.\n\nRead docs/build/task-handoffs.json entry 003-cli-lineage-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-cli-lineage-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/cli-lineage-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-cli-lineage-integration",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-temporal-integration",
+      "title": "cli temporal integration",
+      "taskIds": [
+        "T021"
+      ],
+      "dependsOn": [
+        "cli-lineage-integration"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T021 Add production CLI/dispatcher fixtures for future features, immature labels and evaluation-fitted preparation in src/analytics/acceptance/003.test.ts. Inspect the retained failed-check trace and verify each affected claim is ineligible for supported presentation.\n\nRead docs/build/task-handoffs.json entry 003-cli-temporal-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-cli-temporal-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/cli-temporal-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-cli-temporal-integration",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-report-integration",
+      "title": "cli report integration",
+      "taskIds": [
+        "T022"
+      ],
+      "dependsOn": [
+        "cli-temporal-integration"
+      ],
+      "files": [
+        "src/analytics/controller.ts",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T022 Add the swapped-value production CLI fixture in src/analytics/acceptance/003.test.ts. Verify the reported number, Result, denominator, unit and scope are exact and an opaque/swapped worker value cannot become supported.\n\nRead docs/build/task-handoffs.json entry 003-cli-report-integration and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-cli-report-integration: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/cli-report-integration.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-cli-report-integration",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t013",
+      "title": "T013: Complete three recorded demo-allowance runs and source-to-answer trace fixtures in src/analytics/acceptance/003.tes",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "cli-report-integration"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T013 Complete three recorded demo-allowance runs and source-to-answer trace fixtures in src/analytics/acceptance/003.test.ts. Verify every authoritative displayed value reaches its fixed source version, program digest, environment, Execution, Result, Plan, and transformation; preserve the stop or support state and do not exceed invocation/time limits.\n\nRead docs/build/task-handoffs.json entry 003-scope-t013 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t013: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t013.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t013",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t014",
+      "title": "T014: Complete extension lifecycle and feature 008 integration acceptance in src/analytics/acceptance/003.test.ts. Assert",
+      "taskIds": [
+        "T014"
+      ],
+      "dependsOn": [
+        "scope-t013"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Complete original T014 extension lifecycle integration: stable dependency-ordered hooks, ledger assessment before ranking, one ledger orientation match, optional-unavailable versus required-absent providers, duplicate commands/cycles/present-provider errors, and required-hook failure preventing completion. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-scope-t014: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t014",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exposure-integration-acceptance",
+      "title": "exposure integration acceptance",
+      "taskIds": [
+        "T030"
+      ],
+      "dependsOn": [
+        "scope-t014"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Complete original T014 exposure integration through the ordinary controller and real 008 APIs: context and observation exposure committed before delivery; exploratory/unknown labels remain honest; post-observation substantive changes create outcome_informed linked revisions without relabeling earlier history. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-exposure-integration-acceptance: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-exposure-integration-acceptance",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t015",
+      "title": "T015: Add explicit SC-001/SC-006/SC-008 gap assertions in src/analytics/acceptance/003.test.ts. Include a boundary predic",
+      "taskIds": [
+        "T015"
+      ],
+      "dependsOn": [
+        "exposure-integration-acceptance"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Complete the original T015 locked predictive delta boundary through real CLI: lower-bound equality is inconclusive; upper-bound equality is meaningful_improvement_excluded. Report the exact estimate, interval, delta and fixed scope. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-scope-t015: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-scope-t015",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-roundtrip-acceptance",
+      "title": "question roundtrip acceptance",
+      "taskIds": [
+        "T031"
+      ],
+      "dependsOn": [
+        "scope-t015"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Verify original Question fields survive the complete production lifecycle and inspection; no report interpretation changes here. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-question-roundtrip-acceptance: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-question-roundtrip-acceptance",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "report-honesty-acceptance",
+      "title": "report honesty acceptance",
+      "taskIds": [
+        "T032"
+      ],
+      "dependsOn": [
+        "question-roundtrip-acceptance"
+      ],
+      "files": [
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Complete original T015 report honesty: opaque worker-only values appear zero times as supported values; first-screen answer distinguishes prediction, causal influence and non-improvement, and states that non-improvement does not prove no relationship. Inspect the real committed answer/viewer. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:003-report-honesty-acceptance: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "003-report-honesty-acceptance",
+            "src/analytics/acceptance/003.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t016",
+      "title": "T016: Run pnpm test, record the live synthetic demo with gpt-6-luna/xhigh as described in specs/003-delegated-inquiry/qui",
+      "taskIds": [
+        "T016"
+      ],
+      "dependsOn": [
+        "report-honesty-acceptance"
+      ],
+      "files": [
+        "specs/003-delegated-inquiry/verification.md",
+        "src/analytics/acceptance/003.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T016 Run pnpm test, record the live synthetic demo with gpt-6-luna/xhigh as described in specs/003-delegated-inquiry/quickstart.md, and write specs/003-delegated-inquiry/verification.md with actual evidence for every FR-001..FR-014, SC-001..SC-009, and EC-001..EC-007. Report any failure or limitation directly; do not alter accepted specs, checklists, policy thresholds, or reference answers.\n\nRead docs/build/task-handoffs.json entry 003-scope-t016 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:003-scope-t016: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/003-delegated-inquiry/unit-verification/scope-t016.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "004",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T003",
+      "T004",
+      "T005"
+    ],
+    "FR-002": [
+      "T003"
+    ],
+    "FR-003": [
+      "T003",
+      "T007"
+    ],
+    "FR-004": [
+      "T001",
+      "T003",
+      "T007"
+    ],
+    "FR-005": [
+      "T007"
+    ],
+    "FR-006": [
+      "T007"
+    ],
+    "FR-007": [
+      "T003",
+      "T007"
+    ],
+    "FR-008": [
+      "T004",
+      "T005",
+      "T006"
+    ],
+    "FR-009": [
+      "T004"
+    ],
+    "FR-010": [
+      "T005",
+      "T006"
+    ],
+    "FR-011": [
+      "T004",
+      "T007"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T004"
+    ],
+    "SC-002": [
+      "T005"
+    ],
+    "SC-003": [
+      "T007"
+    ],
+    "SC-004": [
+      "T007"
+    ],
+    "SC-005": [
+      "T004"
+    ],
+    "SC-006": [
+      "T007"
+    ],
+    "SC-007": [
+      "T003",
+      "T007"
+    ],
+    "SC-008": [
+      "T003",
+      "T005"
+    ],
+    "SC-009": [
+      "T005"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T005"
+    ],
+    "EC-002": [
+      "T005"
+    ],
+    "EC-003": [
+      "T005"
+    ],
+    "EC-004": [
+      "T005"
+    ],
+    "EC-005": [
+      "T007"
+    ],
+    "EC-006": [
+      "T007"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002",
+      "title": "T001 / T002: Create the local SQLite source variants, fixture principal/grants, stable source/version IDs, and independent inqui",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/demo-source-memory.ts",
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Create the local SQLite source variants, fixture principal/grants, stable source/version IDs, and independent inquiry inputs in `src/analytics/demo-source-memory.ts`.\n\n- [ ] T002 Add a demo driver in `src/analytics/demo-source-memory.ts` that starts `dag analytics ask` with the synthetic source and `gpt-6-luna`/`xhigh`, captures inquiry and evidence refs, and opens the existing answer/trace path without writing committed records itself.\n\nRead docs/build/task-handoffs.json entry 004-scope-t001-t002 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-scope-t001-t002: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/scope-t001-t002.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "004-scope-t001-t002",
+            "src/analytics/acceptance/004.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003",
+      "title": "T003: Drive the first ordinary `dag analytics ask` through the registered 014 `orient` hook in `src/analytics/demo-source",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001-t002"
+      ],
+      "files": [
+        "src/analytics/demo-source-memory.ts",
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 Drive the first ordinary `dag analytics ask` through the registered 014 `orient` hook in `src/analytics/demo-source-memory.ts`; assert the hook uses the same grant- and budget-bounded discovery implementation as 014 `source discover`, commits a candidate, and returns only its safe reference to orientation. Independently replay a bounded recipe, then use 003's normal typed command registry to invoke 022's registered `skills review` command with the exact candidate and configured owner. Add the runnable `004 first ordinary ask` acceptance case in `src/analytics/acceptance/004.test.ts`. Assert only validated, conflict-resolved owner approval can activate; retain failed/missing replay, unknown meaning, or conflicting definitions as `candidate` without retrying until favorable or using a seeded-active shortcut.\n\nRead docs/build/task-handoffs.json entry 004-scope-t003 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-scope-t003: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/scope-t003.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "004-scope-t003",
+            "src/analytics/acceptance/004.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: After 022 commits activation, start a second ordinary independent `dag analytics ask` through 015's registered sour",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "scope-t003"
+      ],
+      "files": [
+        "src/analytics/demo-source-memory.ts",
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 After 022 commits activation, start a second ordinary independent `dag analytics ask` through 015's registered source-reuse `orient` hook in `src/analytics/demo-source-memory.ts`; assert it receives the exact active source/skill refs and records supplied references separately from executed recipes. Add the runnable `004 second ordinary ask` acceptance case in `src/analytics/acceptance/004.test.ts`; inspect the answer and claim with `answer show --inquiry <id> --open` and `trace --claim <id>`, then request 011's existing `GET /api/analytics/inquiries/{inquiryId}/answer` and `GET /api/analytics/claims/{claimId}/trace` APIs. Assert their generic linked-provenance projection exposes committed source, skill/status, validation, authority, supplied-reference, executed-recipe, and exposure refs with exact revisions/digests under current grants. Add no special dispatcher, 004 viewer route, or feature-specific DTO.\n\nRead docs/build/task-handoffs.json entry 004-scope-t004 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-scope-t004: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/scope-t004.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "004-scope-t004",
+            "src/analytics/acceptance/004.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Add the runnable `004 compatibility` acceptance case in `src/analytics/acceptance/004.test.ts` and exercise 015's s",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 Add the runnable `004 compatibility` acceptance case in `src/analytics/acceptance/004.test.ts` and exercise 015's single compatibility predicate against same-schema semantic, tenant, key/grain, unit, timezone/category, role/grant, stale-watermark, and later-window join changes; preserve unrelated guidance for an unused-column change and preserve each inquiry's locked input.\n\nRead docs/build/task-handoffs.json entry 004-scope-t005 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-scope-t005: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/scope-t005.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "004-scope-t005",
+            "src/analytics/acceptance/004.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006",
+      "title": "T006: Add the runnable `004 revocation` acceptance case in `src/analytics/acceptance/004.test.ts`; invoke 022's registere",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/acceptance/004.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T006 Add the runnable `004 revocation` acceptance case in `src/analytics/acceptance/004.test.ts`; invoke 022's registered `skills revoke` command with the configured owner, exact active version, withdrawal reason, and expected project revision, then verify earlier inquiries retain their original skill pin while later orientation receives zero current guidance from the revoked version and does not substitute a refreshed source or skill.\n\nRead docs/build/task-handoffs.json entry 004-scope-t006 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-scope-t006: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/scope-t006.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "004-scope-t006",
+            "src/analytics/acceptance/004.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trust-and-final-acceptance",
+      "title": "Complete adversarial fixtures and record the feature verification",
+      "taskIds": [
+        "T007",
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t006"
+      ],
+      "files": [
+        "src/analytics/acceptance/004.test.ts",
+        "specs/004-source-memory/verification.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 Add bounded-stop, untrusted-text, grant-scope, sensitive-content, and prior-outcome cases to `src/analytics/acceptance/004.test.ts`; assert no out-of-scope recipe executes, no protected values enter the package, and no outcome enters later context without an exposure record.\n\n- [ ] T008 Run `pnpm test` for feature 004 and write actual command results, test evidence for every FR/SC/ordered Edge Case, source and skill provenance visible in the inspector, and any accurate local access-boundary limits to `specs/004-source-memory/verification.md`.\n\nRead docs/build/task-handoffs.json entry 004-trust-and-final-acceptance and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:004-trust-and-final-acceptance: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/004-source-memory/unit-verification/trust-and-final-acceptance.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

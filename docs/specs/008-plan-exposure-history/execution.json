@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "008",
+  "requirementTasks": {
+    "FR-001": [
+      "T004",
+      "T009",
+      "T010"
+    ],
+    "FR-002": [
+      "T002",
+      "T004",
+      "T010"
+    ],
+    "FR-003": [
+      "T003",
+      "T006",
+      "T010"
+    ],
+    "FR-004": [
+      "T005",
+      "T006",
+      "T010"
+    ],
+    "FR-005": [
+      "T003",
+      "T006",
+      "T010"
+    ],
+    "FR-006": [
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "FR-007": [
+      "T007",
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "FR-008": [
+      "T003",
+      "T005",
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "FR-009": [
+      "T003",
+      "T005",
+      "T010"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T006",
+      "T010"
+    ],
+    "SC-002": [
+      "T003",
+      "T010"
+    ],
+    "SC-003": [
+      "T007",
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "SC-004": [
+      "T003",
+      "T005",
+      "T010"
+    ],
+    "SC-005": [
+      "T003",
+      "T007",
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "SC-006": [
+      "T003",
+      "T006",
+      "T009",
+      "T010"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "EC-002": [
+      "T003",
+      "T005",
+      "T010"
+    ],
+    "EC-003": [
+      "T007",
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "EC-004": [
+      "T007",
+      "T009",
+      "T010"
+    ]
+  },
+  "units": [
+    {
+      "id": "mode-registration",
+      "title": "Implement typed Plan registration and prepare facade acceptance fixtures",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/008.test.ts",
+        "src/analytics/plans.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 Add synthetic inquiry, actor, source/partition, development outcome, evaluation metric, committed-history snapshot, and replacement-projection fixture builders in `src/analytics/acceptance/008.test.ts` using the 18-bootstrap registry IDs.\n\n- [ ] T002 Add production-facade acceptance assertions and the exported `registerPlanV1` request/result hook backed by all four generated `PlanRegistrationV1` schemas in `src/analytics/acceptance/008.test.ts` and `src/analytics/plans.ts`; assert unsupported profiles, mismatched discriminators, missing fields, extra fields, invalid refs, and non-finite values fail closed, while valid profile fixtures pass.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-mode-registration: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-mode-registration",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: Implement original-question and operational-interpretation retention, directed-plan required-field validation, and ",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "mode-registration"
+      ],
+      "files": [
+        "src/analytics/plans.ts",
+        "src/analytics/acceptance/008.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 [US1] Implement original-question and operational-interpretation retention, directed-plan required-field validation, and the exported `lockPlanV1` request/result hook for immutable lock, content digest, and linked revision creation in `src/analytics/plans.ts`.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-scope-t004",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Implement the exported `assessPlanChangeV1` request/result hook and deterministic locked-field comparison for popul",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/plans.ts",
+        "src/analytics/acceptance/008.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 [US1] Implement the exported `assessPlanChangeV1` request/result hook and deterministic locked-field comparison for population, target, method/comparison, partition design, search space, and stopping rule; retain the worker's reason and distinguish substantive forks from code-only executions in `src/analytics/plans.ts`.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t005: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-scope-t005",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003-t006",
+      "title": "T003 / T006: Add facade-path acceptance assertions for a declared candidate/resample, early evaluation-metric exposure, an outco",
+      "taskIds": [
+        "T003",
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/acceptance/008.test.ts",
+        "src/analytics/exposure.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 [US1] Add facade-path acceptance assertions for a declared candidate/resample, early evaluation-metric exposure, an outcome-informed method change, and `rejected`/`revision_conflict` exposure commits producing no release permit and zero `executeStageV1` calls in `src/analytics/acceptance/008.test.ts` before implementing those transitions.\n\n- [ ] T006 [US1] Implement the exported `commitExposureBeforeReleaseV1` request/result hook and exposure construction in `src/analytics/exposure.ts`; return a release permit only for 009 `committed`/`replayed` results, block `rejected`/`revision_conflict`, and validate that every admitted search/resample belongs to the locked family. Pass T003's failure-path assertions through the production facade and real 009 stage coordinator.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t003-t006: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-scope-t003-t006",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t008",
+      "title": "T008: Implement validation of the committed inquiry-history snapshot supplied through 003's committed-read capability aft",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t003-t006"
+      ],
+      "files": [
+        "src/analytics/exposure.ts",
+        "src/analytics/acceptance/008.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T008 [US2] Implement validation of the committed inquiry-history snapshot supplied through 003's committed-read capability after 009 recovery, preserving only refs reachable from the committed manifest in `src/analytics/exposure.ts`.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t008: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-scope-t008",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007-t009",
+      "title": "T007 / T009: Add acceptance assertions for the rehydration result after exposure, shortened-summary independence, a skill contai",
+      "taskIds": [
+        "T007",
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t008"
+      ],
+      "files": [
+        "src/analytics/acceptance/008.test.ts",
+        "src/analytics/plans.ts",
+        "src/analytics/exposure.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 [US2] Add acceptance assertions for the rehydration result after exposure, shortened-summary independence, a skill containing an earlier outcome, unknown out-of-tool access, code-only repair, and approval for exploratory use in `src/analytics/acceptance/008.test.ts` before implementing rehydration.\n\n- [ ] T009 [US2] Export typed `rehydratePlanExposureV1` request/result hooks that build a replacement-context projection from committed Question, Plan, change-assessment, Execution, and Exposure records, derive canonical labels, and mark incomplete/unknown history `exposure_unknown` in `src/analytics/plans.ts` and `src/analytics/exposure.ts`; leave actual worker-context delivery to 003.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t007-t009: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "008-scope-t007-t009",
+            "src/analytics/acceptance/008.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t010-t011",
+      "title": "T010 / T011: Complete synthetic acceptance through the production 008 facade, 009 commit/recovery, and real `executeStageV1`; as",
+      "taskIds": [
+        "T010",
+        "T011"
+      ],
+      "dependsOn": [
+        "scope-t007-t009"
+      ],
+      "files": [
+        "src/analytics/acceptance/008.test.ts",
+        "specs/008-plan-exposure-history/verification.md"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T010 Complete synthetic acceptance through the production 008 facade, 009 commit/recovery, and real `executeStageV1`; assert all 008 FRs/SCs/Edge Cases and the 008-owned T06/T07/T09/T61 producer behavior. For T61, assert the rehydration result retains exposure and labels; reserve actual replacement-worker context delivery for 003 in `src/analytics/acceptance/008.test.ts`.\n\n- [ ] T011 Write `specs/008-plan-exposure-history/verification.md` with executed commands, actual 008 facade/stage evidence, all FR/SC/Edge Case mappings, an explicit 003 integration status (pending if the downstream feature has not run), and the local workflow-withholding limitation. Do not report the facade test as full 003 integration.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:008-scope-t010-t011: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

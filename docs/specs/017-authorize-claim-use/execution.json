@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "017",
+  "requirementTasks": {
+    "FR-001": [
+      "T002",
+      "T004",
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "FR-002": [
+      "T004",
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "FR-003": [
+      "T004",
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "FR-004": [
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "FR-005": [
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "FR-006": [
+      "T003",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "FR-007": [
+      "T002",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "FR-008": [
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "FR-009": [
+      "T002",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T004",
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "SC-002": [
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-003": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-004": [
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-005": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-006": [
+      "T003",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-007": [
+      "T002",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-008": [
+      "T004",
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "SC-009": [
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "SC-010": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T004",
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "EC-002": [
+      "T004",
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "EC-003": [
+      "T004",
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "EC-004": [
+      "T006",
+      "T007",
+      "T008"
+    ],
+    "EC-005": [
+      "T006",
+      "T007",
+      "T008"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002-t003",
+      "title": "T001 / T002 / T003: Add synthetic Claim, Result, Check, Review, Plan, policy, actor and 009 commit/recovery fixture builders in `src/an",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/017.test.ts",
+        "src/analytics/authorization.ts",
+        "src/analytics/decisions.ts"
+      ],
+      "instructions": "Implement original T001/T002 fixture builders and UseAuthorizationPolicyV1, exact binding, review provenance, trace-seen and Use Assessment types/validators. Keep new Decision validation with its successor. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:017-scope-t001-t002-t003: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "017-scope-t001-t002-t003",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision-record-types",
+      "title": "decision record types",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001-t002-t003"
+      ],
+      "files": [
+        "src/analytics/acceptance/017.test.ts",
+        "src/analytics/authorization.ts",
+        "src/analytics/decisions.ts"
+      ],
+      "instructions": "Implement original T003 lightweight Decision record validation in decisions.ts: exact actor, decision text, finding/use-assessment refs and external action pointer. Reject missing required refs and retain append-only decision revisions. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:017-decision-record-types: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "017-decision-record-types",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004-t005",
+      "title": "T004 / T005: Add focused acceptance scenarios for internal uncertainty, owner policy registration, trigger selection, exact bind",
+      "taskIds": [
+        "T004",
+        "T005"
+      ],
+      "dependsOn": [
+        "decision-record-types"
+      ],
+      "files": [
+        "src/analytics/acceptance/017.test.ts",
+        "src/analytics/authorization.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [US1] Add focused acceptance scenarios for internal uncertainty, owner policy registration, trigger selection, exact binding, trace presentation, review provenance and configured-authority gating in `src/analytics/acceptance/017.test.ts`; name the provenance case `worker versus independent review attribution and configured authority gate`.\n\n- [ ] T005 [US1] Implement owner-controlled use-policy evaluation, assessment/review transitions and exact binding checks in `src/analytics/authorization.ts`.\n\nRead docs/build/task-handoffs.json entry 017-scope-t004-t005 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:017-scope-t004-t005: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/017-authorize-claim-use/unit-verification/scope-t004-t005.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "017-scope-t004-t005",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision-change-integration",
+      "title": "Integrate Decisions, staleness, revocation and durable use commands",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t004-t005"
+      ],
+      "files": [
+        "src/analytics/acceptance/017.test.ts",
+        "src/analytics/authorization.ts",
+        "src/analytics/decisions.ts"
+      ],
+      "instructions": "Implement original T006 risk-acceptance/opposing-evidence/changed-binding/revocation/publication/Decision and commit-recovery acceptance through current 017 production services. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:017-decision-change-integration: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "017-decision-change-integration",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "use-extension-registration",
+      "title": "use extension registration",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "decision-change-integration"
+      ],
+      "files": [
+        "src/analytics/acceptance/017.test.ts",
+        "src/analytics/authorization.ts",
+        "src/analytics/decisions.ts"
+      ],
+      "instructions": "Implement original T007 017 extension registration and owner-policy/use command handlers, delegating to completed assessment and Decision services. Validate command/grant/actor binding and durable writes; do not reimplement policy adjudication. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:017-use-extension-registration: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "017-use-extension-registration",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Verify all 017 requirements and record implementation evidence",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "use-extension-registration"
+      ],
+      "files": [
+        "specs/017-authorize-claim-use/verification.md",
+        "src/analytics/acceptance/017.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T008 Run the full 017 acceptance fixture, project build and repository tests, then record actual per-FR/SC/edge evidence and limitations in `specs/017-authorize-claim-use/verification.md`.\n\nRead docs/build/task-handoffs.json entry 017-acceptance-verification and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:017-acceptance-verification: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/017-authorize-claim-use/unit-verification/acceptance-verification.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "node",
+            "--import",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/017.test.ts"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "run",
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

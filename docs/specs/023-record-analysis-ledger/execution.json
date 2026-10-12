@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "023",
+  "requirementTasks": {
+    "FR-001": [
+      "T003",
+      "T004"
+    ],
+    "FR-002": [
+      "T003",
+      "T004"
+    ],
+    "FR-003": [
+      "T003",
+      "T004"
+    ],
+    "FR-004": [
+      "T003",
+      "T004"
+    ],
+    "FR-005": [
+      "T005",
+      "T007"
+    ],
+    "FR-006": [
+      "T005",
+      "T006"
+    ],
+    "FR-007": [
+      "T005",
+      "T007"
+    ],
+    "FR-008": [
+      "T005",
+      "T007"
+    ],
+    "FR-009": [
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "FR-010": [
+      "T004",
+      "T008"
+    ],
+    "FR-011": [
+      "T004",
+      "T008"
+    ],
+    "FR-012": [
+      "T003",
+      "T005",
+      "T007",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T004",
+      "T008"
+    ],
+    "SC-002": [
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "SC-003": [
+      "T002",
+      "T008"
+    ],
+    "SC-004": [
+      "T004",
+      "T008"
+    ],
+    "SC-005": [
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "SC-006": [
+      "T004",
+      "T008"
+    ],
+    "SC-007": [
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "SC-008": [
+      "T003",
+      "T007",
+      "T008"
+    ],
+    "SC-009": [
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "SC-010": [
+      "T002",
+      "T003",
+      "T004",
+      "T008"
+    ],
+    "SC-011": [
+      "T004",
+      "T008"
+    ],
+    "SC-012": [
+      "T005",
+      "T007",
+      "T008"
+    ],
+    "SC-013": [
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "SC-014": [
+      "T003",
+      "T004",
+      "T008"
+    ],
+    "SC-015": [
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T005",
+      "T008"
+    ],
+    "EC-002": [
+      "T005",
+      "T008"
+    ],
+    "EC-003": [
+      "T003",
+      "T008"
+    ],
+    "EC-004": [
+      "T003",
+      "T008"
+    ],
+    "EC-005": [
+      "T004",
+      "T008"
+    ],
+    "EC-006": [
+      "T005",
+      "T006",
+      "T008"
+    ],
+    "EC-007": [
+      "T004",
+      "T007",
+      "T008"
+    ],
+    "EC-008": [
+      "T004",
+      "T008"
+    ],
+    "EC-009": [
+      "T008"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001",
+      "title": "T001: Create the ledger provider scaffold and export analyticsExtensionV1 from src/analytics/ledger.ts, declari",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/ledger.ts",
+        "src/analytics/acceptance/023.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Create the ledger provider scaffold and export analyticsExtensionV1 from src/analytics/ledger.ts, declaring the catalog dependency and using the existing 003 extension types.\n\nRead docs/build/task-handoffs.json entry 023-scope-t001 and its referenced source interfaces. Scaffold validation through the existing registry is the acceptance here. Timeline behavior is tested with T002/T003 after the projection is implemented.\nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:023-scope-t001: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/023-record-analysis-ledger/unit-verification/scope-t001.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "023-scope-t001",
+            "src/analytics/acceptance/023.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t002-t003",
+      "title": "T002 + T003: [US1] Add synthetic timeline tests in src/analytics/acceptance/023.test.ts for committed controller facts",
+      "taskIds": [
+        "T002",
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001"
+      ],
+      "files": [
+        "src/analytics/ledger.ts",
+        "src/analytics/acceptance/023.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T002 [US1] Add synthetic timeline tests in src/analytics/acceptance/023.test.ts for committed controller facts, explicit missing interpretation, absent Results, and retained null, failed, and inconclusive work (write these cases before the implementation tasks in this phase).\n\n### Implementation for User Story 1\n\n- [ ] T003 [US1] Implement LedgerAttemptV1 projection and stable admission/execution/rationale event records in src/analytics/ledger.ts using the shared AnalyticsEventEnvelopeV1 and 009 project-memory commit/recovery interfaces.\n\nRead docs/build/task-handoffs.json entry 023-scope-t002-t003 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:023-scope-t002-t003: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/023-record-analysis-ledger/unit-verification/scope-t002-t003.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "023-scope-t002-t003",
+            "src/analytics/acceptance/023.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t004",
+      "title": "T004: [US1] Connect 003 admission, execution, orientation-read, and finalization hooks plus the access-safe led",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "scope-t002-t003"
+      ],
+      "files": [
+        "src/analytics/ledger.ts",
+        "src/analytics/acceptance/023.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 [US1] Connect 003 admission, execution, orientation-read, and finalization hooks plus the access-safe ledger show command in src/analytics/ledger.ts; preserve current grant checks, recovery, redaction, event replay, exposure refs, and missing-prose fallback.\n\nRead docs/build/task-handoffs.json entry 023-scope-t004 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:023-scope-t004: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/023-record-analysis-ledger/unit-verification/scope-t004.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "023-scope-t004",
+            "src/analytics/acceptance/023.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat-orientation",
+      "title": "Assess prior attempts and record repeat rationale",
+      "taskIds": [
+        "T005",
+        "T006",
+        "T007"
+      ],
+      "dependsOn": [
+        "scope-t004"
+      ],
+      "files": [
+        "src/analytics/acceptance/023.test.ts",
+        "src/analytics/ledger.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 [US2] Add synthetic orientation tests in src/analytics/acceptance/023.test.ts for exact, related, incompatible, unresolved, paraphrased same-question, explicit rerun, and intentional replication cases (write these cases before the implementation tasks in this phase).\n\n- [ ] T006 [US2] Import compareAnalyticalIdentityV1 from src/analytics/analytical-identity.ts in src/analytics/ledger.ts and map its dimension results to attributed exact, related, incompatible, or unresolved AnalyticalMatchV1 assessments without duplicating the identity predicate.\n\n- [ ] T007 [US2] Implement the ledger orientation and pre-repeat rationale hooks in src/analytics/ledger.ts so match assessments reach 020 once before answer ranking, prior outcomes are not supplied by 023, changed scope is linked, and authorized replication creates a distinct purpose instance without changing the Plan.\n\nRead docs/build/task-handoffs.json entry 023-repeat-orientation and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:023-repeat-orientation: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/023-record-analysis-ledger/unit-verification/repeat-orientation.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "023-repeat-orientation",
+            "src/analytics/acceptance/023.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Verify the full ledger path and record evidence",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "repeat-orientation"
+      ],
+      "files": [
+        "src/analytics/acceptance/023.test.ts",
+        "specs/023-record-analysis-ledger/verification.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T008 Complete src/analytics/acceptance/023.test.ts with T48-T51 orientation-to-timeline and remaining access, exposure, redaction, recovery, rebuild, multi-execution, retry, and changed-estimand cases; run every 023 acceptance check and write the actual FR/SC evidence and limitations to specs/023-record-analysis-ledger/verification.md.\n\nRead docs/build/task-handoffs.json entry 023-acceptance-verification and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:023-acceptance-verification: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/023-record-analysis-ledger/unit-verification/acceptance-verification.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

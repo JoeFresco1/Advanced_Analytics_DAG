@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "010",
+  "requirementTasks": {
+    "FR-001": [
+      "T004",
+      "T005"
+    ],
+    "FR-002": [
+      "T004",
+      "T005"
+    ],
+    "FR-003": [
+      "T002",
+      "T006",
+      "T007",
+      "T009"
+    ],
+    "FR-004": [
+      "T007",
+      "T009"
+    ],
+    "FR-005": [
+      "T005",
+      "T010"
+    ],
+    "FR-006": [
+      "T004",
+      "T010"
+    ],
+    "FR-007": [
+      "T008",
+      "T009"
+    ],
+    "FR-008": [
+      "T002",
+      "T009"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T005",
+      "T007",
+      "T010"
+    ],
+    "SC-002": [
+      "T003",
+      "T005",
+      "T010"
+    ],
+    "SC-003": [
+      "T004",
+      "T010"
+    ],
+    "SC-004": [
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "SC-005": [
+      "T002",
+      "T006",
+      "T009",
+      "T010"
+    ],
+    "SC-006": [
+      "T004",
+      "T005",
+      "T007",
+      "T009",
+      "T010"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T003",
+      "T005",
+      "T010"
+    ],
+    "EC-002": [
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "EC-003": [
+      "T003",
+      "T005",
+      "T010"
+    ]
+  },
+  "units": [
+    {
+      "id": "policy-foundation",
+      "title": "Create the synthetic fixture contract and owner-registered policy profile",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/010.test.ts",
+        "src/analytics/policies.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [P] Create synthetic Plan, Claim, policy, validator, execution, artifact, and exact subject reference builders in `src/analytics/acceptance/010.test.ts`.\n\n- [ ] T002 [P] Implement strict owner-registered immutable policy profiles, method/scope applicability, required validator descriptors, permitted `not_applicable` reasons, claim rule, authority route, schema validation, and policy-fixture gate in `src/analytics/policies.ts`.\n\n**Checkpoint**: The current policy reference comes only from the configured owner registration route; worker proposals cannot publish or alter required validators.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:010-policy-foundation: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "010-policy-foundation",
+            "src/analytics/acceptance/010.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check-execution",
+      "title": "Run validators and retain structured Check Results",
+      "taskIds": [
+        "T003",
+        "T004",
+        "T005"
+      ],
+      "dependsOn": [
+        "policy-foundation"
+      ],
+      "files": [
+        "src/analytics/acceptance/010.test.ts",
+        "src/analytics/checks.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 [US1] Add failing acceptance cases for process-success/check-fail separation, twelve-entity overlap, negative-baseline no-retry behavior, checker crash, malformed output, and tested failure-class limits in `src/analytics/acceptance/010.test.ts`.\n\n- [ ] T004 [US1] Implement schema-validated `CheckResultV1` ingestion with the frozen fields, canonical outcomes, exact Plan/policy/validator/subject references, observed/expected values, evidence refs, tested failure classes, limits, and rationale in `src/analytics/checks.ts`.\n\n- [ ] T005 [US1] Execute only the policy-resolved validator through 009 `executeStageV1`, retain process status separately from check outcome, record crash/schema/binding failures as `error`, and never retry a valid negative or failed check in `src/analytics/checks.ts`.\n\n**Checkpoint**: The overlap fixture is retained as a failed check and blocks its Claim even when the command exits zero.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:010-check-execution: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "010-check-execution",
+            "src/analytics/acceptance/010.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006",
+      "title": "T006: Implement policy-bound parameter admission and validator allowlisting in `src/analytics/policies.ts`; reject unknow",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "check-execution"
+      ],
+      "files": [
+        "src/analytics/policies.ts",
+        "src/analytics/acceptance/010.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T006 [P] Implement policy-bound parameter admission and validator allowlisting in `src/analytics/policies.ts`; reject unknown/out-of-contract parameters and worker attempts to choose executables, versions, required checks, N/A allowances, approval authority, or claim rules.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:010-scope-t006: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "010-scope-t006",
+            "src/analytics/acceptance/010.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007-t008-t009",
+      "title": "T007 / T008 / T009: Implement required-check coverage and freshness evaluation in `src/analytics/checks.ts`, matching the full required",
+      "taskIds": [
+        "T007",
+        "T008",
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t006"
+      ],
+      "files": [
+        "src/analytics/checks.ts",
+        "src/analytics/acceptance/010.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 [P] Implement required-check coverage and freshness evaluation in `src/analytics/checks.ts`, matching the full required set to exact Plan, policy, validator/code, and subject references and reporting omitted results as `missing` and changed bindings as `stale`.\n\n- [ ] T008 [US2] Implement `supported_presentation_eligible` from the complete frozen truth table in `src/analytics/checks.ts`; require every condition to be current pass or policy-supported N/A and keep unsupported scope, fail, error, inconclusive, missing, stale, and unjustified N/A blocked.\n\n- [ ] T009 [US2] Add acceptance cases for owner registration before dependent execution, unregistered/unsupported profiles, worker-relaxed or omitted/renamed validators, parameter rejection, every eligibility state, N/A reason handling, and subject/policy/validator version changes in `src/analytics/acceptance/010.test.ts`.\n\n**Checkpoint**: Worker proposals cannot weaken policy, and any missing, stale, failed, inconclusive, error, or unsupported required condition remains visible and blocks supported presentation.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:010-scope-t007-t008-t009: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "010-scope-t007-t008-t009",
+            "src/analytics/acceptance/010.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Run complete 010 acceptance and record verification evidence",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "scope-t007-t008-t009"
+      ],
+      "files": [
+        "src/analytics/acceptance/010.test.ts",
+        "specs/010-run-required-checks/verification.md"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T010 Complete the synthetic SC-001–SC-006 and proposal T02/T03/T04/T10/T23 assertions in `src/analytics/acceptance/010.test.ts`, run `pnpm build` and `pnpm test`, and write actual command results, limits, and an FR/SC-to-evidence table in `specs/010-run-required-checks/verification.md`.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:010-acceptance-verification: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

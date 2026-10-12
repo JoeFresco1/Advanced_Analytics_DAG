@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "revision": "19614ffc0a12a169a9b9a170ef8eea199b2ec897c84457e6326dfd2c782b9c0c",
+  "contextDigest": "61cd17d0f513847f39f35e3a0c3a2e6a9784fffcb75ce8f0791a744a885578e6",
+  "reviewer": "independent-codex-gpt-6-luna-xhigh",
+  "verdict": "fail",
+  "findings": [
+    {
+      "id": "F-002",
+      "rule": "Active task and acceptance artifacts must use coverage denominators derived from the pinned specifications and maps.",
+      "tasks": [
+        "task_5b86c85d",
+        "task_47f2c531"
+      ],
+      "references": [
+        "docs/build/task-handoffs.json:99-scope-t002",
+        "docs/build/task-plans/99/execution.json",
+        "docs/build/acceptance-plan.md:11",
+        "docs/build/acceptance-plan.md:47",
+        "docs/specs/edge-verification-map.md:023"
+      ],
+      "evidence": [
+        "The 023 ninth edge is mapped to FR-005/SC-015. `python scripts/audit_spec_coverage.py` succeeds: 23 specs, 234 FRs, 115 edge cases, with all structural references resolved.",
+        "Independent counts are 234 FR, 219 SC, 115 EC, 61 T cases, and 8 integration paths: 637 matrix rows.",
+        "The corrected convergence plan and contract state 219 SC/115 edges, but the active `99-scope-t002` handoff still specifies 218 SC/114 edges in its behavior, review boundary, and nested contract. The current execution instructions explicitly direct T002 to read that handoff.",
+        "The frozen acceptance plan still states 114 edges at lines 11 and 47; its digest is unchanged between the prior and current manifests."
+      ],
+      "severity": "error",
+      "blocking": true,
+      "message": "The missing-edge correction is present and the structural audit passes, but the active T002 handoff and frozen acceptance plan still give the old denominators. The worker instructions therefore conflict with the corrected plan and source-derived coverage, so F-001 is not fully closed.",
+      "correction": "Propagate the 219 SC/115 edge denominator to the active T002 handoff and reconcile the frozen acceptance plan (or explicitly supersede it with an authoritative replacement); refresh applicable frozen digests and recheck all active task, contract, and mapping denominators."
+    }
+  ]
+}

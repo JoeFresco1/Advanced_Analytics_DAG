@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "002",
+  "requirementTasks": {
+    "FR-001": [
+      "T004",
+      "T005",
+      "T006"
+    ],
+    "FR-002": [
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "FR-003": [
+      "T007",
+      "T008",
+      "T009",
+      "T010"
+    ],
+    "FR-004": [
+      "T007",
+      "T009",
+      "T010"
+    ],
+    "FR-005": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-006": [
+      "T005",
+      "T006",
+      "T007",
+      "T009"
+    ],
+    "FR-007": [
+      "T011",
+      "T012"
+    ],
+    "FR-008": [
+      "T011",
+      "T014"
+    ],
+    "FR-009": [
+      "T007",
+      "T009",
+      "T011",
+      "T013"
+    ],
+    "FR-010": [
+      "T011",
+      "T013"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T005",
+      "T006",
+      "T009"
+    ],
+    "SC-002": [
+      "T007",
+      "T009"
+    ],
+    "SC-003": [
+      "T007",
+      "T008"
+    ],
+    "SC-004": [
+      "T011",
+      "T012"
+    ],
+    "SC-005": [
+      "T007",
+      "T010"
+    ],
+    "SC-006": [
+      "T011",
+      "T014"
+    ],
+    "SC-007": [
+      "T004",
+      "T005",
+      "T006"
+    ],
+    "SC-008": [
+      "T007",
+      "T009",
+      "T010"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "EC-002": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "EC-003": [
+      "T007",
+      "T009"
+    ],
+    "EC-004": [
+      "T011",
+      "T012"
+    ],
+    "EC-005": [
+      "T011",
+      "T014"
+    ],
+    "EC-006": [
+      "T011",
+      "T013"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002",
+      "title": "T001 / T002: Create the scenario argument interface and isolated synthetic run lifecycle in src/analytics/demo-evidence.ts.",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/demo-evidence.ts",
+        "python/analytics_worker/demo_evidence.py",
+        "src/analytics/acceptance/002.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 [P] Create the scenario argument interface and isolated synthetic run lifecycle in src/analytics/demo-evidence.ts.\n\n- [ ] T002 [P] Implement deterministic synthetic input generation and fixed calculation output in python/analytics_worker/demo_evidence.py using the existing Pydantic computation contracts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t001-t002: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t001-t002",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003-t004",
+      "title": "T003 / T004: Add the scenario harness in src/analytics/acceptance/002.test.ts with isolated sidecars, 18-bootstrap fixture input",
+      "taskIds": [
+        "T003",
+        "T004"
+      ],
+      "dependsOn": [
+        "scope-t001-t002"
+      ],
+      "files": [
+        "src/analytics/acceptance/002.test.ts",
+        "src/analytics/demo-evidence.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 Add the scenario harness in src/analytics/acceptance/002.test.ts with isolated sidecars, 18-bootstrap fixture inputs, a `stage-call` acceptance case, and a test-local CDP helper that launches an installed Edge/Chrome through `DAG_ANALYTICS_BROWSER_PATH` or documented platform locations and fails rather than skipping when a real browser is unavailable.\n\n- [ ] T004 Bind the immutable schema-valid Plan and exact computation inputs to executeStageV1 in src/analytics/demo-evidence.ts, with argument-vector execution and declared outputs.\n\n**Checkpoint**: After `pnpm build`, run `node --test dist/analytics/acceptance/002.test.js`. At this checkpoint the acceptance file contains the `stage-call` case, which invokes the synthetic producer through 009 `executeStageV1` using the frozen typed Plan and verifies the returned execution/output binding; no run-file mutation or private runner exists.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t003-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t003-t004",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005-t006",
+      "title": "T005 / T006: Use the test-local CDP helper to open the real 011 browser route for the pass scenario, select each displayed value",
+      "taskIds": [
+        "T005",
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t003-t004"
+      ],
+      "files": [
+        "src/analytics/acceptance/002.test.ts",
+        "src/analytics/demo-evidence.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 [US1] Use the test-local CDP helper to open the real 011 browser route for the pass scenario, select each displayed value, and assert its complete current evidence trace in src/analytics/acceptance/002.test.ts.\n\n### Implementation\n\n- [ ] T006 [US1] Publish the complete pass result through commitEvidence and bind its report assertion to the exact result selector in src/analytics/demo-evidence.ts.\n\n**Checkpoint**: The pass scenario has exactly one committed logical result and a user can reach every required evidence link from the visible value.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t005-t006: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t005-t006",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007-t008-t009-t010",
+      "title": "T007 / T008 / T009 / T010: Run overlap, null-improvement, malformed/crashed, unsupported not_applicable, omitted/stale-check, missing-output, ",
+      "taskIds": [
+        "T007",
+        "T008",
+        "T009",
+        "T010"
+      ],
+      "dependsOn": [
+        "scope-t005-t006"
+      ],
+      "files": [
+        "src/analytics/acceptance/002.test.ts",
+        "python/analytics_worker/demo_evidence.py",
+        "src/analytics/demo-evidence.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 [US2] Run overlap, null-improvement, malformed/crashed, unsupported not_applicable, omitted/stale-check, missing-output, and changed-artifact cases through the production controller and open each affected report in the real 011 browser route in src/analytics/acceptance/002.test.ts.\n\n- [ ] T008 [US2] Assert the browser-visible check observation, exact subject, policy/validator refs, tested failure limits, canonical outcome, and dependent-claim eligibility in src/analytics/acceptance/002.test.ts without reading process logs.\n\n### Implementation\n\n- [ ] T009 [P] Add overlap-fail, null-improvement, malformed-check, checker-exit, and missing-output fixture behavior in python/analytics_worker/demo_evidence.py.\n\n- [ ] T010 [P] Route exact fixture outputs through 010's frozen policy and eligibility and 011's report/viewer in src/analytics/demo-evidence.ts; retain missing/changed evidence without supported promotion.\n\n**Checkpoint**: Check process completion stays distinct from outcome; valid negative results and failed checks remain committed; none is retried to obtain a favorable result.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t007-t008-t009-t010: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t007-t008-t009-t010",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t012",
+      "title": "T012: Implement pre-commit recovery, same-ID acknowledgement replay, and distinct concurrent commits at one expected revi",
+      "taskIds": [
+        "T012"
+      ],
+      "dependsOn": [
+        "scope-t007-t008-t009-t010"
+      ],
+      "files": [
+        "src/analytics/demo-evidence.ts",
+        "src/analytics/acceptance/002.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T012 [US3] Implement pre-commit recovery, same-ID acknowledgement replay, and distinct concurrent commits at one expected revision through 009 in src/analytics/demo-evidence.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t012: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t012",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t013",
+      "title": "T013: Add denied-reader and redacted/unavailable evidence scenarios using current 011 viewer access checks in src/analyti",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "scope-t012"
+      ],
+      "files": [
+        "src/analytics/demo-evidence.ts",
+        "src/analytics/acceptance/002.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T013 [US3] Add denied-reader and redacted/unavailable evidence scenarios using current 011 viewer access checks in src/analytics/demo-evidence.ts.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t013: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t013",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t011-t014",
+      "title": "T011 / T014: Test pre-commit recovery, lost-ack replay, concurrent publication, redacted/inaccessible evidence, and semantic rep",
+      "taskIds": [
+        "T011",
+        "T014"
+      ],
+      "dependsOn": [
+        "scope-t013"
+      ],
+      "files": [
+        "src/analytics/acceptance/002.test.ts",
+        "src/analytics/demo-evidence.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T011 [US3] Test pre-commit recovery, lost-ack replay, concurrent publication, redacted/inaccessible evidence, and semantic reproduction through committed 009/010 records opened in the real 011 browser route in src/analytics/acceptance/002.test.ts.\n\n### Implementation\n\n- [ ] T014 [US3] Add byte-different but canonically equivalent reproduction using the declared 009 comparison rule in src/analytics/demo-evidence.ts.\n\n**Checkpoint**: Recovery yields no partial or duplicate result; the losing publisher has a revision conflict; the viewer discloses only currently permitted metadata.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-scope-t011-t014: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "002-scope-t011-t014",
+            "src/analytics/acceptance/002.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-report",
+      "title": "Run the complete 002 matrix and record actual evidence",
+      "taskIds": [
+        "T015"
+      ],
+      "dependsOn": [
+        "scope-t011-t014"
+      ],
+      "files": [
+        "specs/002-executable-evidence/verification.md",
+        "src/analytics/acceptance/002.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T015 Run the complete feature acceptance matrix and write the exact demo/test commands, actual command output and exit codes, committed revisions, browser name/version, 011 route, observed DOM/trace evidence (or captured browser automation trace), and any environment limitation to specs/002-executable-evidence/verification.md.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:002-acceptance-report: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        },
+        {
+          "program": "uv",
+          "args": [
+            "run",
+            "--project",
+            "python",
+            "pytest",
+            "-q"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "dist/analytics/demo-evidence.js",
+            "--scenario",
+            "matrix"
+          ]
+        },
+        {
+          "program": "python",
+          "args": [
+            "scripts/audit_spec_coverage.py"
+          ]
+        }
+      ]
+    }
+  ]
+}

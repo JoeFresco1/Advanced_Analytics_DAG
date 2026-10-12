@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "011",
+  "requirementTasks": {
+    "FR-001": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-002": [
+      "T002",
+      "T004",
+      "T006"
+    ],
+    "FR-003": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T011",
+      "T012"
+    ],
+    "FR-004": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-005": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "FR-006": [
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "FR-007": [
+      "T001",
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "FR-008": [
+      "T001",
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006"
+    ],
+    "SC-002": [
+      "T002",
+      "T004",
+      "T006"
+    ],
+    "SC-003": [
+      "T003",
+      "T005",
+      "T006"
+    ],
+    "SC-004": [
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "SC-005": [
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "SC-006": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-007": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-008": [
+      "T001",
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "SC-009": [
+      "T007",
+      "T008",
+      "T009"
+    ],
+    "SC-010": [
+      "T002",
+      "T003",
+      "T004",
+      "T006"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T002",
+      "T003",
+      "T004",
+      "T006"
+    ],
+    "EC-002": [
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "EC-003": [
+      "T001",
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002-t004",
+      "title": "T001 / T002 / T004: Create deterministic committed Claim, Result, CheckResult, Plan, Execution, transformation, source-version, artifac",
+      "taskIds": [
+        "T001",
+        "T002",
+        "T004"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/011.test.ts",
+        "src/analytics/report.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 Create deterministic committed Claim, Result, CheckResult, Plan, Execution, transformation, source-version, artifact, and grant fixtures, plus typed RecordRefV1 links for source version, skill version/status, independent validation, authority decision, supplied reference, executed recipe, and outcome exposure; include paired workflow-readable and independently permissioned source fixtures and fixture assertions for both SC-008 labels (`workflow-level` and `independently permissioned source`) in src/analytics/acceptance/011.test.ts\n\n**Checkpoint**: Fixtures use only synthetic/local data and retain stable\nEvidenceRef revisions and digests.\n\n- [ ] T002 Add T11 cases that independently swap metric values, units, and denominators, plus rounding/scope mismatches and missing/changed/redacted EvidenceRefs, and assert each incorrect assertion is blocked before supported display in src/analytics/acceptance/011.test.ts\n\n- [ ] T004 Implement ReportAssertion and ReportChart binding validation, derived displayed values, current check eligibility, ordered evidence trace assembly, and generic linked-provenance projection with exact committed RecordRefV1 identity and safe missing/changed/restricted link conditions in src/analytics/report.ts\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-scope-t001-t002-t004: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "011-scope-t001-t002-t004",
+            "src/analytics/acceptance/011.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Implement the mountable production HTTP handler, answer/trace JSON APIs, inquiry/claim shell routes, artifact-ID ro",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t001-t002-t004"
+      ],
+      "files": [
+        "src/analytics/http.ts",
+        "src/analytics/acceptance/011.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T005 Implement the mountable production HTTP handler, answer/trace JSON APIs, inquiry/claim shell routes, artifact-ID route dispatch, and stable answer/trace URL builders; resolve every generic provenance ref by exact ID/revision/digest and apply current per-scope grants before metadata in src/analytics/http.ts\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-scope-t005: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "011-scope-t005",
+            "src/analytics/acceptance/011.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003-t006",
+      "title": "T003 / T006: Add real HTTP and headless-browser acceptance through the production answer/trace URL builders: request both shell ",
+      "taskIds": [
+        "T003",
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/acceptance/011.test.ts",
+        "viewer/analytics.html"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 Add real HTTP and headless-browser acceptance through the production answer/trace URL builders: request both shell routes and JSON APIs against committed synthetic linked-provenance records; click a report value through the bound Claim and Result to its committed data-version entry; verify exact RecordRefV1 links for source, skill/status, validation, authority, supplied-reference, executed-recipe, and outcome-exposure are present in the answer/trace projection in src/analytics/acceptance/011.test.ts\n\n- [ ] T006 Implement the answer-first viewer and value/chart selection that opens the bound claim trace; display permitted generic provenance refs/status as escaped text and keep the committed data-version entry reachable in viewer/analytics.html\n\n**Checkpoint**: The inquiry and claim page routes return the generic shell;\nthe real handler returns committed answer/trace data; browser selection ends at\nthe bound source-version entry.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-scope-t003-t006: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "011-scope-t003-t006",
+            "src/analytics/acceptance/011.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "answer-and-chart",
+      "title": "Make first-screen completeness and chart lineage explicit",
+      "taskIds": [
+        "T007",
+        "T008",
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t003-t006"
+      ],
+      "files": [
+        "src/analytics/acceptance/011.test.ts",
+        "src/analytics/report.ts",
+        "viewer/analytics.html"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T007 Add an independent omission case for answer, population, period, material assumptions, uncertainty, and limitations, plus negative/inconclusive and causal-wording cases; for every fixture chart, use browser assertions for aggregation, axes/selectors/units, labels, scale/range, filters/population effect, uncertainty definition/encoding, and exact source Result ref, including planted aggregation/scale/filter changes, in src/analytics/acceptance/011.test.ts\n\n- [ ] T008 Implement first-screen completeness, structured Claim interpretation labels, and exact chart binding assessment for aggregation, axes/selectors/units, scale/range, filters/population effect, labels, uncertainty definition/encoding, and source Result ref in src/analytics/report.ts\n\n- [ ] T009 Render completeness and limitations on the first screen and render each chart's complete bound trace, including permitted source Result ref, aggregation, axes, labels, scale, filters, and uncertainty meaning, as browser-visible fields for T007 assertions in viewer/analytics.html\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-answer-and-chart: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "011-answer-and-chart",
+            "src/analytics/acceptance/011.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access-safe-serving",
+      "title": "Enforce viewer grants and safe artifact rendering",
+      "taskIds": [
+        "T010",
+        "T011",
+        "T012"
+      ],
+      "dependsOn": [
+        "answer-and-chart"
+      ],
+      "files": [
+        "src/analytics/acceptance/011.test.ts",
+        "src/analytics/http.ts",
+        "viewer/analytics.html"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T010 Add T60 active-markup/out-of-root-path cases and metadata-only, denied raw access, grant revocation, traversal, and symlink-escape cases; exercise paired workflow-readable and independently permissioned source fixtures through real answer/trace endpoints and browser assertions for both SC-008 labels (`workflow-level` and `independently permissioned source`), with zero ungranted raw values or restricted paths in either viewer response, in src/analytics/acceptance/011.test.ts\n\n- [ ] T011 Enforce current grant checks before metadata or byte responses and for every linked provenance ref; resolve exact committed record/artifact IDs and ID/revision/digest bindings, preserve missing/changed/redacted/restricted safe labels without raw/protected content, canonicalize within approved roots, reject traversal/symlink escape, and return safe errors in src/analytics/http.ts\n\n- [ ] T012 Render report/source text and linked-provenance labels/refs as text nodes, keep missing/restricted/unsafe evidence failures visible, and expose the paired SC-008 boundary labels (`workflow-level` and `independently permissioned source`) in viewer/analytics.html for T010 browser assertions against their matching fixtures without ungranted raw values or restricted paths\n\n**Checkpoint**: Metadata and bytes are separately authorized; no unauthorized\nvalues or restricted paths leave the handler; omission blocks report\ncompleteness; charts retain their bound source details; and unsafe content\ncannot execute in the browser.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-access-safe-serving: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "011-access-safe-serving",
+            "src/analytics/acceptance/011.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Run complete 011 acceptance and record evidence",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "access-safe-serving"
+      ],
+      "files": [
+        "specs/011-inspect-result-trace/verification.md",
+        "src/analytics/acceptance/011.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T013 Run pnpm build and pnpm test, then write actual FR/SC/edge/T11/T60 outcomes and evidence references to specs/011-inspect-result-trace/verification.md\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:011-acceptance-verification: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}

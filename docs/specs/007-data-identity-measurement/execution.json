@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "007",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T009",
+      "T011"
+    ],
+    "FR-002": [
+      "T002",
+      "T003",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "FR-003": [
+      "T006",
+      "T007",
+      "T011"
+    ],
+    "FR-004": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T007",
+      "T011",
+      "T012"
+    ],
+    "FR-005": [
+      "T008",
+      "T009",
+      "T011"
+    ],
+    "FR-006": [
+      "T008",
+      "T009",
+      "T010",
+      "T011"
+    ],
+    "FR-007": [
+      "T002",
+      "T008",
+      "T009",
+      "T011",
+      "T012"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T004",
+      "T007",
+      "T011",
+      "T012"
+    ],
+    "SC-002": [
+      "T001",
+      "T003",
+      "T004",
+      "T007",
+      "T011",
+      "T012"
+    ],
+    "SC-003": [
+      "T008",
+      "T009",
+      "T011",
+      "T012"
+    ],
+    "SC-004": [
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "SC-005": [
+      "T001",
+      "T002",
+      "T009",
+      "T011",
+      "T012"
+    ],
+    "SC-006": [
+      "T001",
+      "T008",
+      "T009",
+      "T011",
+      "T012"
+    ],
+    "SC-007": [
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012"
+    ],
+    "SC-008": [
+      "T008",
+      "T010",
+      "T011",
+      "T012"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T001",
+      "T003",
+      "T004",
+      "T007",
+      "T012"
+    ],
+    "EC-002": [
+      "T008",
+      "T009",
+      "T010",
+      "T012"
+    ],
+    "EC-003": [
+      "T008",
+      "T009",
+      "T012"
+    ],
+    "EC-004": [
+      "T008",
+      "T010",
+      "T012"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001-t002",
+      "title": "T001 / T002: Create synthetic principal/grant, source-version, transformation, and stable RecordRefV1 fixture builders plus init",
+      "taskIds": [
+        "T001",
+        "T002"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/acceptance/007.test.ts",
+        "src/analytics/data.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T001 Create synthetic principal/grant, source-version, transformation, and stable RecordRefV1 fixture builders plus initial identity/cardinality assertions in src/analytics/acceptance/007.test.ts.\n\n- [ ] T002 Implement immutable 007 source/data-version and transformation declaration/manifest validators in src/analytics/data.ts; bind exact shared refs, keep source role separate from access role, require declared grain/cardinality before new transformations, and preserve unknown historical metadata.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:007-scope-t001-t002: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "007-scope-t001-t002",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t003",
+      "title": "T003: Implement denominator-lineage and MeasurementFindingV1 validation in src/analytics/measurement.ts; bind ordered tra",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001-t002"
+      ],
+      "files": [
+        "src/analytics/measurement.ts",
+        "src/analytics/acceptance/007.test.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T003 Implement denominator-lineage and MeasurementFindingV1 validation in src/analytics/measurement.ts; bind ordered transformation refs, reconcile supplied row/entity counts, and expose exact support blockers without assigning global Claim or presentation state.\n\n**Checkpoint**: Source, grant, transformation, denominator, and unknown metadata remain separately attributable; no numeric summary is calculated in TypeScript.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:007-scope-t003: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "007-scope-t003",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "descriptive-computation",
+      "title": "Compute scoped descriptive results and reconcile their denominators",
+      "taskIds": [
+        "T004",
+        "T005",
+        "T006",
+        "T007"
+      ],
+      "dependsOn": [
+        "scope-t003"
+      ],
+      "files": [
+        "src/analytics/acceptance/007.test.ts",
+        "python/analytics_worker/descriptive.py",
+        "src/analytics/descriptive.ts",
+        "src/analytics/measurement.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T004 Add test-first real-computation cases in src/analytics/acceptance/007.test.ts for count, sum, mean, proportion, units, population/period, group scope, missingness/exclusions, denominator lineage, and an undefined zero-denominator proportion. The test must invoke the real Python calculator and must not supply a fabricated result payload.\n\n- [ ] T005 Implement authoritative count, sum, mean, and proportion calculations plus observed row/entity/group and missingness/exclusion counts in python/analytics_worker/descriptive.py using the frozen 001 DescriptiveRequestV1/DescriptiveResultV1 contracts; preserve denominator zero with an absent value and reason for undefined statistics.\n\n- [ ] T006 Implement the descriptive TypeScript facade in src/analytics/descriptive.ts; invoke the shared computeAnalytics/009 stage path with exact plan, source, transformation, program, environment, and execution bindings, validate the echoed result, and return Python values without calculating summaries.\n\n- [ ] T007 Complete denominator reconciliation and support-blocking measurement findings in src/analytics/measurement.ts; distinguish justified row multiplication from unexplained entity/cardinality changes and hidden exclusions, retaining exact expected/observed evidence and denominator refs.\n\n**Checkpoint**: A Result resolves to an exact input and transformation path. A valid declared grain expansion passes; duplicate joins and hidden exclusions remain visible and block affected support.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:007-descriptive-computation: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "007-descriptive-computation",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acquisition-semantic-validity",
+      "title": "Compare acquisitions and validate semantic, freshness, access, and maturity scope",
+      "taskIds": [
+        "T008",
+        "T009",
+        "T010"
+      ],
+      "dependsOn": [
+        "descriptive-computation"
+      ],
+      "files": [
+        "src/analytics/acceptance/007.test.ts",
+        "src/analytics/data.ts",
+        "src/analytics/measurement.ts"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T008 Add test-first acquisition and semantic-drift cases in src/analytics/acceptance/007.test.ts for unknown legacy grain/cardinality, same-schema unit/timezone/key/category changes, query time without repeatable snapshot, missing group meaning, freshness/watermark drift, late events, immature labels, and source-role/grant mismatch.\n\n- [ ] T009 Extend src/analytics/data.ts with acquisition scope/time/consistency and replay availability, semantic-definition versions independent of schema fingerprint, source role/grant matching through 001, explicit unknown legacy facts, and new-version/correction links for changed meaning or late data.\n\n- [ ] T010 Extend src/analytics/measurement.ts with declared freshness and comparison assessment, event-time/processing-time/watermark evidence, target maturity counts and exclusions, group-meaning checks, and exact support blockers for semantically incomparable or immature measurements. Do not introduce a global freshness threshold or infer category meaning.\n\n**Checkpoint**: A query timestamp alone is not an exact snapshot; changed semantics and immature labels keep their counts and evidence visible and cannot support an unqualified affected claim.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:007-acquisition-semantic-validity: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Review only this boundary and its actual caller; retain whole-feature integration for the final unit.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "007-acquisition-semantic-validity",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-verification",
+      "title": "Run complete 007 acceptance and record actual verification evidence",
+      "taskIds": [
+        "T011"
+      ],
+      "dependsOn": [
+        "acquisition-semantic-validity"
+      ],
+      "files": [
+        "src/analytics/acceptance/007.test.ts",
+        "specs/007-data-identity-measurement/verification.md"
+      ],
+      "instructions": "Assigned boundary only: - [ ] T011 Complete the FR-001–FR-007, SC-001–SC-008, all four feature Edge Cases, graph-required missing-group/source-role fixtures, and proposal T05/T08 assertions in src/analytics/acceptance/007.test.ts; run pnpm build, pnpm test, and the focused 007 acceptance command; write actual outcomes, limits, and FR/SC/Edge-to-evidence links in specs/007-data-identity-measurement/verification.md.\nPreserve frozen interfaces and all accepted requirements. Consume completed upstream APIs; do not implement future checklist tasks or repair unrelated production boundaries. Add top-level behavioral tests named scope:007-acceptance-verification: <behavior> with a valid control and each assigned rejection/recovery case. Targeted tests must execute and pass, not merely compile or select zero tests. Test-first fixtures for this unit must become passing through this unit's implementation; future assertions are owned by later units. Run complete feature acceptance and record all FR/SC/edge evidence.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "join-evidence-correction",
+      "title": "join evidence correction",
+      "taskIds": [
+        "T012"
+      ],
+      "dependsOn": [
+        "acceptance-verification"
+      ],
+      "files": [
+        "src/analytics/data.ts",
+        "src/analytics/acceptance/007.test.ts",
+        "src/analytics/measurement.ts"
+      ],
+      "instructions": "Assigned boundary: T012. Extend the existing 007 transformation producer with optional typed declared join and observed join evidence; historical absent fields remain unavailable and never imply a known join. Export validateTransformationJoinV1(value, inputVersionRefs). A known join has joinId, kind (inner/left/right/full), and nonempty keyMappings of leftVersionRef/leftKey/rightVersionRef/rightKey. Exact refs must belong to distinct declared input versions; key strings must be nonempty; duplicate mappings, unknown keys and kinds are invalid. Add optional join to TransformationDeclarationV1 and TransformationObservationsV1; validate known values via the exported helper and retain observed mismatches as evidence, not a fabricated pass. Existing legacy fixtures must still work. Keep immutable digest validation including the optional fields; do not rewrite old committed records. Add tests through both real declaration/manifest validators for a valid two-input join, foreign ref, empty mapping, invalid kind, duplicate mapping, tampered digest, observed different join and absent legacy evidence. Run the external analytics-join-probe.mjs through tsx plus the whole existing 007 test file. Record that this is a corrective successor to accepted 007 T002, not a relabeling of its historical acceptance. Preserve existing tests and frozen product requirements. Add passing real-entry-point tests named scope:007-join-evidence-correction: with a valid control and each listed rejection. Do not implement later boundaries. Explicit corrective ownership includes src/analytics/measurement.ts::reconcileDenominatorLineageV1: when declared and observed join identities, kinds or key mappings differ, denominator reconciliation MUST retain the observed mismatch and MUST NOT report a pass from matching counts/cardinality alone. Unknown historical join evidence remains unknown rather than invented. Add a real reconciliation regression with matching counts/cardinality and different valid observed join, plus a matching-join control. This is a corrective successor to historical T003 as well as T002; historical accepted records remain unchanged. The assigned local acceptance includes this consumer behavior; it is not deferred to T003. Do not route this assigned defect as a missing producer.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "007-join-evidence-correction",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "node_modules/tsx/dist/cli.mjs",
+            "C:\\Users\\Fresc\\lightweight-dag\\scripts\\analytics-join-probe.mjs"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "node_modules/tsx/dist/cli.mjs",
+            "--test",
+            "src/analytics/acceptance/007.test.ts"
+          ]
+        }
+      ]
+    }
+  ]
+}

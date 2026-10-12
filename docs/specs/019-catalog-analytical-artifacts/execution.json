@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "featureKey": "019",
+  "requirementTasks": {
+    "FR-001": [
+      "T001",
+      "T002",
+      "T008"
+    ],
+    "FR-002": [
+      "T002",
+      "T008"
+    ],
+    "FR-003": [
+      "T003",
+      "T010",
+      "T009",
+      "T008"
+    ],
+    "FR-004": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "FR-005": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "FR-006": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "FR-007": [
+      "T003",
+      "T010",
+      "T004",
+      "T011",
+      "T012",
+      "T009",
+      "T008"
+    ],
+    "FR-008": [
+      "T002",
+      "T004",
+      "T011",
+      "T012",
+      "T008"
+    ],
+    "FR-009": [
+      "T005",
+      "T008"
+    ],
+    "FR-010": [
+      "T005",
+      "T008"
+    ],
+    "FR-011": [
+      "T005",
+      "T008"
+    ],
+    "FR-012": [
+      "T006",
+      "T008",
+      "T013"
+    ],
+    "FR-013": [
+      "T007",
+      "T008"
+    ],
+    "FR-014": [
+      "T005",
+      "T008"
+    ],
+    "FR-015": [
+      "T003",
+      "T010",
+      "T009",
+      "T008"
+    ],
+    "FR-016": [
+      "T006",
+      "T008",
+      "T013"
+    ],
+    "FR-017": [
+      "T004",
+      "T011",
+      "T012",
+      "T008"
+    ]
+  },
+  "successTasks": {
+    "SC-001": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "SC-002": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "SC-003": [
+      "T002",
+      "T004",
+      "T011",
+      "T012",
+      "T008"
+    ],
+    "SC-004": [
+      "T005",
+      "T008"
+    ],
+    "SC-005": [
+      "T006",
+      "T008",
+      "T013"
+    ],
+    "SC-006": [
+      "T007",
+      "T008"
+    ],
+    "SC-007": [
+      "T005",
+      "T008"
+    ],
+    "SC-008": [
+      "T003",
+      "T010",
+      "T004",
+      "T011",
+      "T012",
+      "T009",
+      "T008"
+    ],
+    "SC-009": [
+      "T003",
+      "T010",
+      "T009",
+      "T008"
+    ],
+    "SC-010": [
+      "T006",
+      "T008",
+      "T013"
+    ],
+    "SC-011": [
+      "T003",
+      "T010",
+      "T008"
+    ],
+    "SC-012": [
+      "T004",
+      "T011",
+      "T012",
+      "T008"
+    ],
+    "SC-013": [
+      "T003",
+      "T010",
+      "T009",
+      "T008"
+    ],
+    "SC-014": [
+      "T001",
+      "T002",
+      "T008"
+    ],
+    "SC-015": [
+      "T003",
+      "T010",
+      "T005",
+      "T009",
+      "T008"
+    ],
+    "SC-016": [
+      "T003",
+      "T010",
+      "T009",
+      "T008"
+    ],
+    "SC-017": [
+      "T007",
+      "T008"
+    ]
+  },
+  "edgeCaseTasks": {
+    "EC-001": [
+      "T003",
+      "T010"
+    ],
+    "EC-002": [
+      "T003",
+      "T010",
+      "T009"
+    ],
+    "EC-003": [
+      "T003",
+      "T010",
+      "T004",
+      "T011",
+      "T012"
+    ],
+    "EC-004": [
+      "T002",
+      "T004",
+      "T011",
+      "T012",
+      "T008"
+    ],
+    "EC-005": [
+      "T003",
+      "T010",
+      "T004",
+      "T011",
+      "T012",
+      "T009"
+    ],
+    "EC-006": [
+      "T005"
+    ],
+    "EC-007": [
+      "T006",
+      "T013"
+    ]
+  },
+  "units": [
+    {
+      "id": "scope-t001",
+      "title": "T001: Define validated `ArtifactRecordV1`, `CatalogEntryV1`, role/retention/availability fields, stable opaque IDs, diges",
+      "taskIds": [
+        "T001"
+      ],
+      "dependsOn": [],
+      "files": [
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T001 Define validated `ArtifactRecordV1`, `CatalogEntryV1`, role/retention/availability fields, stable opaque IDs, digest rules, source-class distinction, and usage-link types in `src/analytics/catalog.ts`. Keep committed, staged, failed and imported material distinguishable; imported origin defaults to explicit unknown. Do not add a persistence/CAS implementation.\n\nRead docs/build/task-handoffs.json entry 019-scope-t001 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t001: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t001.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t001",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bounded-import",
+      "title": "bounded import",
+      "taskIds": [
+        "T003"
+      ],
+      "dependsOn": [
+        "scope-t001"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T003 Implement approved-root path handling, bounded CSV/XLSX parsing and content reads under current sheet grants. Enforce 100 files/1 GiB/300 seconds before additional reads; reject traversal, unsafe workbooks and denied title/sheet/cell disclosure. Test the 99-file corpus, 101st-file/byte/time stops and metadata-only sheets. Never move originals.\n  - Files: `src/analytics/import.ts`, `src/analytics/catalog.ts`, `src/analytics/acceptance/019.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 019-bounded-import and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-bounded-import: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/bounded-import.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-bounded-import",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "import-history",
+      "title": "import history",
+      "taskIds": [
+        "T010"
+      ],
+      "dependsOn": [
+        "bounded-import"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T010 Use the bounded importer to commit immutable path-specific source/import versions through 009. Group byte-identical content without merging distinct provenance; origin remains unknown despite a final filename. On rescan append change events and reassessment_required projections; missing input becomes unavailable without rewriting history. Test changed/missing input and duplicate groups.\n  - Files: `src/analytics/import.ts`, `src/analytics/catalog.ts`, `src/analytics/acceptance/019.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 019-import-history and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-import-history: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/import-history.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-import-history",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "committed-index",
+      "title": "committed index",
+      "taskIds": [
+        "T004"
+      ],
+      "dependsOn": [
+        "import-history"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T004 Define and validate CatalogProjectionInputV1 and ingest only committed reachable artifact/import/card and typed ledger projections. Implement idempotent FTS5 rebuild from recovered 009 run/project manifest chains after deletion/corruption. Preserve exact record/commit refs, scopes, availability, validity and usage. Do not import future 023 or infer ledger semantics.\n  - Files: `src/analytics/import.ts`, `src/analytics/catalog.ts`, `src/analytics/acceptance/019.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 019-committed-index and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-committed-index: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/committed-index.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-committed-index",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curation-events",
+      "title": "curation events",
+      "taskIds": [
+        "T011"
+      ],
+      "dependsOn": [
+        "committed-index"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T011 Implement appendCurationEventV1 with current project-owner grant, stable actor/target/action/scope/evidence/commit bindings and durable 009 project writes. Rebuild the index from a committed curation event after corruption without changing canonical source bytes or history; an index edit is never authority.\n  - Files: `src/analytics/import.ts`, `src/analytics/catalog.ts`, `src/analytics/acceptance/019.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 019-curation-events and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-curation-events: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/curation-events.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-curation-events",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access-first-search",
+      "title": "access first search",
+      "taskIds": [
+        "T012"
+      ],
+      "dependsOn": [
+        "curation-events"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T012 Implement access-first FTS5 lookup/ranking/context construction and durable recordDeniedLookupV1. Reject restricted workbook metadata before matching/ranking; persist only safe principal/opaque source/operation/reason. Test zero title/path/sheet/cell/rationale/count disclosure and retained ledger/card/artifact refs. Keep proposal T39 primary ownership with 020.\n  - Files: `src/analytics/import.ts`, `src/analytics/catalog.ts`, `src/analytics/acceptance/019.test.ts`.\n  - Dependency: preceding scoped unit and existing feature prerequisites.\n  - Verification: build plus the assigned scope tests; final feature acceptance retains the entire accepted contract.\n\nRead docs/build/task-handoffs.json entry 019-access-first-search and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-access-first-search: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/access-first-search.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-access-first-search",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t002",
+      "title": "T002: Register and reconcile committed run outputs from node-009 manifests in `src/analytics/catalog.ts`; persist require",
+      "taskIds": [
+        "T002"
+      ],
+      "dependsOn": [
+        "access-first-search"
+      ],
+      "files": [
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T002 [US1] Register and reconcile committed run outputs from node-009 manifests in `src/analytics/catalog.ts`; persist required project catalog/curation references only through `commitProjectMemory` and rebuild after `recoverProjectMemory`. Export `analyticsExtensionV1` with the typed `analytics catalog search` and `analytics catalog rebuild` command handlers and the `afterEvidenceCommit(context, manifestRef)` lifecycle hook, using the real node-003 registry/dispatcher contracts without editing 003-owned files. Add `src/analytics/acceptance/019.test.ts` fixtures that invoke the registered catalog commands and hook through the node-003 caller path, checking typed/access-safe `CommandResultV1` payloads, durable 009 recovery, hook replay, stable ID/digest/role/producer/availability/scope/usage bindings, committed-versus-staged state, post-run-commit catalog failure with completion withheld until hook recovery, idempotent rebuild, and forbidden answer-story inference.\n\nRead docs/build/task-handoffs.json entry 019-scope-t002 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t002: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t002.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t002",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t009",
+      "title": "T009: Implement and register the typed `analytics artifacts import` command handler in `src/analytics/catalog.ts`, delega",
+      "taskIds": [
+        "T009"
+      ],
+      "dependsOn": [
+        "scope-t002"
+      ],
+      "files": [
+        "src/analytics/import.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T009 [US2] Implement and register the typed `analytics artifacts import` command handler in `src/analytics/catalog.ts`, delegating bounded CSV/XLSX work to `src/analytics/import.ts`. Bind the invocation to the authenticated principal, project/source refs and current metadata/sheet grants supplied through the node-003 command context; never accept a caller path or worker-supplied grant as authority. Return only bounded, access-safe import status and committed refs from node-009 project memory. Add `src/analytics/acceptance/019.test.ts` coverage through the real node-003 registry/typed dispatcher for the 99-file import, count/byte/time rejection before further reads, mixed workbook sheet grants, zero unauthorized title/sheet/cell disclosure, unknown-origin/path-specific identities, and committed imported-versus-result separation. This handler-path workbook denial is supporting coverage for 020-owned proposal T39; 019 does not own T39.\n\nRead docs/build/task-handoffs.json entry 019-scope-t009 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t009: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t009.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t009",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t005",
+      "title": "T005: Implement controller output declaration and bounded publication in `src/analytics/retention.ts` and register the ty",
+      "taskIds": [
+        "T005"
+      ],
+      "dependsOn": [
+        "scope-t009"
+      ],
+      "files": [
+        "src/analytics/retention.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T005 [US3] Implement controller output declaration and bounded publication in `src/analytics/retention.ts` and register the typed `analytics artifacts export` handler in `src/analytics/catalog.ts`: require a declared canonical role, retention class, producer, approved root and count/byte limits; test a 100-output profile and reject the 101st or byte overflow before publication. Enforce zero default CSV/XLSX exports, retain results on rejection, flag observed unmanaged writes without claiming enforcement, and bind one authorized export to its exact committed Result and answer-card versions in `src/analytics/acceptance/019.test.ts`.\n\nRead docs/build/task-handoffs.json entry 019-scope-t005 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t005: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t005.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t005",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t006",
+      "title": "T006: Implement preview/apply and interruption recovery for retention in `src/analytics/retention.ts`, registering typed ",
+      "taskIds": [
+        "T006"
+      ],
+      "dependsOn": [
+        "scope-t005"
+      ],
+      "files": [
+        "src/analytics/retention.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Implement original T006 retention preview and bounded apply: exact eligible managed scratch/cache enumeration, current grant, approved-root identity and durable cleanup intent. Preserve canonical/raw/final/unmanaged files; expose typed preview/apply commands. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:019-scope-t006: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t006",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retention-recovery",
+      "title": "retention recovery",
+      "taskIds": [
+        "T013"
+      ],
+      "dependsOn": [
+        "scope-t006"
+      ],
+      "files": [
+        "src/analytics/retention.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Complete original T006 interruption recovery: resume only the enumerated durable cleanup intent, stable action IDs and per-file completions. Reject root/grant/target drift; preserve every canonical/raw/final/unmanaged file. Verify failure after one deletion and replay through real project-memory recovery. Preserve frozen requirements and all existing assertions. Add passing real-entry-point tests named scope:019-retention-recovery: with valid controls and each assigned fault. Execute only this boundary; defer full feature acceptance to its registered verifier.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-retention-recovery",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t007",
+      "title": "T007: Implement optional notebook publication/replay validation in `src/analytics/retention.ts` and register the typed `a",
+      "taskIds": [
+        "T007"
+      ],
+      "dependsOn": [
+        "retention-recovery"
+      ],
+      "files": [
+        "src/analytics/retention.ts",
+        "src/analytics/catalog.ts",
+        "src/analytics/acceptance/019.test.ts"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T007 [US4] Implement optional notebook publication/replay validation in `src/analytics/retention.ts` and register the typed `analytics notebook publish` handler and artifact in `src/analytics/catalog.ts`. Use the existing node-009 stage adapter; bind input versions, Python/dependency/environment/program digests, ordered cell IDs/digests, fresh-run outcome and every displayed Claim to committed Result IDs. Keep unsupported or hidden-state notebooks exploratory. Add clean replay, order/environment pinning, missing Result link, hidden-state and failed-replay fixtures in `src/analytics/acceptance/019.test.ts`.\n\nRead docs/build/task-handoffs.json entry 019-scope-t007 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t007: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Review this production boundary and declared failure cases; later integration obligations stay with their named owners. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t007.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "build"
+          ]
+        },
+        {
+          "program": "node",
+          "args": [
+            "scripts/build/check-scope.mjs",
+            "019-scope-t007",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-t008",
+      "title": "T008: Complete all synthetic/local 019 fixtures in `src/analytics/acceptance/019.test.ts` for every FR, SC and ordered ed",
+      "taskIds": [
+        "T008"
+      ],
+      "dependsOn": [
+        "scope-t007"
+      ],
+      "files": [
+        "src/analytics/acceptance/019.test.ts",
+        "specs/019-catalog-analytical-artifacts/verification.md"
+      ],
+      "instructions": "Assigned boundary:\n- [ ] T008 Complete all synthetic/local 019 fixtures in `src/analytics/acceptance/019.test.ts` for every FR, SC and ordered edge case plus 019-owned proposal cases T28–T30, T37 and T43–T47. Also retain `f019-t39-restricted-workbook-denial` as supporting 019 catalog/access-boundary coverage while 020 owns primary proposal T39 acceptance. Exercise the final `analyticsExtensionV1` through node-003's actual registry/typed command dispatcher for catalog, import, export, retention and notebook commands, and deliver `afterEvidenceCommit` through its lifecycle dispatcher with injected failure and idempotent recovery; assert the required hook failure leaves completion unacknowledged until recovery succeeds. Include deletion/corruption rebuild from versioned synthetic committed ledger attempt, rationale, match-assessment, answer-card, artifact and curation records; assert unchanged canonical source bytes/history and preserved IDs, access scopes, availability, current validity, usage links and access-safe rationale retrieval. Run the focused 019 suite and full `pnpm test`; write `specs/019-catalog-analytical-artifacts/verification.md` with actual command results and concrete artifact/evidence references for FR-001–FR-017, SC-001–SC-017 and EC-001–EC-007. Preserve null, negative, failed and incomplete states; do not edit accepted requirements, answer keys or thresholds.\n\nRead docs/build/task-handoffs.json entry 019-scope-t008 and its referenced source interfaces. \nBuild only these IDs against their declared producers. New test cases and their implementation belong in this unit; do not add failing future tests. Existing accepted assertions remain unchanged. Use scope:019-scope-t008: test names, including awaited child cases. Scope acceptance must execute nonzero tests. Run complete original feature acceptance, live/browser journeys when required, and record all FR/SC/edge evidence. Preserve all frozen product requirements. If a consumed capability is absent, identify its exact producer and symbol; do not fabricate authority or repeatedly request an already authorized file. Record exact outputs in specs/019-catalog-analytical-artifacts/unit-verification/scope-t008.md. The coordinator alone amends the graph.",
+      "acceptance": [
+        {
+          "program": "pnpm",
+          "args": [
+            "typecheck"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "exec",
+            "tsx",
+            "--test",
+            "src/analytics/acceptance/019.test.ts"
+          ]
+        },
+        {
+          "program": "pnpm",
+          "args": [
+            "test"
+          ]
+        }
+      ]
+    }
+  ]
+}
